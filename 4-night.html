@@ -43,9 +43,9 @@ header{position:fixed;inset:0 0 auto;z-index:50;mix-blend-mode:difference;color:
 
 /* hero: dark frame, the cursor is a headlight */
 .hero{position:relative;height:100vh;height:100svh;min-height:600px;overflow:hidden;background:#000;cursor:none}
-.hero .base,.hero .lit{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+.hero .base,.hero .lit{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .hero .base{filter:brightness(.16) saturate(.6)}
-.hero .lit{filter:brightness(1.08) contrast(1.05);-webkit-mask-image:radial-gradient(circle var(--r,300px) at var(--x,64%) var(--y,46%),#000 0,rgba(0,0,0,.6) 45%,transparent 100%);mask-image:radial-gradient(circle var(--r,300px) at var(--x,64%) var(--y,46%),#000 0,rgba(0,0,0,.6) 45%,transparent 100%)}
+.hero .lit{filter:brightness(1.08) contrast(1.05);-webkit-mask-image:radial-gradient(circle var(--r,300px) at var(--x,47%) var(--y,43%),#000 0,rgba(0,0,0,.6) 45%,transparent 100%);mask-image:radial-gradient(circle var(--r,300px) at var(--x,47%) var(--y,43%),#000 0,rgba(0,0,0,.6) 45%,transparent 100%)}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,.4) 0,transparent 25%,transparent 55%,rgba(5,5,5,.9) 100%);pointer-events:none}
 .hero-c{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 clamp(18px,3vw,48px) clamp(28px,4vh,48px);pointer-events:none}
 .hero-c a,.hero-c button{pointer-events:auto;cursor:pointer}
@@ -95,7 +95,7 @@ header{position:fixed;inset:0 0 auto;z-index:50;mix-blend-mode:difference;color:
 
 /* city mask */
 .city{padding:clamp(80px,10vw,150px) 0;overflow:hidden;text-align:center}
-.city .word{font:800 clamp(36px,9.2vw,230px)/.9 var(--disp);letter-spacing:-.05em;background-image:url(img/w/night.jpg);background-size:cover;background-position:50% var(--py,50%);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.city .word{font:800 clamp(36px,9.2vw,230px)/.9 var(--disp);letter-spacing:-.05em;background-image:url(img/ekb/w/city.jpg);background-size:cover;background-position:50% var(--py,50%);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
 .city p{font:300 clamp(18px,1.8vw,26px)/1.4 var(--disp);max-width:760px;margin:34px auto 0;color:rgba(242,239,233,.8)}
 
 /* numbers */
@@ -171,7 +171,7 @@ footer .wrap{padding-top:30px;padding-bottom:30px;display:flex;justify-content:s
   .hd-r .tel,.hd-r .ord{display:none}
   .hd-r .ic{display:grid}
   .hero{cursor:auto}
-  .hero .base,.hero .lit{object-position:70% 40%}
+  .hero .base,.hero .lit{object-position:50% 50%}
   .hero-top{flex-direction:column;align-items:flex-start}
   .hero-top .acts{display:none}
   .hero-top p{font-size:15px}
@@ -247,8 +247,8 @@ body:after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;o
 </header>
 
 <section class="hero" id="top">
-  <img class="base" src="img/p/detail.jpg" alt="">
-  <img class="lit" src="img/p/detail.jpg" alt="Фара Mercedes S-класса ночью">
+  <picture><source media="(max-width:640px)" srcset="img/ekb/w/hero-m.jpg"><img class="base" src="img/ekb/w/hero.jpg" alt=""></picture>
+  <picture><source media="(max-width:640px)" srcset="img/ekb/w/hero-m.jpg"><img class="lit" src="img/ekb/w/hero.jpg" alt="Фара Mercedes S-класса ночью, Екатеринбург"></picture>
   <span class="hint">Ведите курсором — включите свет</span>
   <div class="hero-c">
     <div class="hero-top">
@@ -275,8 +275,8 @@ body:after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;o
   <div class="fl-pin">
     <div class="fl-head"><h2>Автопарк</h2><span class="fl-count"><b id="flNo">01</b> / 05</span></div>
     <div class="track" id="track">
-      <article class="slab"><img src="img/p/maybach-event.jpg" alt="Mercedes-Maybach у входа" loading="lazy"><span class="no">01</span><div class="tx"><div><div class="nm">Maybach</div><div class="sp">3 пассажира · от 4 часов</div></div><div class="pr"><b>4 500 ₽</b><span>в час</span></div></div></article>
-      <article class="slab"><img src="img/p/story-4.jpg" alt="Mercedes S-класса" loading="lazy"><span class="no">02</span><div class="tx"><div><div class="nm">S-класс</div><div class="sp">W222 и W221 · 3 пассажира · от 3 часов</div></div><div class="pr"><b>от 1 300 ₽</b><span>в час</span></div></div></article>
+      <article class="slab"><img src="img/ekb/w/fleet-maybach.jpg" alt="Mercedes-Maybach у входа в бизнес-центр" loading="lazy"><span class="no">01</span><div class="tx"><div><div class="nm">Maybach</div><div class="sp">3 пассажира · от 4 часов</div></div><div class="pr"><b>4 500 ₽</b><span>в час</span></div></div></article>
+      <article class="slab"><img src="img/ekb/w/fleet-sclass.jpg" alt="Mercedes S-класса на набережной Исети" loading="lazy"><span class="no">02</span><div class="tx"><div><div class="nm">S-класс</div><div class="sp">W222 и W221 · 3 пассажира · от 3 часов</div></div><div class="pr"><b>от 1 300 ₽</b><span>в час</span></div></div></article>
       <article class="slab"><img src="img/w/i-vclass.jpg" alt="Салон Mercedes V-класса" loading="lazy"><span class="no">03</span><div class="tx"><div><div class="nm">V-класс</div><div class="sp">до 7 пассажиров · с багажом</div></div><div class="pr"><b>2 000 ₽</b><span>в час</span></div></div></article>
       <article class="slab"><img src="img/w/i-sprinter.jpg" alt="Салон Sprinter VIP" loading="lazy"><span class="no">04</span><div class="tx"><div><div class="nm">Sprinter VIP</div><div class="sp">до 20 мест · автобусы до 60</div></div><div class="pr"><b>1 300 ₽</b><span>в час</span></div></div></article>
       <article class="slab last"><b>400+</b><p>автомобилей вместе с партнёрами — седаны, лимузины, внедорожники, автобусы.</p><a class="btn" href="#book">Подобрать машину<i></i></a></article>
@@ -303,14 +303,14 @@ body:after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;o
   <div class="wrap">
     <div class="scen-head"><h2 class="up">Поводы</h2><p class="up">Наведите на строку — покажем, как это выглядит.</p></div>
     <div class="rows" id="rows">
-      <div class="rw" data-img="img/p/story-2.jpg" data-mode="trip"><i>01</i><h3>Встреча в Кольцово</h3><span>Встретим рейс и отвезём по адресу</span><img src="img/p/story-2.jpg" alt="" loading="lazy"></div>
-      <div class="rw" data-img="img/p/cabin-woman.jpg" data-mode="hour"><i>02</i><h3>Деловой день</h3><span>Водитель с вами от 3 часов</span><img src="img/p/cabin-woman.jpg" alt="" loading="lazy"></div>
-      <div class="rw" data-img="img/p/maybach-event.jpg" data-mode="event"><i>03</i><h3>Свадьба</h3><span>Автомобили к ЗАГСу и ресторану</span><img src="img/p/maybach-event.jpg" alt="" loading="lazy"></div>
-      <div class="rw" data-img="img/p/story-1.jpg" data-mode="event"><i>04</i><h3>Кортеж</h3><span>От 5 до 30 машин одного класса</span><img src="img/p/story-1.jpg" alt="" loading="lazy"></div>
-      <div class="rw" data-img="img/p/sprinter-vip.jpg" data-mode="event"><i>05</i><h3>Делегация</h3><span>Минивэны, Sprinter и автобусы</span><img src="img/p/sprinter-vip.jpg" alt="" loading="lazy"></div>
+      <div class="rw" data-img="img/ekb/w/scen-airport.jpg" data-mode="trip"><i>01</i><h3>Встреча в Кольцово</h3><span>Встретим рейс и отвезём по адресу</span><img src="img/ekb/w/scen-airport.jpg" alt="" loading="lazy"></div>
+      <div class="rw" data-img="img/ekb/w/scen-business.jpg" data-mode="hour"><i>02</i><h3>Деловой день</h3><span>Водитель с вами от 3 часов</span><img src="img/ekb/w/scen-business.jpg" alt="" loading="lazy"></div>
+      <div class="rw" data-img="img/ekb/w/scen-wedding.jpg" data-mode="event"><i>03</i><h3>Свадьба</h3><span>Автомобили к ЗАГСу и ресторану</span><img src="img/ekb/w/scen-wedding.jpg" alt="" loading="lazy"></div>
+      <div class="rw" data-img="img/ekb/w/scen-cortege.jpg" data-mode="event"><i>04</i><h3>Кортеж</h3><span>От 5 до 30 машин одного класса</span><img src="img/ekb/w/scen-cortege.jpg" alt="" loading="lazy"></div>
+      <div class="rw" data-img="img/ekb/w/scen-delegation.jpg" data-mode="event"><i>05</i><h3>Делегация</h3><span>Минивэны, Sprinter и автобусы</span><img src="img/ekb/w/scen-delegation.jpg" alt="" loading="lazy"></div>
     </div>
   </div>
-  <div class="float" id="float"><img id="floatImg" src="img/p/story-2.jpg" alt=""></div>
+  <div class="float" id="float"><img id="floatImg" src="img/ekb/w/scen-airport.jpg" alt=""></div>
 </section>
 
 <section class="book" id="book">
@@ -354,7 +354,8 @@ const clamp=(v,a=0,b=1)=>Math.min(Math.max(v,a),b);
 
 // фара: свет идёт за курсором; на телефоне медленно проходит по кадру сам
 const hero=document.getElementById("top");
-let lx=64,ly=46,tx=64,ty=46,lr=300;
+const mob=matchMedia("(max-width:640px)").matches;
+let lx=mob?34:47,ly=mob?36:43,tx=lx,ty=ly,lr=300;
 if(fine)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();tx=(e.clientX-r.left)/r.width*100;ty=(e.clientY-r.top)/r.height*100});
 
 // слова манифеста загораются по мере прокрутки
@@ -368,7 +369,7 @@ const cityWord=document.getElementById("cityWord");
 let fx=0;
 const draw=t=>{
   const h=innerHeight,y=scrollY;
-  if(!fine&&!still){tx=55+Math.sin(t/2600)*22;ty=44+Math.cos(t/3300)*10}
+  if(!fine&&!still){tx=(mob?36:50)+Math.sin(t/2600)*(mob?16:20);ty=(mob?36:44)+Math.cos(t/3300)*(mob?7:9)}
   lx+=(tx-lx)*.12;ly+=(ty-ly)*.12;
   hero.style.setProperty("--x",lx.toFixed(2)+"%");hero.style.setProperty("--y",ly.toFixed(2)+"%");
   hero.style.setProperty("--r",(fine?Math.min(innerWidth*.24,380):Math.min(innerWidth*.5,260))+"px");
@@ -397,7 +398,7 @@ let px=0,py=0,cx=0,cy=0;
 if(fine){
   document.querySelectorAll(".rw").forEach(r=>{r.addEventListener("pointerenter",()=>{fi.src=r.dataset.img;fl.classList.add("on")});r.addEventListener("pointerleave",()=>fl.classList.remove("on"))});
   addEventListener("pointermove",e=>{px=e.clientX;py=e.clientY});
-  const fol=()=>{cx+=(px-cx)*.15;cy+=(py-cy)*.15;fl.style.transform=`translate(${cx-180}px,${cy-135}px) rotate(-4deg)`;requestAnimationFrame(fol)};fol();
+  const fol=()=>{cx+=(px-cx)*.15;cy+=(py-cy)*.15;fl.style.transform=`translate(${cx+40}px,${cy-150}px) rotate(-4deg)`;requestAnimationFrame(fol)};fol();
 }
 
 // прелоадер: счёт до 100, шторка уходит вверх, буквы AVENU96 поднимаются
