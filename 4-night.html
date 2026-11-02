@@ -181,6 +181,10 @@ footer .wrap{padding-top:30px;padding-bottom:30px;display:flex;justify-content:s
   .fleet{height:420vh}
   .fl-head{padding-top:84px}
   .slab{width:84vw}
+  .track{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+  .slab .nm{font-size:30px}
+  .slab .pr b{font-size:28px}
+  .slab .tx{gap:10px;padding:20px}
   .slab .tx{flex-direction:column;align-items:flex-start}
   .slab .pr{text-align:left}
   .slab.last{width:84vw}
@@ -428,6 +432,12 @@ if(fine&&!still){
       const g=cx.createLinearGradient(x0,y,x1,y);g.addColorStop(0,`rgba(${c.c},0)`);g.addColorStop(1,`rgba(${c.c},.9)`);
       cx.strokeStyle=g;cx.lineWidth=c.w*(W/1400);cx.shadowColor=`rgba(${c.c},.8)`;cx.shadowBlur=12;cx.beginPath();cx.moveTo(x0,y);cx.lineTo(x1,y);cx.stroke();
       if(c.x>1.4||c.x<-.4)cars[i]=spawn()});cx.shadowBlur=0};run()})();
+
+// огромные слова подгоняются точно под ширину экрана: шрифт и ширина букв на телефонах разные
+const fit=el=>{if(!el)return;el.style.fontSize="";const box=el.parentElement.clientWidth-parseFloat(getComputedStyle(el.parentElement).paddingLeft)-parseFloat(getComputedStyle(el.parentElement).paddingRight);
+  const fs=parseFloat(getComputedStyle(el).fontSize),w=el.scrollWidth;if(w>0)el.style.fontSize=Math.min(fs*box/w,fs*1.15)+"px"};
+const fitAll=()=>{fit(document.querySelector(".mega"));fit(document.getElementById("cityWord"))};
+document.fonts.ready.then(fitAll);addEventListener("resize",fitAll);fitAll();
 
 // форма и ссылки
 const setMode=m=>{document.querySelectorAll("#seg button").forEach(b=>b.classList.toggle("on",b.dataset.mode===m));document.querySelectorAll(".fld[data-for]").forEach(f=>f.classList.toggle("show",f.dataset.for===m))};
