@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Авеню96 — автомобили с водителем в Екатеринбурге</title>
+<meta name="theme-color" content="#16120f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600&family=Wix+Madefor+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16120f;--ink2:#211b17;--stone:#ebe6df;--stone2:#e2dcd3;--cream:#f5f1ea;
+  --cognac:#b07849;--cognac2:#d5a77c;--muted:#8d847a;--line:rgba(245,241,234,.14);--line2:rgba(22,18,15,.12);
+  --disp:'Wix Madefor Display',system-ui,sans-serif;--text:'Wix Madefor Text',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{background:var(--ink);color:var(--cream);font:400 16px/1.6 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
+button,input,select{font:inherit;color:inherit}
+.caps{font-family:var(--disp);text-transform:uppercase;letter-spacing:.14em}
+.more{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--text);letter-spacing:.2em;text-transform:uppercase;padding:6px 0;border-bottom:1px solid currentColor;transition:gap .4s var(--ease),color .3s}
+.more:after{content:"";width:6px;height:6px;border-top:1px solid;border-right:1px solid;transform:rotate(45deg)}
+.more:hover{gap:16px;color:var(--cognac2)}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;height:76px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 clamp(18px,3vw,40px);transition:background .5s,height .5s,border-color .5s;border-bottom:1px solid transparent}
+header.solid{background:rgba(22,18,15,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);height:64px;border-color:var(--line)}
+.menu-btn{justify-self:start;display:flex;align-items:center;gap:12px;background:none;border:0;cursor:pointer;font:500 12px/1 var(--text);letter-spacing:.2em;text-transform:uppercase}
+.menu-btn i{width:22px;height:9px;border-top:1px solid;border-bottom:1px solid}
+.mark{font:600 19px/1 var(--disp);letter-spacing:.2em;padding-left:.2em}
+.mark b{font-weight:400;color:var(--cognac2)}
+.hr{justify-self:end;display:flex;align-items:center;gap:22px}
+.tel{font:500 14px/1 var(--text);letter-spacing:.06em;font-variant-numeric:tabular-nums;display:flex;align-items:center;gap:10px}
+.tel svg{width:15px;height:15px}
+.order{height:40px;padding:0 20px;border:1px solid rgba(245,241,234,.5);display:grid;place-items:center;font:500 12px/1 var(--text);letter-spacing:.2em;text-transform:uppercase;transition:background .3s,color .3s,border-color .3s}
+.order:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+
+/* menu overlay */
+.nav{position:fixed;inset:0;z-index:60;background:var(--ink);display:grid;grid-template-columns:1fr 1fr;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+.nav.open{opacity:1;visibility:visible}
+.nav-l{padding:120px clamp(24px,6vw,96px) 48px;display:flex;flex-direction:column;justify-content:space-between}
+.nav-l a.n{display:block;font:500 clamp(30px,3.6vw,52px)/1.25 var(--disp);letter-spacing:-.02em;color:rgba(245,241,234,.55);transition:color .3s,padding .4s var(--ease)}
+.nav-l a.n:hover{color:var(--cream);padding-left:14px}
+.nav-l small{color:var(--muted);font-size:13px}
+.nav-r{position:relative;overflow:hidden}
+.nav-r img{width:100%;height:100%;object-fit:cover}
+.nav-x{position:absolute;top:22px;left:clamp(18px,3vw,40px);z-index:2;background:none;border:0;cursor:pointer;font:500 12px/1 var(--text);letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:12px;padding:6px 0}
+.nav-x i{position:relative;width:18px;height:18px}
+.nav-x i:before,.nav-x i:after{content:"";position:absolute;left:0;top:50%;width:18px;border-top:1px solid;transform:rotate(45deg)}
+.nav-x i:after{transform:rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;height:100vh;height:100svh;min-height:620px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;text-align:center}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 48%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,18,15,.55) 0,rgba(22,18,15,0) 22%,rgba(22,18,15,.1) 42%,rgba(22,18,15,.88) 100%)}
+.hero-c{position:relative;z-index:2;padding:0 20px clamp(56px,9vh,96px);max-width:900px}
+.hero .k{font:500 11px/1 var(--text);letter-spacing:.32em;text-transform:uppercase;color:var(--cognac2)}
+.hero h1{font:500 clamp(40px,5.2vw,78px)/1.02 var(--disp);letter-spacing:-.02em;margin:22px 0 18px}
+.hero p{color:rgba(245,241,234,.78);max-width:560px;margin:0 auto 34px;font-size:16px}
+.hero .acts{display:flex;justify-content:center;gap:40px}
+.scroll{position:absolute;z-index:2;bottom:28px;right:clamp(18px,3vw,40px);font:500 10px/1 var(--text);letter-spacing:.3em;text-transform:uppercase;color:rgba(245,241,234,.6);writing-mode:vertical-rl;display:flex;align-items:center;gap:12px}
+.scroll:after{content:"";height:44px;border-left:1px solid rgba(245,241,234,.4)}
+
+/* booking */
+.book{background:var(--ink2);border-bottom:1px solid var(--line)}
+.book-in{max-width:1320px;margin:0 auto;padding:44px clamp(18px,3vw,40px) 48px}
+.book-top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:28px}
+.book-top h2{font:600 13px/1 var(--text);letter-spacing:.24em;text-transform:uppercase}
+.tabs{display:flex;gap:6px;padding:4px;border:1px solid var(--line);border-radius:40px}
+.tabs button{border:0;background:none;cursor:pointer;height:34px;padding:0 18px;border-radius:30px;font-size:13px;color:rgba(245,241,234,.62);transition:background .3s,color .3s}
+.tabs button.on{background:var(--cream);color:var(--ink)}
+.fields{display:grid;grid-template-columns:1.6fr 1fr .8fr 1fr 1.2fr auto;gap:0;border-top:1px solid var(--line)}
+.f{padding:16px 22px 14px 0;border-bottom:1px solid var(--line);margin-right:22px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.f label{font:500 10px/1 var(--text);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.f input,.f select{background:none;border:0;outline:0;font-size:16px;padding:2px 0;width:100%;color-scheme:dark;appearance:none;-webkit-appearance:none}
+.f select{cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 9px) 55%,calc(100% - 4px) 55%;background-size:5px 5px;background-repeat:no-repeat;padding-right:18px}
+.f select option{background:var(--ink2)}
+.f input::placeholder{color:rgba(245,241,234,.4)}
+.f:focus-within{border-color:var(--cognac2)}
+.f[data-for]{display:none}
+.f[data-for].show{display:flex}
+.go{align-self:end;height:58px;padding:0 34px;background:var(--cognac);border:0;cursor:pointer;font:500 12px/1 var(--text);letter-spacing:.2em;text-transform:uppercase;color:#fff;white-space:nowrap;transition:background .3s}
+.go:hover{background:#c08655}
+.book-note{margin-top:16px;font-size:13px;color:var(--muted)}
+
+/* panels */
+.panel{position:relative;height:92vh;min-height:560px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;text-align:center}
+.panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.panel:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,18,15,.25) 0,rgba(22,18,15,0) 30%,rgba(22,18,15,.35) 55%,rgba(22,18,15,.9) 100%)}
+.panel.studio>img{filter:brightness(.62) contrast(1.12) saturate(.85) sepia(.18)}
+.panel .c{position:relative;z-index:2;padding:0 20px clamp(48px,8vh,84px);max-width:760px}
+.panel .n{font:500 11px/1 var(--text);letter-spacing:.3em;color:var(--cognac2)}
+.panel h2{font:500 clamp(32px,3.8vw,56px)/1.05 var(--disp);letter-spacing:-.02em;margin:18px 0 14px}
+.panel p{color:rgba(245,241,234,.8);margin-bottom:26px}
+.panel .meta{display:flex;justify-content:center;gap:28px;margin-bottom:26px;font-size:13px;color:rgba(245,241,234,.7);letter-spacing:.04em}
+.panel .meta b{display:block;font:500 22px/1.2 var(--disp);color:var(--cream);letter-spacing:-.02em;margin-bottom:2px}
+
+/* intro statement */
+.intro{background:var(--stone);color:var(--ink);text-align:center;padding:clamp(80px,12vw,150px) 20px}
+.intro .k{font:500 11px/1 var(--text);letter-spacing:.32em;text-transform:uppercase;color:var(--cognac)}
+.intro h2{font:400 clamp(24px,2.8vw,40px)/1.35 var(--disp);letter-spacing:-.02em;max-width:980px;margin:28px auto 0}
+.intro h2 em{font-style:normal;color:var(--cognac)}
+
+/* fleet */
+.fleet{background:var(--stone);color:var(--ink);padding:0 0 clamp(72px,9vw,120px)}
+.fl-in{max-width:1320px;margin:0 auto;padding:0 clamp(18px,3vw,40px)}
+.fl-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding-bottom:26px;border-bottom:1px solid var(--line2)}
+.fl-head h2{font:500 clamp(26px,3vw,40px)/1 var(--disp);letter-spacing:-.02em}
+.fl-tabs{display:flex;gap:26px}
+.fl-tabs button{white-space:nowrap;flex:none;background:none;border:0;cursor:pointer;font:500 12px/1 var(--text);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:8px 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+.fl-tabs button.on{color:var(--ink);border-color:var(--ink)}
+.cars{display:grid;grid-template-columns:repeat(3,1fr);gap:0 28px}
+.car{padding:30px 0 34px;border-bottom:1px solid var(--line2);display:flex;flex-direction:column}
+.car.hide{display:none}
+.car .im{aspect-ratio:16/10;overflow:hidden;background:var(--stone2)}
+.car .im img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.car:hover .im img{transform:scale(1.04)}
+.car h3{font:500 22px/1.2 var(--disp);letter-spacing:-.015em;margin:22px 0 6px}
+.car .sp{font-size:14px;color:var(--muted)}
+.car .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:20px}
+.car .pr{font:500 20px/1 var(--disp);letter-spacing:-.02em}
+.car .pr small{font:400 13px var(--text);color:var(--muted);letter-spacing:0}
+.car button{background:none;border:0;border-bottom:1px solid var(--ink);cursor:pointer;font:500 11px/1 var(--text);letter-spacing:.2em;text-transform:uppercase;padding:6px 0;transition:color .3s,border-color .3s}
+.car button:hover{color:var(--cognac);border-color:var(--cognac)}
+.fl-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:34px;color:var(--muted);font-size:14px}
+.fl-foot .more{color:var(--ink)}
+
+/* business split */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:86vh;background:var(--ink)}
+.split .ph{position:relative;overflow:hidden}
+.split .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split .tx{padding:clamp(56px,8vw,120px) clamp(24px,6vw,96px);display:flex;flex-direction:column;justify-content:center}
+.split .k{font:500 11px/1 var(--text);letter-spacing:.32em;text-transform:uppercase;color:var(--cognac2)}
+.split h2{font:500 clamp(26px,3vw,42px)/1.2 var(--disp);letter-spacing:-.02em;margin:22px 0 22px}
+.split p{color:rgba(245,241,234,.72);max-width:470px}
+.list{margin:34px 0 40px;border-top:1px solid var(--line);max-width:470px}
+.list div{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+.list span{color:var(--muted)}
+
+/* numbers */
+.nums{background:var(--ink);border-top:1px solid var(--line)}
+.nums-in{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.num{padding:clamp(44px,6vw,80px) clamp(18px,2.4vw,36px);border-right:1px solid var(--line)}
+.num:last-child{border-right:0}
+.num b{display:block;font:500 clamp(40px,4.6vw,68px)/1 var(--disp);letter-spacing:-.02em}
+.num span{display:block;margin-top:14px;color:var(--muted);font-size:14px;max-width:220px}
+
+/* steps */
+.steps{background:var(--stone);color:var(--ink);padding:clamp(80px,10vw,130px) 0}
+.st-in{max-width:1320px;margin:0 auto;padding:0 clamp(18px,3vw,40px);display:grid;grid-template-columns:1fr 2fr;gap:40px}
+.st-in h2{font:500 clamp(26px,3vw,40px)/1.15 var(--disp);letter-spacing:-.02em}
+.st{display:grid;grid-template-columns:70px 1fr 1.3fr;gap:20px;padding:28px 0;border-top:1px solid var(--line2);align-items:baseline}
+.st:last-child{border-bottom:1px solid var(--line2)}
+.st i{font:600 13px var(--text);font-style:normal;color:var(--cognac);letter-spacing:.1em}
+.st h3{font:500 20px/1.3 var(--disp);letter-spacing:-.02em}
+.st p{color:#6f675e;font-size:15px}
+
+/* final */
+.final{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.final>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.final:after{content:"";position:absolute;inset:0;background:rgba(22,18,15,.62)}
+.final .c{position:relative;z-index:2;padding:100px 20px}
+.final .k{font:500 11px/1 var(--text);letter-spacing:.32em;text-transform:uppercase;color:var(--cognac2)}
+.final a.big{display:block;font:500 clamp(34px,5.6vw,84px)/1 var(--disp);letter-spacing:-.02em;margin:30px 0 16px;font-variant-numeric:tabular-nums;transition:color .3s}
+.final a.big:hover{color:var(--cognac2)}
+.final p{color:rgba(245,241,234,.75)}
+.final .acts{display:flex;justify-content:center;gap:14px;margin-top:40px;flex-wrap:wrap}
+.btn{height:54px;padding:0 30px;display:inline-grid;place-items:center;font:500 12px/1 var(--text);letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(245,241,234,.55);transition:background .3s,color .3s,border-color .3s}
+.btn:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.btn.fill{background:var(--cognac);border-color:var(--cognac);color:#fff}
+.btn.fill:hover{background:#c08655;border-color:#c08655;color:#fff}
+
+footer{background:var(--ink);border-top:1px solid var(--line);padding:40px clamp(18px,3vw,40px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+footer .mark{color:var(--cream);font-size:17px}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:28px;z-index:80;transform:translate(-50%,20px);opacity:0;background:var(--cream);color:var(--ink);padding:14px 22px;font-size:14px;transition:opacity .4s,transform .4s var(--ease);pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.shot .rv{opacity:1;transform:none;transition:none}
+
+@media (max-width:1180px){
+  .tel span{display:none}
+  .fields{grid-template-columns:1fr 1fr 1fr}
+  .go{grid-column:1/-1;margin-top:20px;width:100%}
+}
+@media (max-width:900px){
+  .cars{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr}
+  .split .ph{min-height:62vh}
+  .nums-in{grid-template-columns:1fr 1fr}
+  .num:nth-child(2){border-right:0}
+  .num:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .st-in{grid-template-columns:1fr}
+  .nav{grid-template-columns:1fr}
+  .nav-r{display:none}
+}
+@media (max-width:640px){
+  header{height:64px}
+  .menu-btn span,.order{display:none}
+  .mark{font-size:16px;letter-spacing:.16em}
+  .tel{width:40px;height:40px;border:1px solid rgba(245,241,234,.4);border-radius:50%;justify-content:center}
+  /* телефон: каждый кадр на весь экран, один свайп — следующий кадр */
+  html{scroll-snap-type:y mandatory}
+  .hero,.book,.intro,.panel,.fl-in,.split .ph,.split .tx,.nums,.steps,.final{scroll-snap-align:start}
+  .hero,.panel,.final{height:100vh;height:100svh;min-height:0;scroll-snap-stop:always}
+  footer{scroll-snap-align:end}
+  .hero-c,.panel .c{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+  .hero>img{object-position:86% 50%}
+  .hero h1{font-size:38px}
+  .hero p{font-size:15px;margin-bottom:28px}
+  .hero .acts{gap:28px}
+  .scroll{display:none}
+  .book-top{flex-direction:column;align-items:flex-start}
+  .tabs{width:100%}
+  .tabs button{flex:1;padding:0 8px}
+  .fields{grid-template-columns:1fr 1fr}
+  .f{margin-right:0;padding-right:12px}
+  .f.wide,.f[data-for]{grid-column:1/-1}
+  .panel>img{object-position:50% 50%}
+  .panel .meta{gap:20px}
+  .intro h2{font-size:22px}
+  .fl-head{flex-direction:column;align-items:flex-start}
+  .fl-tabs{gap:18px;overflow-x:auto;max-width:100%}
+  .cars{grid-template-columns:1fr}
+  .fl-foot{flex-direction:column;align-items:flex-start}
+  .num b{font-size:38px}
+  .st{grid-template-columns:44px 1fr}
+  .st p{grid-column:2}
+  .final a.big{font-size:32px}
+  footer{padding-bottom:96px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(22,18,15,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .mbar a{height:48px;display:grid;place-items:center;font:500 12px/1 var(--text);letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(245,241,234,.4)}
+  .mbar a.o{background:var(--cognac);border-color:var(--cognac);color:#fff}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <button class="menu-btn" id="openNav" aria-label="Меню"><i></i><span>Меню</span></button>
+  <a class="mark" href="#top">AVENU<b>96</b></a>
+  <div class="hr">
+    <a class="tel" href="tel:+73433282045" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>+7 343 328-20-45</span></a>
+    <a class="order" href="#book">Заказать</a>
+  </div>
+</header>
+
+<nav class="nav" id="nav" aria-hidden="true">
+  <button class="nav-x" id="closeNav"><i></i>Закрыть</button>
+  <div class="nav-l">
+    <div>
+      <a class="n" href="#book">Заказ поездки</a>
+      <a class="n" href="#fleet">Автопарк</a>
+      <a class="n" href="#s1">Бизнес-класс</a>
+      <a class="n" href="#s4">Свадьбы и кортежи</a>
+      <a class="n" href="#biz">Для компаний</a>
+      <a class="n" href="#contact">Контакты</a>
+    </div>
+    <small>+7 343 328-20-45 · Екатеринбург</small>
+  </div>
+  <div class="nav-r"><img src="img/w/i-gls.jpg" alt=""></div>
+</nav>
+
+<section class="hero" id="top">
+  <img src="img/w/hero.jpg" alt="Водитель открывает дверь Mercedes S-класса">
+  <div class="hero-c">
+    <span class="k rv">Екатеринбург · с 2008 года</span>
+    <h1 class="rv">Автомобили<br>с водителем</h1>
+    <p class="rv">Mercedes S-класса, Maybach, минивэны V-класса и автобусы — на час, на день или на всё мероприятие.</p>
+    <div class="acts rv"><a class="more" href="#book">Заказать поездку</a><a class="more" href="#fleet">Автопарк</a></div>
+  </div>
+  <span class="scroll">Листайте</span>
+</section>
+
+<section class="book" id="book">
+  <div class="book-in">
+    <div class="book-top">
+      <h2>Заказ поездки</h2>
+      <div class="tabs" id="tabs">
+        <button class="on" data-mode="hour">По часам</button>
+        <button data-mode="trip">Трансфер</button>
+        <button data-mode="event">Мероприятие</button>
+      </div>
+    </div>
+    <form class="fields" id="bookForm">
+      <div class="f wide"><label>Откуда</label><input placeholder="Адрес, отель или аэропорт Кольцово"></div>
+      <div class="f"><label>Дата</label><input type="date"></div>
+      <div class="f"><label>Время</label><input type="time" value="10:00"></div>
+      <div class="f show" data-for="hour"><label>Сколько часов</label><select><option>3 часа</option><option selected>4 часа</option><option>6 часов</option><option>8 часов</option><option>Весь день</option></select></div>
+      <div class="f" data-for="trip"><label>Куда</label><input placeholder="Адрес назначения"></div>
+      <div class="f" data-for="event"><label>Событие</label><select><option>Свадьба</option><option>Кортеж</option><option>Деловая встреча</option><option>Корпоратив</option><option>Делегация</option></select></div>
+      <div class="f wide"><label>Автомобиль</label><select id="carSel"><option>Подобрать по задаче</option><option>Mercedes-Maybach S-класс</option><option>Mercedes S-класс W222</option><option>Mercedes S-класс W221</option><option>Mercedes V-класс</option><option>Sprinter VIP</option><option>Toyota Land Cruiser 200</option></select></div>
+      <button class="go" type="submit">Рассчитать</button>
+    </form>
+    <p class="book-note">Перезвоним, подтвердим автомобиль и стоимость.</p>
+  </div>
+</section>
+
+<section class="intro">
+  <span class="k rv">Авеню96</span>
+  <h2 class="rv">Больше пятнадцати лет мы подаём автомобили представительского класса по Екатеринбургу — для <em>деловых встреч</em>, <em>гостей города</em>, <em>свадеб</em> и мероприятий до <em>3000 человек</em>.</h2>
+</section>
+
+<section class="panel studio" id="s1">
+  <img src="img/w/i-maybach.jpg" alt="Задний ряд Mercedes-Maybach" loading="lazy">
+  <div class="c">
+    <span class="n rv">01</span>
+    <h2 class="rv">Maybach и S-класс</h2>
+    <p class="rv">Для переговоров, встреч в аэропорту и вечеров, когда важна каждая деталь.</p>
+    <div class="meta rv"><span><b>от 1 300 ₽</b>в час</span><span><b>3 пасс.</b>в салоне</span></div>
+    <a class="more rv" href="#fleet" data-tab="vip">Седаны в автопарке</a>
+  </div>
+</section>
+
+<section class="panel studio" id="s2">
+  <img src="img/w/i-vclass.jpg" alt="Салон Mercedes V-класса" loading="lazy" style="object-position:50% 40%">
+  <div class="c">
+    <span class="n rv">02</span>
+    <h2 class="rv">Минивэны V-класса</h2>
+    <p class="rv">Семья, делегация или встреча рейса — все вместе и с багажом.</p>
+    <div class="meta rv"><span><b>2 000 ₽</b>в час</span><span><b>до 7</b>пассажиров</span></div>
+    <a class="more rv" href="#fleet" data-tab="van">Минивэны в автопарке</a>
+  </div>
+</section>
+
+<section class="panel studio" id="s3">
+  <img src="img/w/i-sprinter.jpg" alt="Салон Mercedes Sprinter VIP" loading="lazy">
+  <div class="c">
+    <span class="n rv">03</span>
+    <h2 class="rv">Sprinter VIP и автобусы</h2>
+    <p class="rv">Трансферы групп, корпоративы и выезды за город — до 60 мест.</p>
+    <div class="meta rv"><span><b>от 1 300 ₽</b>в час</span><span><b>до 60</b>мест</span></div>
+    <a class="more rv" href="#fleet" data-tab="van">Микроавтобусы</a>
+  </div>
+</section>
+
+<section class="panel" id="s4">
+  <img src="img/p/maybach-event.jpg" alt="Maybach у входа на мероприятие" loading="lazy">
+  <div class="c">
+    <span class="n rv">04</span>
+    <h2 class="rv">Свадьбы и кортежи</h2>
+    <p class="rv">Кортежи от 5 до 30 автомобилей одного класса — к ЗАГСу, ресторану или площадке.</p>
+    <a class="more rv" href="#book" data-mode="event">Рассчитать кортеж</a>
+  </div>
+</section>
+
+<section class="fleet" id="fleet">
+  <div class="intro" style="padding-bottom:clamp(48px,6vw,72px)">
+    <span class="k rv">Автопарк</span>
+    <h2 class="rv">Чистые, свежие автомобили и водители, которые знают город.</h2>
+  </div>
+  <div class="fl-in">
+    <div class="fl-head">
+      <h2>Классы</h2>
+      <div class="fl-tabs" id="flTabs">
+        <button class="on" data-f="all">Все</button>
+        <button data-f="vip">Седаны</button>
+        <button data-f="van">Минивэны и автобусы</button>
+        <button data-f="suv">Внедорожники</button>
+      </div>
+    </div>
+    <div class="cars">
+      <article class="car rv" data-c="vip"><div class="im"><img src="img/w/c-maybach.jpg" alt="Mercedes-Maybach S-класс" loading="lazy"></div><h3>Maybach S-класс</h3><span class="sp">3 пассажира · от 4 часов</span><div class="row"><span class="pr">4 500 ₽ <small>/ час</small></span><button data-car="Mercedes-Maybach S-класс">Выбрать</button></div></article>
+      <article class="car rv" data-c="vip"><div class="im"><img src="img/w/c-s222.jpg" alt="Mercedes S-класс W222" loading="lazy"></div><h3>S-класс W222</h3><span class="sp">3 пассажира · от 3 часов</span><div class="row"><span class="pr">2 000 ₽ <small>/ час</small></span><button data-car="Mercedes S-класс W222">Выбрать</button></div></article>
+      <article class="car rv" data-c="van"><div class="im"><img src="img/w/c-vclass.jpg" alt="Mercedes V-класс" loading="lazy"></div><h3>V-класс</h3><span class="sp">до 7 пассажиров · багаж</span><div class="row"><span class="pr">2 000 ₽ <small>/ час</small></span><button data-car="Mercedes V-класс">Выбрать</button></div></article>
+      <article class="car rv" data-c="vip"><div class="im"><img src="img/w/c-s221.jpg" alt="Mercedes S-класс W221" loading="lazy"></div><h3>S-класс W221</h3><span class="sp">3 пассажира · от 3 часов</span><div class="row"><span class="pr">1 300 ₽ <small>/ час</small></span><button data-car="Mercedes S-класс W221">Выбрать</button></div></article>
+      <article class="car rv" data-c="van"><div class="im"><img src="img/w/c-sprinter.jpg" alt="Mercedes Sprinter VIP" loading="lazy"></div><h3>Sprinter VIP</h3><span class="sp">до 20 мест</span><div class="row"><span class="pr">1 300 ₽ <small>/ час</small></span><button data-car="Sprinter VIP">Выбрать</button></div></article>
+      <article class="car rv" data-c="suv"><div class="im"><img src="img/w/c-lc200.jpg" alt="Toyota Land Cruiser 200" loading="lazy"></div><h3>Land Cruiser 200</h3><span class="sp">4 пассажира · от 4 часов</span><div class="row"><span class="pr">1 800 ₽ <small>/ час</small></span><button data-car="Toyota Land Cruiser 200">Выбрать</button></div></article>
+    </div>
+    <div class="fl-foot"><span>Более 400 автомобилей — собственных и партнёров: седаны, лимузины, внедорожники, автобусы.</span><a class="more" href="#contact">Подобрать под задачу</a></div>
+  </div>
+</section>
+
+<section class="split" id="biz">
+  <div class="ph"><img src="img/w/i-s222.jpg" alt="Салон Mercedes S-класса" loading="lazy"></div>
+  <div class="tx">
+    <span class="k rv">Для компаний</span>
+    <h2 class="rv">Транспорт для гостей, делегаций и событий</h2>
+    <p class="rv">С нами работают больше 500 компаний. Встретим делегацию в Кольцово, обеспечим переговоры и проведём выездное мероприятие.</p>
+    <div class="list rv">
+      <div>Работа с юридическими лицами<span>да</span></div>
+      <div>Мероприятия<span>до 3000 человек</span></div>
+      <div>Кортежи<span>5–30 автомобилей</span></div>
+    </div>
+    <a class="more rv" href="#contact">Обсудить задачу</a>
+  </div>
+</section>
+
+<section class="nums">
+  <div class="nums-in">
+    <div class="num rv"><b>2008</b><span>работаем в Екатеринбурге с этого года</span></div>
+    <div class="num rv"><b>400+</b><span>автомобилей с учётом партнёров</span></div>
+    <div class="num rv"><b>500+</b><span>компаний среди клиентов</span></div>
+    <div class="num rv"><b>3000</b><span>гостей — самое большое обслуженное событие</span></div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="st-in">
+    <h2 class="rv">Как заказать</h2>
+    <div>
+      <div class="st rv"><i>01</i><h3>Заявка</h3><p>Оставьте заявку на сайте, позвоните или напишите в WhatsApp.</p></div>
+      <div class="st rv"><i>02</i><h3>Подтверждение</h3><p>Подберём автомобиль под задачу и назовём точную стоимость.</p></div>
+      <div class="st rv"><i>03</i><h3>Поездка</h3><p>Водитель приедет к назначенному времени и месту.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="contact">
+  <img src="img/w/night.jpg" alt="Mercedes S-класса и водитель на набережной вечером" loading="lazy">
+  <div class="c">
+    <span class="k rv">На связи</span>
+    <a class="big rv" href="tel:+73433282045">+7 343 328-20-45</a>
+    <p class="rv">Екатеринбург · подберём автомобиль под вашу задачу</p>
+    <div class="acts rv"><a class="btn fill" href="#book">Заказать поездку</a><a class="btn" href="https://wa.me/79221882045">WhatsApp</a></div>
+  </div>
+</section>
+
+<footer>
+  <span class="mark">AVENU<b>96</b></span>
+  <span>Концепция дизайна. Фото — пример стиля; цены — с текущего сайта avenu96.ru</span>
+</footer>
+
+<div class="mbar"><a href="tel:+73433282045">Позвонить</a><a class="o" href="#book">Заказать</a></div>
+<div class="toast" id="toast">Это демо: заявка не отправляется</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+if(location.hash==="#shot")document.documentElement.classList.add("shot");
+// плавная прокрутка колесом: чуть медленнее обычной, на телефонах остаётся родная
+const calm=matchMedia("(prefers-reduced-motion: reduce)").matches||location.hash==="#shot";
+const lenis=(!calm&&window.Lenis&&innerWidth>640)?new Lenis({lerp:.075,wheelMultiplier:.9}):null;
+if(lenis){const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf)}
+const go=el=>{if(nav.classList.contains("open"))setNav(false);const off=el.id==="top"?0:-60;lenis?lenis.scrollTo(el,{offset:off,duration:1.4}):scrollTo({top:el.getBoundingClientRect().top+scrollY+off,behavior:"smooth"})};
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const el=document.querySelector(a.getAttribute("href"));if(!el)return;e.preventDefault();go(el)}));
+const hdr=document.getElementById("hdr");
+const onScroll=()=>hdr.classList.toggle("solid",scrollY>40);onScroll();addEventListener("scroll",onScroll,{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".rv,.panel").forEach(el=>io.observe(el));
+const nav=document.getElementById("nav");
+const setNav=o=>{nav.classList.toggle("open",o);nav.setAttribute("aria-hidden",!o);document.body.style.overflow=o?"hidden":"";if(lenis)o?lenis.stop():lenis.start()};
+document.getElementById("openNav").onclick=()=>setNav(true);
+document.getElementById("closeNav").onclick=()=>setNav(false);
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>setNav(false)));
+const setMode=m=>{document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.mode===m));document.querySelectorAll(".f[data-for]").forEach(f=>f.classList.toggle("show",f.dataset.for===m))};
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+document.querySelectorAll("a[data-mode]").forEach(a=>a.addEventListener("click",()=>setMode(a.dataset.mode)));
+const filt=f=>{document.querySelectorAll("#flTabs button").forEach(b=>b.classList.toggle("on",b.dataset.f===f));document.querySelectorAll(".car").forEach(c=>c.classList.toggle("hide",f!=="all"&&c.dataset.c!==f))};
+document.querySelectorAll("#flTabs button").forEach(b=>b.onclick=()=>filt(b.dataset.f));
+document.querySelectorAll("a[data-tab]").forEach(a=>a.addEventListener("click",()=>filt(a.dataset.tab)));
+const sel=document.getElementById("carSel");
+document.querySelectorAll("[data-car]").forEach(b=>b.onclick=()=>{sel.value=b.dataset.car;go(document.getElementById("book"))});
+const toast=document.getElementById("toast");
+document.getElementById("bookForm").addEventListener("submit",e=>{e.preventDefault();toast.classList.add("on");setTimeout(()=>toast.classList.remove("on"),2600)});
+</script>
+</body>
+</html>
