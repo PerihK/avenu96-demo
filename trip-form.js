@@ -26,7 +26,7 @@
     input.type = 'hidden';
     input.before(display);
     const pop = document.createElement('div');
-    pop.className = `picker-pop picker-${kind}`; pop.hidden = true; pop.id = `picker-${++uid}`;
+    pop.className = `picker-pop picker-${kind}`; pop.setAttribute('data-lenis-prevent', ''); pop.hidden = true; pop.id = `picker-${++uid}`;
     display.setAttribute('aria-controls', pop.id);
     display.after(pop);
     const show = () => {
@@ -166,7 +166,7 @@
   };
   const enhanceSuggest = input => {
     const list = document.createElement('div');
-    list.className = 'suggest-pop'; list.id = `suggest-${++uid}`; list.setAttribute('role', 'listbox'); list.hidden = true;
+    list.className = 'suggest-pop'; list.setAttribute('data-lenis-prevent', ''); list.id = `suggest-${++uid}`; list.setAttribute('role', 'listbox'); list.hidden = true;
     input.after(list);
     input.setAttribute('role', 'combobox'); input.setAttribute('aria-autocomplete', 'list'); input.setAttribute('aria-expanded', 'false'); input.setAttribute('aria-controls', list.id);
     let items = []; let active = -1; let timer = 0; let controller = null; let remoteShown = false;
