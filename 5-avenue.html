@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Авеню96 — автомобили с водителем в Екатеринбурге</title>
+<meta name="description" content="Концепция дизайна: представительские и бизнес-автомобили, минивэны, микроавтобусы и автобусы с водителем в Екатеринбурге.">
+<meta name="theme-color" content="#08090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=Unbounded:wght@500;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090b;--bg2:#0e1013;--panel:#121418;--panel2:#171a1f;
+  --line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.15);
+  --text:#f5f3ef;--soft:#c9ccd1;--muted:#868b93;
+  --gold:#e0b45c;--gold2:#f1d494;
+  --disp:'Inter Tight',Inter,system-ui,sans-serif;--sans:Inter,system-ui,sans-serif;--logo:Unbounded,system-ui,sans-serif;
+  --pad:clamp(18px,4vw,56px);--ease:cubic-bezier(.2,.7,.1,1);--r:18px
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{background:var(--bg);color:var(--text);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;font-feature-settings:"cv11","ss01"}
+body.lock{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums lining-nums}
+h1,h2,h3{font-family:var(--disp);font-weight:600;letter-spacing:-.035em}
+h2{font-size:clamp(32px,4.2vw,58px);line-height:1.02}
+h2 span{color:var(--muted)}
+.lbl{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.lbl:before{content:"";width:22px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:99px;font:600 15px var(--sans);letter-spacing:.01em;transition:.35s var(--ease);white-space:nowrap}
+.btn.gold{background:var(--gold);color:#16130d}
+.btn.gold:hover{background:var(--gold2)}
+.btn.glass{background:rgba(255,255,255,.08);border:1px solid var(--line2);backdrop-filter:blur(10px)}
+.btn.glass:hover{background:rgba(255,255,255,.14)}
+.btn svg{width:18px;height:18px}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:60;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+header.solid{background:rgba(8,9,11,.8);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px);border-color:var(--line)}
+.bar{display:flex;align-items:center;gap:clamp(18px,2.6vw,40px);height:84px;transition:height .4s}
+header.solid .bar{height:70px}
+.burger{display:flex;align-items:center;gap:14px;flex:none}
+.burger i{position:relative;width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;transition:.3s}
+.burger i:before,.burger i:after{content:"";position:absolute;left:13px;right:13px;height:1.5px;background:currentColor;transition:.4s var(--ease)}
+.burger i:before{top:17px}.burger i:after{top:25px}
+.burger:hover i{border-color:var(--gold);color:var(--gold2)}
+.menu-on .burger i:before{top:21px;transform:rotate(45deg)}
+.menu-on .burger i:after{top:21px;transform:rotate(-45deg)}
+.logo{font:800 21px/1 var(--logo);letter-spacing:.01em}
+.logo em{font-style:normal;color:var(--gold)}
+nav.main{display:flex;gap:28px;font-size:14px;color:var(--soft);margin-left:clamp(0px,1.4vw,24px)}
+nav.main a{transition:color .2s}
+nav.main a:hover{color:var(--text)}
+.hr{margin-left:auto;display:flex;align-items:center;gap:10px}
+.phone{display:flex;align-items:center;gap:12px;height:46px;padding:0 18px 0 6px;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid var(--line2);font:600 15px var(--disp);letter-spacing:.01em;transition:.3s}
+.phone:hover{background:rgba(255,255,255,.12)}
+.phone b{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#16130d;display:grid;place-items:center}
+.phone b svg{width:16px;height:16px}
+.wa{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.06);border:1px solid var(--line2);transition:.3s}
+.wa:hover{background:#1fa855;border-color:#1fa855}
+.wa svg{width:20px;height:20px}
+.hr .btn{height:46px;padding:0 22px;font-size:14px}
+
+/* full menu */
+.menu{position:fixed;inset:0;z-index:55;background:rgba(8,9,11,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s;overflow-y:auto}
+.menu-on .menu{opacity:1;visibility:visible}
+.menu .wrap{display:grid;grid-template-columns:1.25fr 1fr .9fr;gap:clamp(30px,5vw,80px);padding-top:clamp(120px,15vh,170px);padding-bottom:60px;min-height:100%}
+.menu h4{font:600 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.menu .cats a{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font:600 clamp(22px,2.2vw,32px)/1.15 var(--disp);letter-spacing:-.03em;transform:translateY(16px);opacity:0;transition:color .2s,transform .7s var(--ease),opacity .7s var(--ease)}
+.menu .cats a small{font:500 13px var(--sans);color:var(--muted);letter-spacing:0}
+.menu .cats a:hover{color:var(--gold2)}
+.menu-on .menu .cats a{transform:none;opacity:1}
+.menu .lnk a{display:block;padding:9px 0;color:var(--soft);font-size:17px;transition:color .2s}
+.menu .lnk a:hover{color:var(--text)}
+.menu .lnk+h4{margin-top:40px}
+.menu .ct a,.menu .ct p{display:block;color:var(--soft);padding:6px 0}
+.menu .ct .big{font:600 26px var(--disp);color:var(--text);letter-spacing:-.02em}
+
+/* hero */
+.hero{position:relative;z-index:2;min-height:max(760px,100svh);display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
+.hero .ph{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(8,9,11,.9) 0%,rgba(8,9,11,.78) 24%,rgba(8,9,11,.4) 42%,rgba(8,9,11,0) 60%),
+  linear-gradient(0deg,var(--bg) 0%,rgba(8,9,11,.6) 22%,rgba(8,9,11,0) 46%),
+  linear-gradient(180deg,rgba(8,9,11,.7) 0%,rgba(8,9,11,0) 20%)}
+.hero .wrap{width:100%;padding-top:150px;padding-bottom:34px}
+.hero h1{font-size:clamp(36px,3.9vw,60px);line-height:1.04;max-width:660px;margin:20px 0 20px}
+.hero h1 span{color:var(--gold2);font-weight:500}
+.hero .lead{max-width:500px;color:var(--soft);font-size:17px}
+.hero .cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.hero .stats{display:flex;gap:40px;margin-top:40px}
+.hero .stats div{font-size:13px;color:var(--muted)}
+.hero .stats b{display:block;font:600 30px/1.1 var(--disp);color:var(--text);letter-spacing:-.03em}
+
+/* booking bar */
+.book{margin-top:50px;background:rgba(14,16,19,.74);backdrop-filter:blur(22px) saturate(1.2);-webkit-backdrop-filter:blur(22px);border:1px solid var(--line2);border-radius:24px;padding:16px}
+.book .top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:4px 6px 14px;flex-wrap:wrap}
+.seg{display:flex;background:rgba(255,255,255,.06);border-radius:99px;padding:4px}
+.seg button{height:36px;padding:0 18px;border-radius:99px;font-size:14px;font-weight:500;color:var(--soft);transition:.25s}
+.seg button.on{background:var(--text);color:#111}
+.book .top small{color:var(--muted);font-size:13px}
+.fields{display:grid;grid-template-columns:1.5fr 1fr .8fr 1.1fr 1.3fr auto;gap:8px}
+.f{position:relative;display:block;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:14px;transition:border-color .2s,background .2s}
+.f:focus-within{border-color:var(--gold);background:rgba(255,255,255,.08)}
+.f span{position:absolute;left:16px;top:10px;font-size:11px;letter-spacing:.06em;color:var(--muted);pointer-events:none}
+.f input,.f select{width:100%;height:60px;background:none;border:0;outline:none;padding:24px 16px 8px;font-size:15px;color:var(--text);appearance:none;-webkit-appearance:none;color-scheme:dark;text-overflow:ellipsis}
+.f select{padding-right:34px}
+.f select option{background:#16181c}
+.f input::placeholder{color:#666b73}
+.f.sel:after{content:"";position:absolute;right:16px;top:28px;width:7px;height:7px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);pointer-events:none}
+.book .btn{height:62px;border-radius:14px;padding:0 26px}
+/* trip form helpers (trip-form.js, as on VIP-АвтоАренда) */
+.picker-display{cursor:pointer;caret-color:transparent}
+.picker-pop,.suggest-pop{position:absolute;z-index:30;left:0;top:calc(100% + 6px);background:#17191d;color:var(--text);border:1px solid var(--line2);border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.picker-pop.is-up{top:auto;bottom:calc(100% + 6px)}
+.suggest-pop{right:0;min-width:300px;max-height:340px;overflow-y:auto;padding:6px;overscroll-behavior:contain}
+.suggest-pop [role=option]{display:grid;grid-template-columns:auto 1fr;gap:1px 12px;align-items:baseline;padding:10px 12px;border-radius:10px;cursor:pointer}
+.suggest-pop [role=option]:hover,.suggest-pop [role=option][aria-selected=true]{background:rgba(255,255,255,.07)}
+.suggest-pop strong{font-size:14px;font-weight:600}
+.suggest-pop small{grid-column:2;font-size:12px;color:var(--muted)}
+.suggest-kind{grid-row:span 2;align-self:center;min-width:72px;font-size:11px;color:var(--gold)}
+.suggest-credit{margin:4px 12px;font-size:11px;color:var(--muted)}
+.suggest-credit a{text-decoration:underline}
+.picker-date{width:300px;padding:12px}
+.picker-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.picker-head strong{font-size:15px;font-weight:600;text-transform:capitalize}
+.picker-head button{width:34px;height:34px;border-radius:50%;font-size:22px;line-height:1}
+.picker-head button:hover:not(:disabled){background:rgba(255,255,255,.08)}
+.picker-head button:disabled{opacity:.3;cursor:default}
+.picker-week,.picker-days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+.picker-week span{font-size:11px;color:var(--muted);padding:4px 0}
+.picker-days button{height:36px;border-radius:8px;font-size:14px}
+.picker-days button:hover:not(:disabled),.picker-days button:focus-visible{background:rgba(255,255,255,.08);outline:none}
+.picker-days button.is-today{box-shadow:inset 0 0 0 1px rgba(224,180,92,.6)}
+.picker-days button[aria-pressed=true]{background:var(--gold);color:#16130d}
+.picker-days button:disabled{color:#4b4f56;cursor:default}
+.picker-time{width:100%;min-width:120px;max-height:260px;overflow-y:auto;padding:6px;overscroll-behavior:contain}
+.picker-time [role=option]{padding:8px 12px;border-radius:8px;font-size:14px;cursor:pointer}
+.picker-time [role=option]:hover,.picker-time [role=option]:focus{background:rgba(255,255,255,.08);outline:none}
+.picker-time [role=option][aria-selected=true]{background:var(--gold);color:#16130d}
+.picker-time [role=option][aria-disabled=true]{color:#4b4f56;cursor:default;background:none}
+.f.err{border-color:#d9705a}
+/* order dialog */
+.order{position:fixed;inset:0;z-index:85;display:grid;place-items:center;padding:16px;visibility:hidden}
+.order.on{visibility:visible}
+.order .o-bg{position:absolute;inset:0;background:rgba(0,0,0,.65);opacity:0;transition:opacity .4s}
+.order.on .o-bg{opacity:1}
+.order .box{position:relative;width:min(560px,100%);max-height:calc(100svh - 32px);overflow-y:auto;background:var(--bg2);border:1px solid var(--line2);border-radius:24px;padding:clamp(22px,3vw,34px);opacity:0;transform:translateY(24px);transition:.5s var(--ease)}
+.order.on .box{opacity:1;transform:none}
+.order h3{font-size:26px;padding-right:50px}
+.order .close{position:absolute;top:18px;right:18px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center}
+.order .close svg{width:16px;height:16px}
+.order .sum{margin:16px 0 18px;border:1px solid var(--line);border-radius:14px}
+.order .sum div{display:flex;justify-content:space-between;gap:16px;padding:10px 14px;font-size:14px}
+.order .sum div+div{border-top:1px solid var(--line)}
+.order .sum span{color:var(--muted);flex:none}
+.order .sum b{font-weight:500;text-align:right}
+.order .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.order .f.full{grid-column:1/-1}
+.order .acts{display:grid;gap:8px;margin-top:14px}
+.order .acts .btn{width:100%}
+.order .note{font-size:12px;color:#5f646b;margin-top:12px;text-align:center}
+.order .done{text-align:center;padding:20px 0 6px}
+.order .done i{display:grid;place-items:center;width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:var(--gold);color:#16130d;font-style:normal;font-size:28px}
+.order .done p{color:var(--soft);margin-top:8px}
+@media (max-width:760px){.order{place-items:end center;padding:0}.order .box{border-radius:22px 22px 0 0;max-height:92svh;padding-bottom:calc(22px + env(safe-area-inset-bottom))}.order .row{grid-template-columns:1fr}.suggest-pop{min-width:0}}
+[data-show]{display:none!important}
+[data-show].vis{display:block!important}
+
+/* moving words */
+.ticker{padding:clamp(30px,4vw,56px) 0;overflow:hidden;border-bottom:1px solid var(--line)}
+.ticker .row{display:flex;gap:.55em;white-space:nowrap;font:800 clamp(30px,4.4vw,72px)/1.05 var(--logo);letter-spacing:-.02em;will-change:transform}
+.ticker .row span{color:transparent;-webkit-text-stroke:1.2px rgba(242,239,233,.42)}
+.ticker .row b{font-weight:800;color:var(--text)}
+.ticker .row em{font-style:normal;color:var(--gold);font-size:.5em;align-self:center}
+
+section{padding:clamp(84px,11vw,150px) 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:clamp(30px,4vw,52px)}
+.sh h2{margin-top:18px;max-width:780px}
+.sh p{color:var(--muted);max-width:400px}
+
+/* fleet */
+.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:30px}
+.tab{height:42px;padding:0 14px;border-radius:99px;border:1px solid var(--line2);font-size:14px;color:var(--soft);transition:.25s;display:inline-flex;align-items:center;gap:8px}
+.tab small{font-size:12px;color:var(--muted);transition:.25s}
+.tab.on{background:var(--text);border-color:var(--text);color:#111}
+.tab.on small{color:#6b6b6b}
+.tab:not(.on):hover{color:var(--text);border-color:rgba(255,255,255,.3)}
+.cars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.car{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .5s var(--ease),border-color .4s;cursor:pointer;animation:cin .6s var(--ease) both}
+@keyframes cin{from{opacity:0;transform:translateY(18px)}}
+.car:hover{transform:translateY(-6px);border-color:rgba(224,180,92,.4)}
+.car .im{position:relative;aspect-ratio:16/10.5;overflow:hidden;background:#1b1d21}
+.car .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),opacity .5s}
+.car .im img+img{opacity:0}
+.car:hover .im img+img{opacity:1}
+.car .cls{position:absolute;left:14px;top:14px;z-index:2;padding:6px 11px;border-radius:99px;background:rgba(8,9,11,.72);backdrop-filter:blur(8px);font-size:12px;font-weight:500;color:var(--gold2)}
+.car .ph-n{position:absolute;right:14px;bottom:14px;z-index:2;padding:5px 10px;border-radius:99px;background:rgba(8,9,11,.6);backdrop-filter:blur(8px);font-size:12px;color:var(--soft)}
+.car .b{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.car h3{font-size:22px;line-height:1.15;letter-spacing:-.025em}
+.car .spec{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 20px}
+.car .spec span{padding:6px 10px;border-radius:8px;background:rgba(255,255,255,.05);font-size:13px;color:var(--soft)}
+.car .pr{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+.car .pr b{font:600 22px var(--disp);letter-spacing:-.03em}
+.car .pr b small{font:500 13px var(--sans);color:var(--muted);letter-spacing:0}
+.car .pr span{height:42px;padding:0 18px;border-radius:99px;border:1px solid var(--gold);color:var(--gold2);font-size:14px;font-weight:600;transition:.25s;display:inline-flex;align-items:center}
+.car:hover .pr span{background:var(--gold);color:#16130d}
+.fl-note{margin-top:26px;color:var(--muted);font-size:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.fl-note a{padding:10px 16px;border-radius:99px;border:1px solid var(--line2);color:var(--soft);transition:.2s}
+.fl-note a:hover{border-color:var(--gold);color:var(--text)}
+
+/* car sheet */
+.sheet{position:fixed;inset:0;z-index:80;visibility:hidden}
+.sheet.on{visibility:visible}
+.sheet .sc-bg{position:absolute;inset:0;background:rgba(0,0,0,.6);opacity:0;transition:opacity .45s}
+.sheet.on .sc-bg{opacity:1}
+.sheet .pane{position:absolute;top:0;right:0;bottom:0;width:min(1120px,94vw);background:var(--bg2);border-left:1px solid var(--line2);transform:translateX(100%);transition:transform .6s var(--ease);overflow-y:auto;overscroll-behavior:contain}
+.sheet.on .pane{transform:none}
+.sheet .x{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px clamp(18px,3vw,40px);background:rgba(14,16,19,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.sheet .crumb{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sheet .crumb b{color:var(--gold2);font-weight:500}
+.sheet .close{width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;flex:none;transition:.3s}
+.sheet .close:hover{border-color:var(--gold);transform:rotate(90deg)}
+.sheet .close svg{width:18px;height:18px}
+.sheet .in{padding:clamp(20px,3vw,40px)}
+.cv{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(22px,3vw,44px);align-items:start}
+.gal .main{position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:#1b1d21}
+.gal .main img{width:100%;height:100%;object-fit:cover;animation:fade .5s var(--ease)}
+@keyframes fade{from{opacity:.2}}
+.gal .nav{position:absolute;inset:auto 14px 14px auto;display:flex;gap:8px}
+.gal .nav button{width:44px;height:44px;border-radius:50%;background:rgba(8,9,11,.65);backdrop-filter:blur(8px);font-size:18px;transition:.25s}
+.gal .nav button:hover{background:var(--gold);color:#16130d}
+.gal .cnt{position:absolute;left:14px;bottom:14px;padding:6px 11px;border-radius:99px;background:rgba(8,9,11,.65);font-size:12px;color:var(--soft)}
+.gal .th{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:8px}
+.gal .th button{aspect-ratio:4/3;border-radius:10px;overflow:hidden;opacity:.5;border:1px solid transparent;transition:.25s}
+.gal .th button.on,.gal .th button:hover{opacity:1;border-color:var(--gold)}
+.gal .th img{width:100%;height:100%;object-fit:cover}
+.info .cls{font-size:13px;color:var(--gold2)}
+.info h2{font-size:clamp(28px,2.8vw,40px);margin:10px 0 16px}
+.info .spec{display:flex;gap:8px;flex-wrap:wrap}
+.info .spec span{padding:7px 12px;border-radius:8px;background:rgba(255,255,255,.06);font-size:14px;color:var(--soft)}
+.info .from{margin:24px 0 6px;font:600 34px var(--disp);letter-spacing:-.03em}
+.info .from small{font:500 15px var(--sans);color:var(--muted);letter-spacing:0}
+.rates{margin-top:16px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.rates div{display:flex;justify-content:space-between;gap:16px;padding:12px 16px;font-size:14px}
+.rates div+div{border-top:1px solid var(--line)}
+.rates span{color:var(--muted)}
+.info .acts{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.info .acts .btn{flex:1 1 200px}
+.info ul{list-style:none;margin-top:26px;border-top:1px solid var(--line)}
+.info li{padding:11px 0 11px 22px;border-bottom:1px solid var(--line);color:var(--soft);font-size:14px;position:relative}
+.info li:before{content:"";position:absolute;left:2px;top:19px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.info .src{margin-top:14px;font-size:12px;color:#5f646b}
+.rec{margin-top:clamp(40px,5vw,64px)}
+.rec .rh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:18px}
+.rec .rh p{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.rec .rh h3{font-size:26px;margin-top:8px}
+.rec .rh button{color:var(--soft);font-size:14px;border-bottom:1px solid var(--line2);padding-bottom:2px;white-space:nowrap}
+.rec .rh button:hover{color:var(--text);border-color:var(--gold)}
+.rec .cars{grid-template-columns:repeat(4,1fr);gap:12px}
+.rec .car .b{padding:14px 14px 16px}
+.rec .car h3{font-size:16px}
+.rec .car .spec{margin:8px 0 12px}
+.rec .car .spec span{font-size:12px;padding:4px 8px}
+.rec .car .pr{padding-top:12px}
+.rec .car .pr b{font-size:16px}
+.rec .car .pr span{display:none}
+
+/* show more in the fleet */
+.cars .car.more{display:none}
+.cars.all .car.more{display:flex}
+.fl-more{display:flex;justify-content:center;margin-top:34px}
+.fl-more .btn{height:52px;padding:0 30px;font-size:14px}
+.fl-more .btn i{font-style:normal;transition:transform .4s var(--ease)}
+.cars.all+.fl-more .btn i{transform:rotate(180deg)}
+
+/* journey: a gold line runs through four steps as the section scrolls by */
+.journey{--p:0;position:relative}
+.j-track{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,24px);margin-bottom:34px}
+.j-track:before,.j-track:after{content:"";position:absolute;left:0;top:7px;height:1px;background:var(--line2);right:0}
+.j-track:after{background:linear-gradient(90deg,var(--gold),var(--gold2));right:auto;width:calc(var(--p)*100%);box-shadow:0 0 14px rgba(224,180,92,.6)}
+.j-dot{position:relative;z-index:1;display:flex;align-items:center;gap:14px;font:600 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);transition:color .5s}
+.j-dot i{width:15px;height:15px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);transition:.5s var(--ease);flex:none}
+.j-dot.on{color:var(--gold2)}
+.j-dot.on i{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 5px rgba(224,180,92,.16)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,24px);align-items:start}
+.step:nth-child(even){margin-top:clamp(30px,4vw,64px)}
+.step .ph{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;isolation:isolate}
+.step .ph img{width:100%;height:100%;object-fit:cover}
+.step .ph:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);background:linear-gradient(0deg,rgba(8,9,11,.55),rgba(8,9,11,0) 45%);transition:box-shadow .5s}
+.step:hover .ph:after{box-shadow:inset 0 0 0 1px rgba(224,180,92,.55)}
+.step .no{position:absolute;left:18px;bottom:8px;z-index:1;font:800 clamp(56px,6vw,96px)/1 var(--logo);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.2px rgba(241,212,148,.85)}
+.step .tx{padding:22px 4px 0}
+.step .k{font:600 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.step h3{font-size:clamp(20px,1.6vw,24px);line-height:1.2;margin:12px 0 10px;letter-spacing:-.02em}
+.step p{color:var(--muted);font-size:15px;line-height:1.55}
+
+/* scenarios */
+.scen{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.sc{position:relative;border-radius:var(--r);overflow:hidden;min-height:420px;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;padding:30px}
+.sc:nth-child(1){grid-column:span 7}.sc:nth-child(2){grid-column:span 5}.sc:nth-child(3){grid-column:span 5}.sc:nth-child(4){grid-column:span 7}
+.sc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s var(--ease)}
+.sc:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(8,9,11,.9) 0%,rgba(8,9,11,.15) 60%)}
+.sc h3{font-size:clamp(26px,2.6vw,38px);line-height:1.04}
+.sc p{color:var(--soft);margin-top:10px;max-width:440px}
+.sc .tg{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px}
+.sc .tg span{padding:6px 11px;border-radius:99px;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);font-size:13px}
+.sc .go{position:absolute;top:22px;right:22px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);display:grid;place-items:center;font-size:18px;transition:.35s var(--ease)}
+.sc:hover .go{background:var(--gold);color:#16130d;transform:rotate(-45deg)}
+
+/* city word */
+.city{padding:clamp(70px,9vw,140px) 0;overflow:hidden;text-align:center;border-top:1px solid var(--line)}
+.city .word{font:800 clamp(34px,9.6vw,200px)/.92 var(--logo);letter-spacing:-.04em;background-image:url(img/ekb/w/city.jpg);background-size:cover;background-position:50% var(--py,50%);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.city p{font-size:clamp(17px,1.5vw,21px);line-height:1.5;max-width:640px;margin:30px auto 0;color:var(--soft);padding:0 var(--pad)}
+
+/* band */
+.band{position:relative;overflow:hidden;isolation:isolate;padding:clamp(90px,12vw,170px) 0}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;z-index:-2}
+.band:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,9,11,.94) 0%,rgba(8,9,11,.7) 50%,rgba(8,9,11,.45) 100%)}
+.band h2{max-width:720px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(40px,6vw,80px);border-top:1px solid var(--line2)}
+.nums div{padding:28px 24px 0 0}
+.nums b{display:block;font:600 clamp(42px,5vw,72px)/1 var(--disp);letter-spacing:-.045em}
+.nums b i{font-style:normal;color:var(--gold)}
+.nums span{display:block;color:var(--soft);font-size:14px;margin-top:12px;max-width:210px}
+
+/* trust: three events on photos and client cards */
+.events{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px}
+.ev{position:relative;min-height:440px;border-radius:var(--r);overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(22px,2.4vw,34px)}
+.ev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.ev:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(8,9,11,.95) 0%,rgba(8,9,11,.55) 45%,rgba(8,9,11,.15) 100%)}
+.ev:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);transition:box-shadow .5s;pointer-events:none}
+.ev:hover:after{box-shadow:inset 0 0 0 1px rgba(224,180,92,.55)}
+.ev .yr{position:absolute;top:22px;left:22px;padding:7px 12px;border-radius:99px;background:rgba(8,9,11,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);font:500 13px var(--sans);color:var(--gold2)}
+.ev .k{font:600 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.ev h3{font:600 clamp(26px,2.4vw,36px)/1.05 var(--disp);letter-spacing:-.03em;margin:14px 0 12px}
+.ev p{color:var(--soft);font-size:15px;max-width:420px}
+.clients{margin-top:clamp(48px,6vw,96px);max-width:1180px;font:500 clamp(24px,2.7vw,42px)/1.3 var(--disp);letter-spacing:-.025em;color:var(--muted)}
+.clients b{font-weight:600;color:var(--text)}
+
+/* why */
+.why{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
+.why .pics{position:relative;aspect-ratio:1/1}
+.why .pics img{position:absolute;object-fit:cover;border-radius:var(--r)}
+.why .pics .a{inset:0 16% 18% 0;width:84%;height:82%}
+.why .pics .b{right:0;bottom:0;width:50%;height:46%;border:8px solid var(--bg);border-radius:24px}
+.list{margin-top:34px;display:grid;gap:0}
+.list>div{display:grid;grid-template-columns:44px 1fr;gap:6px;padding:20px 0;border-top:1px solid var(--line)}
+.list>div:last-child{border-bottom:1px solid var(--line)}
+.list svg{width:22px;height:22px;color:var(--gold);margin-top:2px}
+.list h3{font:600 17px/1.35 var(--sans);letter-spacing:0}
+.list p{color:var(--muted);font-size:15px;margin-top:4px}
+
+/* contact */
+.contact .g{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(36px,6vw,90px);align-items:start}
+.contact h2{margin:18px 0 20px}
+.contact .lead{color:var(--soft);max-width:440px}
+.bigtel{display:block;font:600 clamp(32px,4.2vw,58px)/1 var(--disp);letter-spacing:-.04em;margin-top:38px;transition:color .2s}
+.bigtel:hover{color:var(--gold2)}
+.cl{margin-top:30px;display:grid;gap:0}
+.cl a,.cl div{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid var(--line);color:var(--soft);text-align:right}
+.cl span{color:var(--muted);text-align:left}
+.form{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,3vw,38px)}
+.form h3{font-size:28px}
+.form>p{color:var(--muted);font-size:14px;margin:6px 0 22px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.form .f.full{grid-column:1/-1}
+.form .btn{width:100%;margin-top:10px;height:58px}
+.form .note{font-size:12px;color:#5f646b;margin-top:12px;text-align:center}
+
+footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer .logo{font-size:15px;color:var(--text)}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);opacity:0;background:var(--text);color:#111;padding:14px 22px;border-radius:99px;font-size:14px;font-weight:600;z-index:90;transition:.4s var(--ease);pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in,.shot .rv{opacity:1;transform:none}
+.shot .hero{min-height:960px}.shot .car{animation:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+@media (max-width:1180px){
+  nav.main{display:none}
+  .fields{grid-template-columns:1fr 1fr 1fr}
+  .fields .f:first-child{grid-column:1/-1}
+  .book .btn{grid-column:1/-1}
+  .cars{grid-template-columns:1fr 1fr}
+  .rec .cars{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}.j-track{display:none}
+  .events{grid-template-columns:1fr 1fr}.ev:first-child{grid-column:1/-1}
+  .cv{grid-template-columns:1fr}
+  .trust{grid-template-columns:1fr 1fr}
+  .menu .wrap{grid-template-columns:1fr 1fr}
+  .menu .ct{grid-column:1/-1}
+}
+@media (max-width:760px){
+  .bar{height:66px;gap:12px}
+  header.solid .bar{height:60px}
+  .burger{gap:10px}
+  .burger i{width:40px;height:40px}
+  .burger i:before,.burger i:after{left:12px;right:12px}
+  .burger i:before{top:15px}.burger i:after{top:23px}
+  .menu-on .burger i:before,.menu-on .burger i:after{top:19px}
+  .logo{font-size:17px}
+  .hr .btn,.wa{display:none}
+  .phone{height:40px;width:40px;padding:0;justify-content:center;font-size:0;gap:0;background:none;border:0}
+  .phone b{width:38px;height:38px}
+  .menu .wrap{grid-template-columns:1fr;padding-top:96px;gap:34px;padding-bottom:110px}
+  .hero{min-height:0}
+  .hero .ph{bottom:auto;height:640px}
+  .hero .ph img{object-position:50% 96%}
+  .hero:before{background:linear-gradient(180deg,rgba(8,9,11,.55) 0%,rgba(8,9,11,0) 90px,rgba(8,9,11,0) 420px,rgba(8,9,11,.86) 560px,var(--bg) 640px)}
+  .hero .wrap{padding-top:470px}
+  .hero .lbl{font-size:10px;letter-spacing:.14em}
+  .hero .lbl:before{width:14px}
+  .hero h1{font-size:clamp(30px,8.6vw,38px);margin:14px 0 16px}
+  .hero .lead{font-size:16px}
+  .hero .cta .btn{flex:1 1 100%}
+  .hero .stats{gap:22px;margin-top:30px}
+  .hero .stats b{font-size:23px}
+  .book{margin-top:34px;padding:12px;border-radius:20px}
+  .seg{width:100%}.seg button{flex:1;padding:0 4px;font-size:13px}
+  .book .top small{display:none}
+  .fields{grid-template-columns:1fr 1fr}
+  .fields .f.sel,.fields .f.wide{grid-column:1/-1}
+  .sh{flex-direction:column;align-items:flex-start;gap:14px}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;margin:0 calc(var(--pad)*-1) 24px;padding:0 var(--pad);scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{white-space:nowrap;flex:none}
+  .cars{grid-template-columns:1fr}
+  .rec .cars{display:flex;overflow-x:auto;margin:0 calc(var(--pad)*-1);padding:0 var(--pad);scroll-snap-type:x mandatory;scrollbar-width:none}
+  .rec .car{flex:0 0 70%;scroll-snap-align:start}
+  .sheet .pane{width:100%;border-left:0}
+  .gal .th{grid-template-columns:repeat(5,1fr);gap:6px}
+  .info .acts{position:sticky;bottom:0;background:var(--bg2);padding:12px 0 calc(12px + env(safe-area-inset-bottom));margin-top:18px;z-index:3}
+  .steps{display:flex;gap:12px;overflow-x:auto;margin:0 calc(var(--pad)*-1);padding:0 var(--pad);scroll-snap-type:x mandatory;scrollbar-width:none}
+  .steps::-webkit-scrollbar{display:none}
+  .step{flex:0 0 78%;scroll-snap-align:start}.step:nth-child(even){margin-top:0}
+  .events{grid-template-columns:1fr}.ev{min-height:360px}
+
+  .scen{grid-template-columns:1fr}
+  .sc,.sc:nth-child(n){grid-column:auto;min-height:340px;padding:22px}
+  .nums{grid-template-columns:1fr 1fr}
+  .trust{grid-template-columns:1fr}
+  .trust div{min-height:0;padding:22px 20px}
+  .why{grid-template-columns:1fr}
+  .contact .g{grid-template-columns:1fr}
+  .form .row{grid-template-columns:1fr}
+  footer{padding-bottom:100px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(8,9,11,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line)}
+  .mbar .btn{height:50px}
+  .toast{bottom:92px}
+}
+</style>
+</head>
+<body>
+
+<header id="top"><div class="wrap bar">
+  <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false"><i></i></button>
+  <a class="logo" href="#">AVENU<em>96</em></a>
+  <nav class="main"><a href="#fleet">Автопарк</a><a href="#scen">Услуги</a><a href="#trip">Поездка</a><a href="#trust">Компаниям</a><a href="#contact">Контакты</a></nav>
+  <div class="hr">
+    <a class="phone num" href="tel:+73433282045" aria-label="Позвонить"><b><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></b>+7 343 328-20-45</a>
+    <a class="wa" href="https://wa.me/79221882045" aria-label="Написать в WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg></a>
+    <a class="btn gold" href="#book">Заказать</a>
+  </div>
+</div></header>
+
+<div class="menu" id="menu" data-lenis-prevent>
+  <div class="wrap">
+    <div><h4>Автопарк</h4><div class="cats" id="menuCats"></div></div>
+    <div>
+      <h4>Услуги</h4>
+      <div class="lnk"><a href="#scen">Деловые поездки и делегации</a><a href="#scen">Трансфер в Кольцово и межгород</a><a href="#scen">Свадьбы и праздники</a><a href="#scen">Группы и мероприятия</a><a href="#fleet" data-cat="cortege">Кортежи</a></div>
+      <h4>Компания</h4>
+      <div class="lnk"><a href="#trust">Компаниям и мероприятиям</a><a href="#trip">Как проходит поездка</a><a href="#why">О сервисе</a><a href="#contact">Контакты</a></div>
+    </div>
+    <div class="ct">
+      <h4>Связаться</h4>
+      <a class="big num" href="tel:+73433282045">+7 343 328-20-45</a>
+      <a href="https://wa.me/79221882045">WhatsApp · +7 922 188-20-45</a>
+      <a href="mailto:avenu96@mail.ru">avenu96@mail.ru</a>
+      <p>Красноармейская, 10, БЦ «Антей», офис 1404</p>
+      <p>Ежедневно 9:00–22:00</p>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+  <picture class="ph"><source media="(max-width:760px)" srcset="img/ekb/w/s223-m.jpg"><img id="heroImg" src="img/ekb/w/s223-xl.jpg" srcset="img/ekb/w/s223-l.jpg 1920w, img/ekb/w/s223-xl.jpg 2880w" sizes="100vw" alt="Mercedes-Benz S-класса на набережной Исети в Екатеринбурге"></picture>
+  <div class="wrap">
+    <span class="lbl">Аренда авто с водителем · с 2008 года</span>
+    <h1>Автомобили с водителем <span>в Екатеринбурге</span></h1>
+    <p class="lead">Mercedes S-класса и Maybach, бизнес-класс, минивэны V-класса, микроавтобусы и автобусы до 60 мест — на трансфер, на день или на всё мероприятие.</p>
+    <div class="cta">
+      <a class="btn gold" href="#fleet">Выбрать автомобиль</a>
+      <a class="btn glass" href="https://wa.me/79221882045"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg>Написать в WhatsApp</a>
+    </div>
+    <div class="stats num"><div><b data-to="400" data-suf="+">400+</b>автомобилей</div><div><b data-to="500" data-suf="+">500+</b>компаний-клиентов</div><div><b data-to="2008" data-pre="с ">с 2008</b>года в городе</div></div>
+
+    <form class="book" id="book" data-mode="hour" novalidate>
+      <div class="top">
+        <div class="seg" role="tablist"><button type="button" class="on" data-mode="hour">Аренда от 4 часов</button><button type="button" data-mode="transfer">Трансфер</button><button type="button" data-mode="event">Мероприятие</button></div>
+        <small>Менеджер посчитает стоимость и перезвонит</small>
+      </div>
+      <div class="fields">
+        <label class="f"><span data-lbl>Адрес подачи</span><input type="text" name="from" placeholder="Улица, отель, аэропорт" autocomplete="off" data-suggest required></label>
+        <label class="f"><span>Дата</span><input type="date" name="date" data-picker="date" required></label>
+        <label class="f"><span>Время</span><input type="time" name="time" step="600" value="10:00" data-picker="time" required></label>
+        <label class="f sel" data-show="hour"><span>Длительность</span><select name="hours"><option>4 часа</option><option>5 часов</option><option>6 часов</option><option>8 часов</option><option>Весь день</option><option>Несколько дней</option></select></label>
+        <label class="f" data-show="transfer"><span>Куда</span><input type="text" name="to" placeholder="Кольцово, вокзал, другой город" autocomplete="off" data-suggest></label>
+        <label class="f sel" data-show="event"><span>Повод</span><select name="event"><option>Свадьба</option><option>Кортеж</option><option>Делегация, конференция</option><option>Корпоратив, праздник</option></select></label>
+        <label class="f sel"><span>Автомобиль</span><select id="carSel" name="car"><option>Помогите подобрать</option></select></label>
+        <button class="btn gold" type="submit">Узнать стоимость</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<section class="ticker" aria-hidden="true">
+  <div class="row" data-dir="-1"><b>MAYBACH</b><span>S-КЛАСС</span><em>●</em><b>V-КЛАСС</b><span>SPRINTER VIP</span><em>●</em><b>КОРТЕЖИ</b><span>АВТОБУСЫ</span><em>●</em><b>MAYBACH</b><span>S-КЛАСС</span><em>●</em><b>V-КЛАСС</b></div>
+  <div class="row" data-dir="1" style="margin-top:.14em"><span>СВАДЬБЫ</span><b>ДЕЛЕГАЦИИ</b><em>●</em><span>КОЛЬЦОВО</span><b>ДЕЛОВЫЕ ВСТРЕЧИ</b><em>●</em><span>СВАДЬБЫ</span><b>ДЕЛЕГАЦИИ</b><em>●</em><span>КОЛЬЦОВО</span><b>ТРАНСФЕРЫ</b></div>
+</section>
+
+<section id="fleet"><div class="wrap">
+  <div class="sh rv"><div><span class="lbl">Автопарк</span><h2>Выберите автомобиль. <span>Остальное — наша забота.</span></h2></div><p>Нажмите на машину — откроются фото, тарифы и похожие варианты. Цены с текущего сайта avenu96.ru.</p></div>
+  <div class="tabs rv" role="tablist" id="tabs"></div>
+  <div class="cars" id="cars"></div>
+  <div class="fl-more"><button class="btn glass" id="moreBtn" type="button"><span></span><i>↓</i></button></div>
+  <div class="fl-note rv">Не нашли нужное? <a href="https://wa.me/79221882045">Подберём под задачу в WhatsApp</a><a href="tel:+73433282045">+7 343 328-20-45</a></div>
+</div></section>
+
+<section id="trip" style="padding-top:0"><div class="wrap">
+  <div class="sh rv"><div><span class="lbl">Как проходит поездка</span><h2>От звонка <span>до точки назначения</span></h2></div><p>Вы называете адрес и время — дальше машина и водитель работают на ваш график.</p></div>
+  <div class="journey" id="journey">
+    <div class="j-track" aria-hidden="true"><span class="j-dot"><i></i>Подача</span><span class="j-dot"><i></i>Встреча</span><span class="j-dot"><i></i>Салон</span><span class="j-dot"><i></i>В пути</span></div>
+    <div class="steps">
+      <article class="step rv"><div class="ph"><img src="img/ekb/w/fleet-sclass.jpg" alt="Mercedes S-класса на набережной" loading="lazy"><span class="no">01</span></div><div class="tx"><span class="k">Подача</span><h3>Машина у адреса к назначенному времени</h3><p>Дом, офис, отель или ЗАГС — водитель заранее знает маршрут и время.</p></div></article>
+      <article class="step rv"><div class="ph"><img src="img/ekb/w/scen-airport.jpg" alt="Встреча пассажира у автомобиля" loading="lazy"><span class="no">02</span></div><div class="tx"><span class="k">Встреча</span><h3>Встречаем у машины, в Кольцово или на вокзале</h3><p>Назовите номер рейса или поезда — водитель встретит в нужном месте.</p></div></article>
+      <article class="step rv"><div class="ph"><img src="img/ekb/w/scen-business.jpg" alt="Пассажирка работает в салоне" loading="lazy"><span class="no">03</span></div><div class="tx"><span class="k">Салон</span><h3>Время в дороге — ваше</h3><p>Можно работать, говорить по телефону или просто отдохнуть.</p></div></article>
+      <article class="step rv"><div class="ph"><img src="img/ekb/w/scen-cortege.jpg" alt="Автомобили на набережной вечером" loading="lazy"><span class="no">04</span></div><div class="tx"><span class="k">В пути</span><h3>Маршрут по вашему плану</h3><p>Встречи, остановки, ожидание — машина работает на ваш график весь заказ.</p></div></article>
+    </div>
+  </div>
+</div></section>
+
+<section id="scen" style="padding-top:0"><div class="wrap">
+  <div class="sh rv"><div><span class="lbl">Услуги</span><h2>Под любую задачу</h2></div><p>Одна заявка — и мы закрываем транспорт целиком: от одной машины до перевозки мероприятия на 3000 гостей.</p></div>
+  <div class="scen">
+    <a class="sc rv" href="#fleet" data-cat="vip"><img src="img/ekb/w/scen-delegation.jpg" alt="Делегация у автомобилей Mercedes" loading="lazy"><span class="go">→</span><h3>Деловые встречи и делегации</h3><p>Maybach и S-класс для переговоров, гостей компании и встречи в Кольцово.</p><div class="tg"><span>Maybach</span><span>S-класс</span><span>V-класс</span></div></a>
+    <a class="sc rv" href="#fleet" data-cat="business"><img src="img/ekb/w/scen-airport.jpg" alt="Встреча в аэропорту Кольцово" loading="lazy"><span class="go">→</span><h3>Трансферы</h3><p>Аэропорт, вокзал, межгород — по фиксированной цене трансфера.</p><div class="tg"><span>Кольцово</span><span>Межгород</span></div></a>
+    <a class="sc rv" href="#fleet" data-cat="cortege"><img src="img/ekb/w/scen-wedding.jpg" alt="Свадебный автомобиль Mercedes" loading="lazy"><span class="go">→</span><h3>Свадьбы и праздники</h3><p>Белые и чёрные Mercedes, ретро, кабриолеты и кортежи из 5–30 машин одной марки.</p><div class="tg"><span>Кортежи</span><span>Ретро</span><span>Кабриолеты</span></div></a>
+    <a class="sc rv" href="#fleet" data-cat="bus"><img src="img/p/sprinter-vip.jpg" alt="Mercedes Sprinter VIP" loading="lazy"><span class="go">→</span><h3>Группы и мероприятия</h3><p>Минивэны, микроавтобусы и автобусы до 60 мест — конференции, экскурсии, корпоративы.</p><div class="tg"><span>V-класс · до 7</span><span>Sprinter · 20</span><span>Автобусы · до 60</span></div></a>
+  </div>
+</div></section>
+
+<section class="city">
+  <div class="word" id="cityWord">ЕКАТЕРИНБУРГ</div>
+  <p class="rv">Знаем город, его площадки и дороги. Подадим автомобиль к отелю, офису, ЗАГСу или трапу самолёта — вовремя.</p>
+</section>
+
+<section id="trust"><div class="wrap">
+  <div class="sh rv"><div><span class="lbl">Нам доверяют</span><h2>Компании и события, <span>которые мы возили</span></h2></div><p>Из раздела «Нам доверяют» на avenu96.ru. Работаем с компаниями: разные способы оплаты, долгосрочная аренда для бизнеса.</p></div>
+  <div class="events">
+    <article class="ev rv"><img src="img/ekb/w/scen-delegation.jpg" alt="Гости выставки у минивэнов Mercedes" loading="lazy"><span class="yr">2013</span><span class="k">Выставка</span><h3>«Иннопром»</h3><p>Основной подрядчик по автомобилям для международных гостей выставки.</p></article>
+    <article class="ev rv"><img src="img/ekb/w/city.jpg" alt="Екатеринбург вечером" loading="lazy"><span class="yr">2015 · 2016</span><span class="k">Чемпионат</span><h3>WorldSkills Russia</h3><p>Обслуживали чемпионат в Екатеринбурге два года подряд.</p></article>
+    <article class="ev rv"><img src="img/ekb/w/cortege-xl.jpg" alt="Колонна автомобилей" loading="lazy"><span class="yr">2011 · 2013 · 2015</span><span class="k">Выставка</span><h3>Выставка вооружений</h3><p>Нижний Тагил — обслуживали выставку три раза подряд.</p></article>
+  </div>
+  <p class="clients rv">Среди наших клиентов — <b>Правительство Свердловской области</b>, госкорпорации <b>«Росатом»</b> и <b>«Ростех»</b>, <b>«Роснано»</b>, <b>Министерство спорта РФ</b> и футбольный клуб <b>«Спартак Москва»</b>.</p>
+</div>
+</section>
+
+<section id="why" style="padding-top:0"><div class="wrap why">
+  <div class="pics rv"><img class="a" src="img/p/cabin-woman.jpg" alt="Салон Mercedes Maybach" loading="lazy"><img class="b" src="img/ekb/w/scen-business.jpg" alt="Деловая поездка" loading="lazy"></div>
+  <div class="rv">
+    <span class="lbl">О сервисе</span>
+    <h2 style="margin-top:18px">Работаем на репутации, <span>а не на рекламе</span></h2>
+    <div class="list">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l5 5L20 7"/></svg><div><h3>Опыт крупнейших мероприятий города</h3><p>Больше 15 лет в транспортных услугах Екатеринбурга.</p></div></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l5 5L20 7"/></svg><div><h3>Компании и частные клиенты</h3><p>Разные способы оплаты, долгосрочная аренда для бизнеса.</p></div></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l5 5L20 7"/></svg><div><h3>Любой транспорт в одном месте</h3><p>От седана бизнес-класса до автобуса на 60 мест и кортежа из 30 машин.</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="contact" id="contact" style="padding-top:0"><div class="wrap g">
+  <div class="rv">
+    <span class="lbl">Контакты</span>
+    <h2>Нужна машина на дату?</h2>
+    <p class="lead">Позвоните или напишите — подберём автомобиль и назовём стоимость.</p>
+    <a class="bigtel num" href="tel:+73433282045">+7 343 328-20-45</a>
+    <div class="cl">
+      <a href="https://wa.me/79221882045"><span>WhatsApp</span>+7 922 188-20-45</a>
+      <a href="mailto:avenu96@mail.ru"><span>Почта</span>avenu96@mail.ru</a>
+      <div><span>Офис</span>Красноармейская, 10, БЦ «Антей», офис 1404</div>
+      <div><span>Режим</span>ежедневно 9:00–22:00</div>
+    </div>
+  </div>
+  <form class="form rv" id="cform" novalidate>
+    <h3>Заявка на автомобиль</h3>
+    <p>Перезвоним и подтвердим машину.</p>
+    <div class="row">
+      <label class="f"><span>Имя</span><input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name"></label>
+      <label class="f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" data-phone required></label>
+      <label class="f full"><span>Что нужно</span><input type="text" name="need" id="needF" placeholder="V-класс на 5 часов, 14 ноября"></label>
+    </div>
+    <button class="btn gold" type="submit">Отправить заявку</button>
+    <p class="note">Демонстрация дизайна: форма ничего не отправляет</p>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <span><span class="logo">AVENU<em>96</em></span> · © 2008—2026 · Екатеринбург</span>
+  <span>Концепция дизайна. Машины, фото и цены — с текущего сайта avenu96.ru; кадры города сгенерированы для макета</span>
+</div></footer>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <div class="sc-bg" data-close></div>
+  <div class="pane" id="pane" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Карточка автомобиля">
+    <div class="x"><div class="crumb" id="crumb"></div><button class="close" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="in" id="sheetIn"></div>
+  </div>
+</div>
+
+<div class="mbar"><a class="btn glass" href="tel:+73433282045">Позвонить</a><a class="btn gold" href="#book">Заказать</a></div>
+<div class="order" id="order" aria-hidden="true">
+  <div class="o-bg" data-oclose></div>
+  <div class="box" role="dialog" aria-modal="true" aria-labelledby="oTitle" data-lenis-prevent>
+    <button class="close" type="button" data-oclose aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div id="oBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast">Это демонстрация дизайна — заявка не отправлена</div>
+
+<script src="fleet.js"></script>
+<script src="trip-form.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const shot=location.hash==="#shot";if(shot)document.documentElement.classList.add("shot");
+const still=shot||matchMedia("(prefers-reduced-motion:reduce)").matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const clamp=v=>Math.max(0,Math.min(1,v));
+const rub=n=>n.toLocaleString("ru-RU").replace(/ /g," ");
+
+// другое фото шапки для показа: ?hero=girl или ?hero=driver
+const heroAlt={girl:["img/ekb/w/business-xl.jpg","Пассажирка работает в салоне Maybach","50% 50%"],driver:["img/hero-driver.jpg","Mercedes S-класса и водитель","62% 30%"],night:["img/ekb/w/hero.jpg","Фара Mercedes на фоне Екатеринбурга","60% 50%"],sclass:["img/ekb/w/sclass-xl.jpg","Mercedes-Benz S-класса на набережной Екатеринбурга","56% 50%"]}[new URLSearchParams(location.search).get("hero")];
+if(heroAlt){const im=$("#heroImg");im.removeAttribute("srcset");im.parentElement.querySelector("source").remove();im.src=heroAlt[0];im.alt=heroAlt[1];im.style.objectPosition=heroAlt[2]}
+
+/* ---------- автопарк ---------- */
+const CATS=[
+  ["vip","Представительский","Представительский класс"],["business","Бизнес","Бизнес-класс"],["bus","Автобусы","Автобусы"],["minibus","Микроавтобусы","Микроавтобусы"],
+  ["minivan","Минивэны","Минивэны"],["suv","Внедорожники","Внедорожники"],["cabrio","Кабриолеты","Кабриолеты"],["retro","Ретро","Ретро-автомобили"],["cortege","Кортежи","Кортежи"]];
+const catName=k=>CATS.find(c=>c[0]===k)[2];
+// что предлагать ниже карточки: тот же класс + соседний
+const RELATED={vip:"business",business:"vip",bus:"minibus",minibus:"minivan",minivan:"minibus",suv:"vip",cabrio:"retro",retro:"cabrio",cortege:"vip"};
+const byId=Object.fromEntries(FLEET.map(c=>[c.id,c]));
+const pick=id=>byId[id];
+// кортежи собраны из машин, у которых они есть на сайте
+const CORTEGE=[
+  {id:"k-001",t:"Кортеж Mercedes S-класс W222, номера 001",p:pick("mercedes-s500w222l-001")?.p||1600,unit:"за машину",seats:null,chips:["до 7 машин с одинаковыми номерами"],img:pick("mercedes-s500w222l-001")?.img||[],li:["7 чёрных Mercedes S222 с одинаковым номером 001","для делегаций, официальных визитов и свадеб","водители в костюмах, единый маршрут и связь между машинами"]},
+  {id:"k-black",t:"Деловой кортеж Mercedes S-класс",p:2000,unit:"за машину",chips:["5–30 машин","чёрные"],img:["img/ekb/w/cortege-xl.jpg",...(pick("mercedes-s500-w222-long-amg")?.img||[]).slice(0,3)],li:["чёрные Mercedes S-класса одного поколения","сопровождение делегаций и гостей мероприятий","можно добавить Sprinter VIP для свиты и багажа"]},
+  {id:"k-white",t:"Белый свадебный кортеж Mercedes",p:2000,unit:"за машину",chips:["5–30 машин","белые"],img:[...(pick("novyi-belyi-mersedes-e200-w213")?.img||[]).slice(0,2),...(pick("belyi-mersedes-s5000w222l")?.img||[]).slice(0,2)],li:["белые Mercedes E- и S-класса","украшение машин — по желанию","во главе можно поставить белый Maybach"]},
+  {id:"k-suv",t:"Кортеж внедорожников",p:1400,unit:"за машину",chips:["Land Cruiser 200","Lexus LX","Mercedes GL"],img:[...(pick("toiota-lc200-black-restail")?.img||[]).slice(0,2),...(pick("lexus-lx570")?.img||[]).slice(0,2)],li:["Toyota Land Cruiser 200, Lexus LX570, Mercedes GL — чёрные и белые","для сопровождения и выездов за город"]},
+  {id:"k-retro",t:"Ретро-кортеж",p:null,unit:"",chips:["«Волга» ГАЗ-21","ЗИМ","«Победа»"],img:[...(pick("volga-gaz-21")?.img||[]).slice(0,2),...(pick("zim")?.img||[]).slice(0,2)],li:["советская классика одного стиля для свадеб и съёмок","состав и цену подберём под дату"]}
+].map(k=>({...k,cat:"cortege",min:null,rates:[]}));
+const ALL=[...FLEET,...CORTEGE];ALL.forEach(c=>byId[c.id]=c);
+const inCat=k=>ALL.filter(c=>c.cat===k);
+const minTxt=c=>c.min?`мин. ${c.min} ${c.min<5?"часа":"часов"}`:"";
+const seatsTxt=c=>c.seats?(c.seats>9?`${c.seats} мест`:`${c.seats} пассаж.`):"";
+const priceTxt=c=>c.p?`от ${rub(c.p)} ₽<small> / час${c.unit?" "+c.unit:""}</small>`:`<small>цена по запросу</small>`;
+const card=c=>{const chips=c.chips||[seatsTxt(c),minTxt(c)].filter(Boolean);
+  return `<article class="car" data-id="${c.id}" tabindex="0"><div class="im">${c.img[0]?`<img src="${c.img[0]}" alt="${c.t}" loading="lazy">`:""}${c.img[1]?`<img src="${c.img[1]}" alt="" loading="lazy">`:""}<span class="cls">${catName(c.cat)}</span>${c.img.length>1?`<span class="ph-n">${c.img.length} фото</span>`:""}</div><div class="b"><h3>${c.t}</h3><div class="spec">${chips.map(s=>`<span>${s}</span>`).join("")}</div><div class="pr"><b class="num">${priceTxt(c)}</b><span>Подробнее</span></div></div></article>`};
+
+const tabs=$("#tabs"),cars=$("#cars");
+tabs.innerHTML=CATS.map(([k,n])=>`<button class="tab" data-f="${k}">${n}<small>${inCat(k).length}</small></button>`).join("");
+$("#menuCats").innerHTML=CATS.map(([k,n,full],i)=>`<a href="#fleet" data-cat="${k}" style="transition-delay:${.05+i*.03}s">${full}<small>${inCat(k).length}</small></a>`).join("");
+// на главной по 6 машин, остальные — по кнопке
+const LIMIT=6,moreBtn=$("#moreBtn");
+const plural=(n,a,b,c)=>{const d=n%10,h=n%100;return h>10&&h<20?c:d===1?a:d>=2&&d<=4?b:c};
+const moreLabel=()=>{const n=inCat(cars.dataset.cat).length-LIMIT;moreBtn.firstChild.textContent=cars.classList.contains("all")?"Свернуть":`Показать ещё ${n} ${plural(n,"модель","модели","моделей")}`};
+const showCat=k=>{$$(".tab").forEach(t=>t.classList.toggle("on",t.dataset.f===k));const list=inCat(k);cars.dataset.cat=k;cars.classList.remove("all");cars.innerHTML=list.map(card).join("");
+  [...cars.children].forEach((el,i)=>{el.style.animationDelay=(i%3)*60+Math.floor(i%LIMIT/3)*40+"ms";if(i>=LIMIT)el.classList.add("more")});
+  moreBtn.parentElement.hidden=list.length<=LIMIT;moreLabel()};
+moreBtn.addEventListener("click",()=>{const open=cars.classList.toggle("all");moreLabel();if(!open)go("#fleet")});
+tabs.addEventListener("click",e=>{const t=e.target.closest(".tab");if(t)showCat(t.dataset.f)});
+showCat("vip");
+
+// выбор машины в форме
+const sel=$("#carSel");
+sel.innerHTML+=CATS.map(([k,,full])=>`<option>${full}</option>`).join("");
+const setCar=c=>{let o=[...sel.options].find(o=>o.value===c.t);if(!o){o=new Option(c.t,c.t);sel.add(o,1)}sel.value=c.t};
+
+/* ---------- карточка машины ---------- */
+const sheet=$("#sheet"),pane=$("#pane"),sin=$("#sheetIn");
+let cur=null,gi=0;
+const recBlock=(title,label,list,cat)=>list.length?`<div class="rec"><div class="rh"><div><p>${label}</p><h3>${title}</h3></div><button data-showcat="${cat}">Весь класс →</button></div><div class="cars">${list.map(card).join("")}</div></div>`:"";
+const render=c=>{cur=c;gi=0;const chips=c.chips||[seatsTxt(c),minTxt(c)].filter(Boolean);
+  const same=inCat(c.cat).filter(x=>x.id!==c.id).slice(0,4),rel=inCat(RELATED[c.cat]).slice(0,4);
+  const wa="https://wa.me/79221882045?text="+encodeURIComponent(`Здравствуйте! Интересует ${c.t}. Дата и время: `);
+  $("#crumb").innerHTML=`Автопарк · <b>${catName(c.cat)}</b>`;
+  sin.innerHTML=`<div class="cv">
+    <div class="gal"><div class="main"><img id="gMain" src="${c.img[0]||""}" alt="${c.t}"><span class="cnt" id="gCnt">1 / ${c.img.length}</span>${c.img.length>1?`<div class="nav"><button data-g="-1" aria-label="Предыдущее фото">←</button><button data-g="1" aria-label="Следующее фото">→</button></div>`:""}</div>
+      ${c.img.length>1?`<div class="th">${c.img.map((s,i)=>`<button data-gi="${i}" class="${i?"":"on"}"><img src="${s}" alt="" loading="lazy"></button>`).join("")}</div>`:""}</div>
+    <div class="info"><div class="cls">${catName(c.cat)}</div><h2>${c.t}</h2><div class="spec">${chips.map(s=>`<span>${s}</span>`).join("")}</div>
+      <div class="from num">${priceTxt(c)}</div>
+      ${c.rates.length?`<div class="rates num">${c.rates.map(([a,b])=>`<div><span>${a}</span>${b}</div>`).join("")}</div>`:""}
+      <div class="acts"><button class="btn gold" data-order>Заказать</button><a class="btn glass" href="${wa}">Спросить в WhatsApp</a></div>
+      ${c.li.length?`<ul>${c.li.map(s=>`<li>${s}</li>`).join("")}</ul>`:""}
+      ${c.src?`<p class="src">Данные и фото — со страницы машины на avenu96.ru</p>`:""}
+    </div></div>
+    ${recBlock("Ещё в этом классе",catName(c.cat),same,c.cat)}
+    ${recBlock(catName(RELATED[c.cat]),"Также подойдут",rel,RELATED[c.cat])}`;
+  pane.scrollTop=0};
+const gShow=i=>{if(!cur||!cur.img.length)return;gi=(i+cur.img.length)%cur.img.length;const m=$("#gMain");m.src=cur.img[gi];m.style.animation="none";m.offsetWidth;m.style.animation="";$("#gCnt").textContent=`${gi+1} / ${cur.img.length}`;$$(".gal .th button").forEach((b,k)=>b.classList.toggle("on",k===gi))};
+const open=(id,push=true)=>{const c=byId[id];if(!c)return;render(c);sheet.classList.add("on");sheet.setAttribute("aria-hidden","false");document.body.classList.add("lock");lenis&&lenis.stop();
+  if(push)history.pushState({car:id},"","#car="+id);else history.replaceState({car:id},"","#car="+id)};
+const close=(back=true)=>{if(!sheet.classList.contains("on"))return;sheet.classList.remove("on");sheet.setAttribute("aria-hidden","true");document.body.classList.remove("lock");lenis&&lenis.start();if(back&&history.state&&history.state.car)history.back()};
+document.addEventListener("click",e=>{const c=e.target.closest(".car");if(c){open(c.dataset.id,!sheet.classList.contains("on"));return}
+  if(e.target.closest("[data-close]"))close();
+  const g=e.target.closest("[data-g]");if(g)gShow(gi+ +g.dataset.g);
+  const t=e.target.closest("[data-gi]");if(t)gShow(+t.dataset.gi);
+  const sc=e.target.closest("[data-showcat]");if(sc){close();showCat(sc.dataset.showcat);go("#fleet")}
+  if(e.target.closest("[data-order]")){const c=cur;close();setCar(c);$("#needF").value=c.t;go("#book",()=>sel.closest(".f").animate([{borderColor:"#e0b45c"},{borderColor:"rgba(255,255,255,.08)"}],{duration:1800}))}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){close();setMenu(false)}if(sheet.classList.contains("on")){if(e.key==="ArrowRight")gShow(gi+1);if(e.key==="ArrowLeft")gShow(gi-1)}
+  if(e.key==="Enter"&&e.target.classList&&e.target.classList.contains("car"))open(e.target.dataset.id)});
+addEventListener("popstate",e=>{if(e.state&&e.state.car)open(e.state.car,false);else close(false)});
+// свайп по фото на телефоне
+let sx=null;pane.addEventListener("touchstart",e=>{if(e.target.closest(".gal .main"))sx=e.touches[0].clientX},{passive:true});
+pane.addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)gShow(gi+(dx<0?1:-1));sx=null});
+
+/* ---------- меню ---------- */
+const setMenu=on=>{document.documentElement.classList.toggle("menu-on",on);$("#burger").setAttribute("aria-expanded",on);$("#burger").setAttribute("aria-label",on?"Закрыть меню":"Открыть меню");if(lenis)on?lenis.stop():lenis.start()};
+$("#burger").addEventListener("click",()=>setMenu(!document.documentElement.classList.contains("menu-on")));
+
+/* ---------- прокрутка ---------- */
+const lenis=(!still&&window.Lenis&&matchMedia("(pointer:fine)").matches)?new Lenis({lerp:.09,wheelMultiplier:.9}):null;
+const go=(sel,done)=>{const el=$(sel);if(!el)return;setMenu(false);const off=sel==="#book"?-140:-70;
+  if(lenis){lenis.scrollTo(el,{offset:off,duration:1.3,onComplete:done})}else{scrollTo({top:el.getBoundingClientRect().top+scrollY+off,behavior:"smooth"});done&&setTimeout(done,700)}};
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]');if(!a||a.closest(".car"))return;const h=a.getAttribute("href");if(h.length<2)return;e.preventDefault();
+  if(a.dataset.cat)showCat(a.dataset.cat);go(h)});
+
+const hdr=$("#top"),rows=$$(".ticker .row"),cityWord=$("#cityWord");
+const draw=()=>{const y=scrollY,h=innerHeight;hdr.classList.toggle("solid",y>40);
+  if(!still)rows.forEach(r=>{const d=+r.dataset.dir;r.style.transform=`translate3d(${(d*y*.22-(d<0?0:500)).toFixed(1)}px,0,0)`});
+  const cr=cityWord.getBoundingClientRect();if(cr.bottom>0&&cr.top<h)cityWord.style.setProperty("--py",(clamp((h-cr.top)/(h+cr.height))*100).toFixed(1)+"%");
+  // золотая линия поездки: заполняется, пока блок проходит экран
+  const jr=journey.getBoundingClientRect();if(jr.bottom>0&&jr.top<h){jp+=((shot?1:clamp((h*.8-jr.top)/(jr.height*.75)))-jp)*.12;journey.style.setProperty("--p",jp.toFixed(4));jdots.forEach((d,i)=>d.classList.toggle("on",jp>=i/4+.01))}};
+const journey=$("#journey"),jdots=$$(".j-dot");let jp=0;
+const loop=t=>{if(lenis)lenis.raf(t);draw();requestAnimationFrame(loop)};requestAnimationFrame(loop);
+
+// слово «Екатеринбург» во всю ширину
+const fit=el=>{el.style.fontSize="";const w=el.parentElement.clientWidth*.94,s=el.scrollWidth;if(s>w)el.style.fontSize=(parseFloat(getComputedStyle(el).fontSize)*w/s).toFixed(1)+"px"};
+const fitAll=()=>fit(cityWord);document.fonts&&document.fonts.ready.then(fitAll);addEventListener("resize",fitAll);fitAll();
+
+/* ---------- появление и счётчики ---------- */
+const count=b=>{const to=+b.dataset.to,suf=b.dataset.suf||"",pre=b.dataset.pre||"";if(still)return;const from=to>1900?to-8:0,t0=performance.now(),dur=to>1900?1500:1600;
+  const st=t=>{const k=clamp((t-t0)/dur),e=1-Math.pow(1-k,3);b.innerHTML=pre+Math.round(from+(to-from)*e)+(k<1&&to<1900?"":suf);if(k<1)requestAnimationFrame(st);else b.innerHTML=pre+to+suf};requestAnimationFrame(st)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");e.target.querySelectorAll("b[data-to]").forEach(count);io.unobserve(e.target)}}),{threshold:.1});
+$$(".rv").forEach(el=>{const s=[...el.parentElement.children].filter(x=>x.classList.contains("rv"));if(s.length>2)el.style.transitionDelay=(s.indexOf(el)%4)*80+"ms";io.observe(el)});
+io.observe($(".hero .stats"));
+
+/* ---------- форма ---------- */
+const lbl=$("[data-lbl]");
+const book=$("#book");
+const setMode=m=>{book.dataset.mode=m;$$(".seg button").forEach(b=>b.classList.toggle("on",b.dataset.mode===m));$$("[data-show]").forEach(x=>x.classList.toggle("vis",x.dataset.show===m));lbl.textContent=m==="transfer"?"Откуда":"Адрес подачи";book.elements.to.required=m==="transfer"};
+$$(".seg button").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));setMode("hour");
+
+// телефон: +7 (999) 123-45-67
+const fmtPhone=v=>{let d=v.replace(/\D/g,"");if(d[0]==="8")d="7"+d.slice(1);if(d&&d[0]!=="7")d="7"+d;d=d.slice(0,11);const p=d.slice(1);
+  return d?"+7"+(p.length?" ("+p.slice(0,3):"")+(p.length>3?") "+p.slice(3,6):"")+(p.length>6?"-"+p.slice(6,8):"")+(p.length>8?"-"+p.slice(8,10):""):""};
+document.addEventListener("input",e=>{if(e.target.matches("[data-phone]"))e.target.value=fmtPhone(e.target.value)});
+document.addEventListener("focusin",e=>{if(e.target.matches("[data-phone]")&&!e.target.value)e.target.value="+7 ("});
+const phoneOk=v=>v.replace(/\D/g,"").length===11;
+// пустые обязательные поля подсвечиваются; у календаря и времени на компьютере видимое поле — соседнее
+const check=form=>{let first=null;[...form.querySelectorAll("[required]")].forEach(i=>{const box=i.closest(".f");if(!box||box.closest("[data-show]:not(.vis)"))return;
+  const bad=i.matches("[data-phone]")?!phoneOk(i.value):!i.value.trim();box.classList.toggle("err",bad);if(bad&&!first)first=box.querySelector("input:not([type=hidden]),select")});
+  if(first)first.focus();return !first};
+document.addEventListener("input",e=>{const box=e.target.closest(".f.err");if(box)box.classList.remove("err")});
+document.addEventListener("change",e=>{const box=e.target.closest(".f.err");if(box)box.classList.remove("err")});
+
+const order=$("#order"),oBody=$("#oBody"),toast=$("#toast");
+const dateTxt=v=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(v||"");return m?new Date(+m[1],m[2]-1,+m[3]).toLocaleDateString("ru-RU",{day:"numeric",month:"long",weekday:"short"}):v};
+const tripRows=()=>{const f=book.elements,mode=book.dataset.mode;
+  return [["Услуга",{hour:"Аренда с водителем",transfer:"Трансфер",event:"Мероприятие"}[mode]],[mode==="transfer"?"Откуда":"Подача",f.from.value],mode==="transfer"?["Куда",f.to.value]:null,
+    ["Когда",dateTxt(f.date.value)+", "+f.time.value],mode==="hour"?["Длительность",f.hours.value]:null,mode==="event"?["Повод",f.event.value]:null,["Автомобиль",f.car.value]].filter(Boolean)};
+const waText=(rows,o)=>"Здравствуйте! Заявка с сайта Авеню96.\n"+rows.map(([a,b])=>`${a}: ${b}`).join("\n")+(o.name?`\nИмя: ${o.name}`:"")+(o.phone?`\nТелефон: ${o.phone}`:"")+(o.note?`\nКомментарий: ${o.note}`:"");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+const openOrder=rows=>{
+  oBody.innerHTML=`<form id="oform" novalidate><h3 id="oTitle">Проверьте заявку</h3><div class="sum">${rows.map(([a,b])=>`<div><span>${a}</span><b>${esc(b)}</b></div>`).join("")}</div>
+    <div class="row"><label class="f"><span>Имя</span><input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name"></label>
+    <label class="f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" data-phone required></label>
+    <label class="f full"><span>Комментарий</span><input type="text" name="note" placeholder="Номер рейса, детское кресло, табличка с именем"></label></div>
+    <div class="acts"><button class="btn gold" type="submit">Отправить заявку</button><a class="btn glass" id="oWa" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a></div>
+    <p class="note">Менеджер перезвонит, подтвердит машину и назовёт стоимость. Демо: заявка пока никуда не уходит, WhatsApp открывается с готовым текстом.</p></form>`;
+  const of=$("#oform"),wa=$("#oWa");
+  const vals=()=>({name:of.elements.name.value.trim(),phone:fmtPhone(of.elements.phone.value.trim()),note:of.elements.note.value.trim()});
+  const upd=()=>wa.href="https://wa.me/79221882045?text="+encodeURIComponent(waText(rows,vals()));upd();of.addEventListener("input",upd);
+  of.addEventListener("submit",e=>{e.preventDefault();if(!check(of))return;const v=vals();
+    oBody.innerHTML=`<div class="done"><i>✓</i><h3 style="padding:0">Заявка принята</h3><p>${esc(v.name||"Спасибо")}, менеджер перезвонит на ${esc(v.phone)} в рабочее время (9:00–22:00).</p><p style="font-size:12px;color:#5f646b;margin-top:18px">Демо: заявка никуда не отправлена — куда её получать, решим с Александром.</p><div class="acts"><button class="btn glass" type="button" data-oclose>Готово</button></div></div>`});
+  order.classList.add("on");order.setAttribute("aria-hidden","false");document.body.classList.add("lock");lenis&&lenis.stop();
+  setTimeout(()=>of.elements.phone.focus({preventScroll:true}),350)};
+const closeOrder=()=>{if(!order.classList.contains("on"))return;order.classList.remove("on");order.setAttribute("aria-hidden","true");document.body.classList.remove("lock");lenis&&lenis.start()};
+document.addEventListener("click",e=>{if(e.target.closest("[data-oclose]"))closeOrder()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeOrder()});
+book.addEventListener("submit",e=>{e.preventDefault();if(check(book))openOrder(tripRows())});
+$("#cform").addEventListener("submit",e=>{e.preventDefault();const f=e.target;if(!check(f))return;
+  oBody.innerHTML=`<div class="done"><i>✓</i><h3 style="padding:0">Заявка принята</h3><p>${esc(f.elements.name.value.trim()||"Спасибо")}, менеджер перезвонит на ${esc(f.elements.phone.value)} в рабочее время (9:00–22:00).</p><p style="font-size:12px;color:#5f646b;margin-top:18px">Демо: заявка никуда не отправлена — куда её получать, решим с Александром.</p><div class="acts"><button class="btn glass" type="button" data-oclose>Готово</button></div></div>`;
+  order.classList.add("on");order.setAttribute("aria-hidden","false");document.body.classList.add("lock");lenis&&lenis.stop();f.reset()});
+
+// прямая ссылка на машину: 5-avenue.html#car=...
+const m=location.hash.match(/^#car=(.+)$/);if(m&&byId[m[1]]){history.replaceState(null,"",location.pathname+location.search);open(m[1])}
+</script>
+</body>
+</html>
