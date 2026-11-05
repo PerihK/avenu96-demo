@@ -142,22 +142,25 @@ nav.main a:hover:after{transform:scaleX(1);transform-origin:left}
 .lit .h-a.d1{transition-delay:.14s}.lit .h-a.d2{transition-delay:.28s}.lit .h-a.d3{transition-delay:.42s}
 
 /* booking dock */
-.book{margin-top:26px;background:rgba(13,15,18,.66);backdrop-filter:blur(26px) saturate(1.3);-webkit-backdrop-filter:blur(26px) saturate(1.3);border:1px solid var(--line2);border-radius:22px;padding:10px;display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:stretch}
-.seg{display:flex;flex-direction:column;justify-content:center;gap:0;padding:0 4px;min-width:176px;position:relative}
-.seg button{height:30px;padding:0 14px;border-radius:10px;font-size:14px;color:var(--muted);text-align:left;transition:.25s}
+.book{margin-top:22px;background:rgba(13,15,18,.66);backdrop-filter:blur(26px) saturate(1.3);-webkit-backdrop-filter:blur(26px) saturate(1.3);border:1px solid var(--line2);border-radius:18px;padding:7px;display:grid;gap:7px}
+.f.msel{display:none}
+@media (min-width:1281px){.book .seg{display:none}.f.msel{display:block}}
+@media (min-width:1281px) and (max-width:1500px){.fields{grid-template-columns:.8fr 1.25fr .85fr .55fr .8fr 1.25fr auto}.f input,.f select{font-size:14px;padding-left:12px}.f.sel select{padding-right:26px}.f>span{left:12px}.f.sel:after{right:11px}.book .btn{padding:0 16px;font-size:14px}}
+.seg{display:flex;padding:0;position:relative}
+.seg button{flex:1;height:38px;padding:0 14px;border-radius:10px;font-size:14px;color:var(--muted);text-align:center;transition:.25s}
 .seg button:hover{color:var(--text)}
 .seg button.on{color:var(--ink);background:var(--gold);font-weight:600}
-.fields{display:grid;grid-template-columns:1.6fr 1fr .72fr 1fr 1.25fr auto;gap:6px}
+.fields{display:grid;grid-template-columns:1.05fr 1.5fr .95fr .62fr .95fr 1.25fr auto;gap:5px}
 .f{position:relative;display:block;background:rgba(255,255,255,.05);border:1px solid transparent;border-radius:13px;transition:border-color .2s,background .2s}
 .f:hover{background:rgba(255,255,255,.08)}
 .f:focus-within{border-color:var(--gold);background:rgba(255,255,255,.09)}
-.f>span{position:absolute;left:15px;top:11px;font-size:11px;letter-spacing:.04em;color:var(--muted);pointer-events:none}
-.f input,.f select{width:100%;height:64px;background:none;border:0;outline:none;padding:26px 15px 9px;font-size:15px;color:var(--text);appearance:none;-webkit-appearance:none;color-scheme:dark;text-overflow:ellipsis}
+.f>span{position:absolute;left:14px;top:9px;font-size:11px;letter-spacing:.04em;color:var(--muted);pointer-events:none}
+.f input,.f select{width:100%;height:56px;background:none;border:0;outline:none;padding:23px 14px 7px;font-size:15px;color:var(--text);appearance:none;-webkit-appearance:none;color-scheme:dark;text-overflow:ellipsis}
 .f select{padding-right:32px}
 .f select option{background:#16181c}
 .f input::placeholder{color:#7a7f87}
-.f.sel:after{content:"";position:absolute;right:15px;top:30px;width:7px;height:7px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);pointer-events:none}
-.book .btn{height:auto;border-radius:13px;padding:0 26px}
+.f.sel:after{content:"";position:absolute;right:14px;top:26px;width:7px;height:7px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);pointer-events:none}
+.book .btn{height:auto;border-radius:13px;padding:0 24px}
 .picker-display{cursor:pointer;caret-color:transparent}
 .picker-pop,.suggest-pop{position:absolute;z-index:30;left:0;top:calc(100% + 6px);background:#17191d;color:var(--text);border:1px solid var(--line2);border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.6)}
 .picker-pop.is-up{top:auto;bottom:calc(100% + 6px)}
@@ -445,9 +448,6 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 
 @media (max-width:1280px){
   nav.main{display:none}
-  .book{grid-template-columns:1fr}
-  .seg{flex-direction:row;padding:0}
-  .seg button{flex:1;text-align:center;height:38px}
   .fields{grid-template-columns:1.5fr 1fr .8fr}
   .fields .f.sel,.fields [data-show]{grid-column:span 1}
   .book .btn{height:60px}
@@ -490,7 +490,7 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
   .book{margin-top:24px;padding:8px;border-radius:18px}
   .seg button{font-size:13px;padding:0 4px}
   .fields{grid-template-columns:1fr 1fr}
-  .fields .f:first-child,.fields .f.sel,.fields [data-show]{grid-column:1/-1}
+  .fields .f.addr,.fields .f.sel,.fields [data-show]{grid-column:1/-1}
   .book .btn{grid-column:1/-1}
   .book .suggest-pop{top:calc(100% + 6px);bottom:auto;min-width:0}
   .stage{height:66svh;min-height:440px}
@@ -595,7 +595,8 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
     <form class="book h-a d3" id="book" data-mode="hour" novalidate>
       <div class="seg" role="tablist"><button type="button" class="on" data-mode="hour">От 4 часов</button><button type="button" data-mode="transfer">Трансфер</button><button type="button" data-mode="event">Мероприятие</button></div>
       <div class="fields">
-        <label class="f"><span data-lbl>Адрес подачи</span><input type="text" name="from" placeholder="Улица, отель, аэропорт" autocomplete="off" data-suggest required></label>
+        <label class="f sel msel"><span>Услуга</span><select id="modeSel"><option value="hour">От 4 часов</option><option value="transfer">Трансфер</option><option value="event">Мероприятие</option></select></label>
+        <label class="f addr"><span data-lbl>Адрес подачи</span><input type="text" name="from" placeholder="Улица, отель, аэропорт" autocomplete="off" data-suggest required></label>
         <label class="f"><span>Дата</span><input type="date" name="date" data-picker="date" required></label>
         <label class="f"><span>Время</span><input type="time" name="time" step="600" value="10:00" data-picker="time" required></label>
         <label class="f sel" data-show="hour"><span>Длительность</span><select name="hours"><option>4 часа</option><option>5 часов</option><option>6 часов</option><option>8 часов</option><option>Весь день</option><option>Несколько дней</option></select></label>
@@ -967,7 +968,8 @@ if(matchMedia("(hover:hover) and (pointer:fine)").matches&&!still){
 /* ---------- форма ---------- */
 const lbl=$("[data-lbl]");
 const book=$("#book");
-const setMode=m=>{book.dataset.mode=m;$$(".seg button").forEach(b=>b.classList.toggle("on",b.dataset.mode===m));$$("[data-show]").forEach(x=>x.classList.toggle("vis",x.dataset.show===m));lbl.textContent=m==="transfer"?"Откуда":"Адрес подачи";book.elements.to.required=m==="transfer"};
+const modeSel=$("#modeSel");modeSel.addEventListener("change",()=>setMode(modeSel.value));
+const setMode=m=>{book.dataset.mode=m;modeSel.value=m;$$(".seg button").forEach(b=>b.classList.toggle("on",b.dataset.mode===m));$$("[data-show]").forEach(x=>x.classList.toggle("vis",x.dataset.show===m));lbl.textContent=m==="transfer"?"Откуда":"Адрес подачи";book.elements.to.required=m==="transfer"};
 $$(".seg button").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));setMode("hour");
 const fmtPhone=v=>{let d=v.replace(/\D/g,"");if(d[0]==="8")d="7"+d.slice(1);if(d&&d[0]!=="7")d="7"+d;d=d.slice(0,11);const p=d.slice(1);
   return d?"+7"+(p.length?" ("+p.slice(0,3):"")+(p.length>3?") "+p.slice(3,6):"")+(p.length>6?"-"+p.slice(6,8):"")+(p.length>8?"-"+p.slice(8,10):""):""};

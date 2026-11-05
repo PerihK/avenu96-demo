@@ -53,7 +53,7 @@
       pop.innerHTML = html + '</div>';
       pop.querySelector('[data-step="-1"]').disabled = month <= new Date(now.getFullYear(), now.getMonth(), 1);
       const target = pop.querySelector(`[data-date="${focusDay}"]:not([disabled])`) || pop.querySelector('[aria-pressed="true"]:not([disabled])') || pop.querySelector('[data-date]:not([disabled])');
-      if (target) { target.tabIndex = 0; if (!pop.hidden) target.focus(); }
+      if (target) { target.tabIndex = 0; if (!pop.hidden) target.focus({ preventScroll: true }); }
       pop.vipMonth = month;
     };
     const renderTime = () => {
@@ -80,7 +80,7 @@
       else {
         renderTime();
         const target = pop.querySelector('[aria-selected="true"]') || pop.querySelector('[data-time="09:00"]:not([aria-disabled])') || pop.querySelector('[data-time]:not([aria-disabled])');
-        if (target) { pop.scrollTop = target.offsetTop - pop.clientHeight / 2 + target.offsetHeight / 2; target.focus(); }
+        if (target) { pop.scrollTop = target.offsetTop - pop.clientHeight / 2 + target.offsetHeight / 2; target.focus({ preventScroll: true }); }
       }
     };
     display.addEventListener('beforeinput', event => event.preventDefault());
