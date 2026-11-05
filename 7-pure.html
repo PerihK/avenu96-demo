@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Авеню96 — автомобили с водителем в Екатеринбурге</title>
+<meta name="description" content="Концепция дизайна: автомобили с водителем в Екатеринбурге, от Maybach и S-класса до автобусов на 60 мест.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/ekb/w/sclass-xl.jpg" media="(min-width:761px)">
+<link rel="preload" as="image" href="img/ekb/w/s223-m.jpg" media="(max-width:760px)">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=Unbounded:wght@800&display=swap" rel="stylesheet">
+<script>(function(){var h=document.documentElement;h.classList.add("js");if(!matchMedia("(pointer:fine)").matches)h.classList.add("touch");if(location.hash==="#shot")h.classList.add("shot")})()</script>
+<style>
+:root{
+  --bg:#000;--tile:#141416;--tile2:#1d1d20;--line:rgba(255,255,255,.1);--line2:rgba(255,255,255,.2);
+  --text:#f5f5f7;--soft:#c7c7cc;--muted:#86868b;--gold:#e0b45c;--gold2:#f1d494;--ink:#14110a;
+  --disp:'Inter Tight',Inter,system-ui,-apple-system,sans-serif;--sans:Inter,system-ui,-apple-system,sans-serif;--logo:Unbounded,system-ui,sans-serif;
+  --pad:clamp(18px,4vw,56px);--ease:cubic-bezier(.22,1,.36,1);--r:clamp(18px,1.8vw,28px);--gap:clamp(10px,1vw,16px)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;overflow-x:clip;overscroll-behavior-x:none}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{background:var(--bg);color:var(--text);font:17px/1.47 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body.lock{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums lining-nums}
+h1,h2,h3{font-family:var(--disp);font-weight:600;letter-spacing:-.03em}
+.h{font-size:clamp(34px,5.2vw,72px);line-height:1.04;text-wrap:balance}
+.h em{font-style:normal;color:var(--muted)}
+.sub{color:var(--soft);font-size:clamp(17px,1.5vw,21px);line-height:1.4;max-width:640px;margin-top:14px;text-wrap:balance}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:48px;padding:0 24px;border-radius:99px;font:500 16px var(--sans);transition:background .25s,color .25s;white-space:nowrap}
+.btn.gold{background:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:var(--gold2)}
+.btn.ghost{background:rgba(255,255,255,.1)}
+.btn.ghost:hover{background:rgba(255,255,255,.18)}
+.btn svg{width:18px;height:18px}
+.lnk{color:var(--gold2);font-weight:500}
+.lnk:hover{text-decoration:underline}
+.rv{opacity:0;transform:translate3d(0,26px,0);transition:opacity .9s ease,transform 1s var(--ease)}
+.rv.in,.shot .rv,html:not(.js) .rv{opacity:1;transform:none}
+.lazy-sec{content-visibility:auto;contain-intrinsic-size:auto 900px}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:60;background:rgba(0,0,0,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:clamp(14px,2vw,30px);height:56px}
+.burger{position:relative;width:32px;height:32px;margin-left:-5px;flex:none}
+.burger:before,.burger:after{content:"";position:absolute;left:6px;right:6px;height:1.5px;background:currentColor;transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger:before{top:11px}.burger:after{top:19px}
+.menu-on .burger:before{top:15px;transform:rotate(45deg)}
+.menu-on .burger:after{top:15px;transform:rotate(-45deg)}
+.logo{font:800 17px/1 var(--logo);letter-spacing:.01em}
+.logo em{font-style:normal;color:var(--gold)}
+nav.main{display:flex;gap:clamp(16px,2vw,28px);font-size:13px;color:var(--soft)}
+nav.main a{transition:color .2s}
+nav.main a:hover{color:#fff}
+.hr{margin-left:auto;display:flex;align-items:center;gap:clamp(10px,1.4vw,18px);font-size:13px}
+.tel{font-weight:500}
+.tel:hover{color:var(--gold2)}
+.tel svg{display:none;width:20px;height:20px}
+.ic{display:grid;place-items:center;width:32px;height:32px}
+.ic svg{width:19px;height:19px}
+.ic:hover{color:#25d366}
+.hr .btn{height:32px;padding:0 15px;font-size:13px}
+
+/* menu */
+.menu{position:fixed;inset:57px 0 auto;z-index:55;background:#0b0b0d;border-bottom:1px solid var(--line);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .55s var(--ease),visibility .55s;max-height:calc(100svh - 57px);overflow-y:auto}
+.menu-on .menu{clip-path:inset(0);visibility:visible}
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.menu-on .scrim{opacity:1;visibility:visible}
+.m-g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(24px,4vw,70px);padding-top:clamp(26px,3vw,44px);padding-bottom:clamp(30px,3.4vw,50px)}
+.m-g h4{font:500 12px var(--sans);color:var(--muted);margin-bottom:12px}
+.m-c{columns:2;column-gap:30px}
+.m-c a{display:block;font:600 21px/1.5 var(--disp);letter-spacing:-.02em;break-inside:avoid;transition:color .2s}
+.m-c a:hover{color:var(--gold2)}
+.m-l a,.m-l p{display:block;font-size:14px;line-height:2;color:var(--soft)}
+.m-l a:hover{color:#fff}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:680px;padding-top:56px;background:#000;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero picture{position:absolute;inset:0;z-index:-1}
+.hero picture img{width:100%;height:100%;object-fit:cover;object-position:62% 100%;-webkit-mask-image:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.22) 38%,#000 62%);mask-image:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.22) 38%,#000 62%)}
+.h-t{padding:clamp(40px,8vh,92px) var(--pad) 0}
+.hero h1{font-size:clamp(34px,4.3vw,64px);line-height:1.06}
+.hero h1 span{color:var(--gold2)}
+.hero .sub{margin:12px auto 0;font-size:clamp(16px,1.35vw,20px);max-width:780px}
+.h-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.h-a{animation:hrise 1.1s var(--ease) both}
+.h-a.d1{animation-delay:.1s}.h-a.d2{animation-delay:.2s}
+@keyframes hrise{from{opacity:0;transform:translate3d(0,22px,0)}}
+.h-b{position:absolute;left:0;right:0;bottom:clamp(14px,3vh,28px);padding:0 var(--pad);text-align:left}
+
+/* one bar, one object */
+.book{max-width:1240px;margin:0 auto;background:rgba(29,29,32,.82);backdrop-filter:saturate(160%) blur(22px);-webkit-backdrop-filter:saturate(160%) blur(22px);border:1px solid var(--line2);border-radius:99px;padding:6px 6px 6px 10px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.fields{display:grid;grid-template-columns:.8fr 1.5fr .9fr .6fr .8fr 1.15fr auto;align-items:center}
+.f{position:relative;display:block;min-width:0;border-radius:99px;transition:background .2s}
+.f+.f:before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:1px;background:var(--line2)}
+.f:hover,.f:focus-within{background:rgba(255,255,255,.08)}
+.f:hover:before,.f:focus-within:before,.f:hover+.f:before,.f:focus-within+.f:before{opacity:0}
+.f>span{position:absolute;left:18px;top:9px;font-size:11px;font-weight:500;color:var(--muted);pointer-events:none}
+.f input,.f select{width:100%;height:54px;background:none;border:0;outline:none;padding:23px 18px 7px;font-size:15px;color:var(--text);appearance:none;-webkit-appearance:none;color-scheme:dark;text-overflow:ellipsis}
+.f input::placeholder{color:#8a8a8f}
+.f select{padding-right:28px}
+.f select option{background:#1d1d20}
+.f.sel:after{content:"";position:absolute;right:14px;top:25px;width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);pointer-events:none}
+.f.err{box-shadow:inset 0 0 0 1.5px #ff6b57}
+.book .btn{height:54px;margin-left:6px}
+[data-show]{display:none!important}
+[data-show].vis{display:block!important}
+.picker-display{cursor:pointer;caret-color:transparent}
+.picker-pop,.suggest-pop{position:absolute;z-index:30;left:0;top:calc(100% + 8px);background:#1d1d20;color:var(--text);border:1px solid var(--line2);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.picker-pop.is-up{top:auto;bottom:calc(100% + 8px)}
+.suggest-pop{right:0;min-width:320px;max-height:340px;overflow-y:auto;padding:6px;overscroll-behavior:contain}
+.book .suggest-pop{top:auto;bottom:calc(100% + 8px)}
+.suggest-pop [role=option]{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;cursor:pointer}
+.suggest-pop [role=option]:hover,.suggest-pop [role=option][aria-selected=true]{background:rgba(255,255,255,.08)}
+.suggest-pop strong{font-size:14px;font-weight:600}
+.suggest-pop small{font-size:12px;color:var(--muted)}
+.suggest-kind{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.suggest-credit{margin:4px 12px;font-size:11px;color:var(--muted)}
+.suggest-credit a{text-decoration:underline}
+.picker-date{width:300px;padding:12px}
+.picker-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.picker-head strong{font-size:15px;font-weight:600;text-transform:capitalize}
+.picker-head button{width:34px;height:34px;border-radius:50%;font-size:22px;line-height:1}
+.picker-head button:hover:not(:disabled){background:rgba(255,255,255,.08)}
+.picker-head button:disabled{opacity:.3;cursor:default}
+.picker-week,.picker-days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+.picker-week span{font-size:11px;color:var(--muted);padding:4px 0}
+.picker-days button{height:36px;border-radius:50%;font-size:14px}
+.picker-days button:hover:not(:disabled),.picker-days button:focus-visible{background:rgba(255,255,255,.1);outline:none}
+.picker-days button.is-today{box-shadow:inset 0 0 0 1px rgba(224,180,92,.7)}
+.picker-days button[aria-pressed=true]{background:var(--gold);color:var(--ink)}
+.picker-days button:disabled{color:#4b4f56;cursor:default}
+.picker-time{width:100%;min-width:120px;max-height:260px;overflow-y:auto;padding:6px;overscroll-behavior:contain}
+.picker-time [role=option]{padding:8px 12px;border-radius:10px;font-size:14px;cursor:pointer}
+.picker-time [role=option]:hover,.picker-time [role=option]:focus{background:rgba(255,255,255,.08);outline:none}
+.picker-time [role=option][aria-selected=true]{background:var(--gold);color:var(--ink)}
+.picker-time [role=option][aria-disabled=true]{color:#4b4f56;cursor:default;background:none}
+
+/* moving words */
+.ticker{padding:clamp(26px,3.4vw,48px) 0 clamp(14px,1.6vw,24px);overflow:hidden}
+.ticker .row{display:flex;width:max-content;gap:.55em;white-space:nowrap;font:800 clamp(24px,3.2vw,52px)/1.1 var(--logo);letter-spacing:-.02em;will-change:transform}
+.ticker .row span{color:#000;-webkit-text-stroke:2.2px #5f5f64;paint-order:stroke fill}
+.ticker .row b{font-weight:800}
+.ticker .row em{font-style:normal;color:var(--gold);font-size:.42em;align-self:center}
+
+/* fleet */
+.sec{padding:clamp(64px,8vw,120px) 0 0}
+.cats{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:clamp(6px,.8vw,12px);margin-top:clamp(26px,3vw,40px)}
+.cat{display:block;text-align:center;font-size:13px;line-height:1.25;color:var(--soft);transition:color .2s}
+.cat i{display:block;aspect-ratio:1/1;border-radius:clamp(12px,1.2vw,18px);overflow:hidden;margin-bottom:9px;background:var(--tile);box-shadow:0 0 0 0 var(--gold);transition:box-shadow .3s}
+.cat img{width:100%;height:100%;object-fit:cover;transition:filter .3s;filter:brightness(.78)}
+.cat:hover{color:#fff}.cat:hover img{filter:none}
+.cat.on{color:var(--gold2);font-weight:500}
+.cat.on i{box-shadow:0 0 0 2px var(--gold)}
+.cat.on img{filter:none}
+.fl-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px 30px;flex-wrap:wrap;margin:clamp(30px,3.6vw,52px) 0 clamp(16px,1.8vw,24px)}
+.fl-h h3{font-size:clamp(26px,3vw,42px);line-height:1.1}
+.fl-h p{color:var(--muted);font-size:clamp(15px,1.15vw,17px)}
+.fl-h b{color:var(--gold2);font-weight:500}
+.cars{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.car{position:relative;display:flex;flex-direction:column;background:var(--tile);border-radius:var(--r);overflow:hidden;cursor:pointer;animation:cin .6s var(--ease) both;transition:background .3s}
+@keyframes cin{from{opacity:0;transform:translate3d(0,16px,0)}}
+.car:hover{background:var(--tile2)}
+.car .im{position:relative;aspect-ratio:3/2;overflow:hidden;background:#1b1b1e}
+.car .im img{width:100%;height:100%;object-fit:cover}
+.car .b{display:grid;grid-template-columns:1fr auto;gap:3px 16px;align-items:baseline;padding:15px clamp(16px,1.5vw,22px) 18px}
+.car h3{font-size:clamp(17px,1.35vw,20px);line-height:1.2;letter-spacing:-.02em}
+.car .pr{font:500 15px var(--disp);white-space:nowrap}
+.car .pr small{font:400 12px var(--sans);color:var(--muted)}
+.car .spec{grid-column:1/-1;color:var(--muted);font-size:13px}
+.cars .car.more{display:none}
+.cars.all .car.more{display:flex}
+.fl-more{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;align-items:center;margin-top:clamp(20px,2.4vw,32px)}
+.fl-more .btn i{font-style:normal;transition:transform .4s var(--ease)}
+.cars.all+.fl-more #moreBtn i{transform:rotate(180deg)}
+
+/* compare */
+.cmp{margin-top:clamp(22px,2.6vw,36px);background:var(--tile);border-radius:var(--r);overflow:hidden}
+.cmp a{display:grid;grid-template-columns:1.6fr 1fr 1fr 22px;gap:14px;align-items:center;padding:14px clamp(16px,2vw,28px);border-top:1px solid var(--line);transition:background .2s}
+.cmp a:first-child{border-top:0}
+.cmp a:hover{background:var(--tile2)}
+.cmp b{font:600 clamp(16px,1.3vw,19px) var(--disp);letter-spacing:-.02em}
+.cmp span{color:var(--soft);font-size:15px}
+.cmp i{font-style:normal;color:var(--muted);text-align:right;transition:transform .3s var(--ease)}
+.cmp a:hover i{color:var(--gold2);transform:translateX(3px)}
+.cmp .hd{display:grid;grid-template-columns:1.6fr 1fr 1fr 22px;gap:14px;padding:12px clamp(16px,2vw,28px) 10px;color:var(--muted);font-size:12px}
+
+/* expanding frame */
+.fx{position:relative;height:190vh;margin-top:clamp(64px,8vw,120px)}
+.fx-s{position:sticky;top:0;height:100vh;overflow:hidden;background:#000}
+.fx-m{position:absolute;inset:0;overflow:hidden;clip-path:inset(11vh 11vw round 28px);will-change:clip-path}
+.fx-m img{width:100%;height:100%;object-fit:cover}
+.fx-m:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,0) 46%)}
+.fx-t{position:absolute;left:0;right:0;bottom:clamp(30px,8vh,76px);text-align:center;opacity:0;transform:translate3d(0,20px,0)}
+.fx-t .sub{margin-left:auto;margin-right:auto}
+
+/* trip rail */
+.rail{display:flex;gap:var(--gap);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 var(--pad);scroll-padding:0 var(--pad);margin-top:clamp(24px,3vw,40px);overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+.st{position:relative;flex:0 0 min(84vw,920px);aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;scroll-snap-align:start;background:var(--tile)}
+.st img{width:100%;height:100%;object-fit:cover}
+.st:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,0) 54%)}
+.st div{position:absolute;z-index:1;left:clamp(18px,2.6vw,36px);right:clamp(18px,2.6vw,36px);bottom:clamp(16px,2.4vw,32px)}
+.st small{color:var(--gold2);font-size:14px;font-weight:500}
+.st h3{font-size:clamp(23px,2.5vw,36px);line-height:1.1;margin:3px 0 5px}
+.st p{color:var(--soft);font-size:clamp(14px,1.1vw,16px);max-width:540px}
+.r-c{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:18px}
+.dots{display:flex;gap:8px;background:var(--tile2);padding:12px 16px;border-radius:99px}
+.dots i{width:8px;height:8px;border-radius:50%;background:#55555a;transition:background .3s}
+.dots i.on{background:var(--text)}
+.r-c button{width:36px;height:36px;border-radius:50%;background:var(--tile2);font-size:15px;transition:.2s}
+.r-c button:hover{background:#2c2c30}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-top:clamp(24px,3vw,40px)}
+.t{position:relative;grid-column:span 4;background:var(--tile);border-radius:var(--r);overflow:hidden;padding:clamp(20px,2.2vw,32px);isolation:isolate}
+.t.n{min-height:clamp(170px,16vw,230px);display:flex;flex-direction:column;justify-content:flex-end}
+.t.n>span{color:var(--soft);font-size:15px;line-height:1.3}
+.odo{display:flex;font:600 clamp(46px,5.4vw,76px)/1.05 var(--disp);letter-spacing:-.04em;height:1.05em;overflow:hidden;margin-bottom:6px}
+.odo .d{display:block;height:1.05em;overflow:hidden}
+.odo .s{display:block;transition:transform 2.4s cubic-bezier(.16,1,.3,1)}
+.odo .s i{display:block;height:1.05em;font-style:normal}
+.odo .pl{color:var(--gold)}
+.t.p{display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(320px,31vw,470px)}
+.t.w7{grid-column:span 7}.t.w5{grid-column:span 5}
+.t.p img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.t.p:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 56%)}
+.t.p h3{font-size:clamp(24px,2.5vw,36px);line-height:1.08}
+.t.p p{color:var(--soft);font-size:15px;margin-top:6px;max-width:440px}
+
+/* city */
+.city{padding:clamp(70px,9vw,140px) 0 0;text-align:center;overflow:hidden}
+.word{font:800 clamp(30px,9.2vw,190px)/1 var(--logo);letter-spacing:-.04em;white-space:nowrap;background:url(img/ekb/w/city.jpg) 50% var(--py,50%)/cover;-webkit-background-clip:text;background-clip:text;color:transparent}
+.city .sub{margin-left:auto;margin-right:auto;padding:0 var(--pad)}
+.city ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:20px;padding:0 var(--pad)}
+.city li{padding:6px 14px;border-radius:99px;background:var(--tile2);font-size:14px;color:var(--soft)}
+
+/* trust */
+.evs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:clamp(24px,3vw,40px)}
+.ev{background:var(--tile);border-radius:var(--r);padding:clamp(20px,2.2vw,32px);display:flex;flex-direction:column;min-height:clamp(190px,17vw,250px)}
+.ev small{color:var(--gold2);font-size:14px;font-weight:500}
+.ev h3{font-size:clamp(23px,2.3vw,32px);line-height:1.1;margin-top:auto}
+.ev p{color:var(--muted);font-size:15px;margin-top:6px}
+.clients{margin-top:clamp(30px,3.6vw,52px);max-width:1040px;font:500 clamp(22px,2.6vw,36px)/1.25 var(--disp);letter-spacing:-.025em;color:var(--muted)}
+.clients b{font-weight:500;color:var(--text)}
+
+/* final */
+.final{margin-top:clamp(64px,8vw,120px)}
+.fin{background:var(--gold);color:var(--ink);border-radius:var(--r);padding:clamp(30px,5vw,72px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(26px,4vw,64px);align-items:center}
+.fin .h{font-size:clamp(36px,5vw,68px)}
+.bigtel{display:inline-block;font:600 clamp(26px,3vw,42px)/1 var(--disp);letter-spacing:-.03em;margin-top:18px}
+.bigtel:hover{text-decoration:underline}
+.fin p{margin-top:10px;font-size:15px;opacity:.75}
+.form{background:#000;color:var(--text);border-radius:calc(var(--r) - 4px);padding:clamp(16px,1.8vw,24px)}
+.form .row{display:grid;gap:6px}
+.form .f{background:var(--tile2);border-radius:14px}
+.form .f:before{display:none}
+.form .btn{width:100%;margin-top:8px;height:52px}
+.form .note{font-size:12px;color:#77777c;margin-top:9px;text-align:center}
+footer{margin-top:clamp(36px,4vw,60px);padding:clamp(26px,3vw,40px) 0 clamp(30px,3vw,44px);border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.ft{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:26px}
+.ft h4{color:var(--text);font-weight:600;font-size:12px;margin-bottom:8px}
+.ft a,.ft p{display:block;line-height:2}
+.ft a:hover{color:var(--text)}
+
+/* car sheet */
+.sheet{position:fixed;inset:0;z-index:80;visibility:hidden;display:grid;place-items:center;padding:clamp(0px,2vw,28px);transition:visibility .5s}
+.sheet.on{visibility:visible}
+.sc-bg{position:absolute;inset:0;background:rgba(0,0,0,.72);opacity:0;transition:opacity .4s}
+.sheet.on .sc-bg{opacity:1}
+.pane{position:relative;width:min(1200px,100%);max-height:100%;height:100%;background:#101012;border-radius:var(--r);overflow-y:auto;overscroll-behavior:contain;opacity:0;transform:translate3d(0,30px,0);transition:opacity .4s ease,transform .6s var(--ease)}
+.sheet.on .pane{opacity:1;transform:none}
+.sheet .x{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px clamp(16px,2.6vw,36px);background:rgba(16,16,18,.92)}
+.crumb{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.crumb b{color:var(--gold2);font-weight:500}
+.close{width:36px;height:36px;border-radius:50%;background:var(--tile2);display:grid;place-items:center;flex:none;transition:background .2s}
+.close:hover{background:#2c2c30}
+.close svg{width:15px;height:15px}
+.sheet .in{padding:6px clamp(16px,2.6vw,36px) 40px}
+.cv{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(20px,3.4vw,50px);align-items:start}
+.gal .main{position:relative;aspect-ratio:3/2;border-radius:calc(var(--r) - 6px);overflow:hidden;background:#1b1b1e}
+.gal .main img{width:100%;height:100%;object-fit:cover;animation:fade .4s ease}
+@keyframes fade{from{opacity:.3}}
+.gal .nav{position:absolute;inset:auto 12px 12px auto;display:flex;gap:8px}
+.gal .nav button{width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.6);transition:.2s}
+.gal .nav button:hover{background:var(--gold);color:var(--ink)}
+.gal .cnt{position:absolute;left:12px;bottom:12px;padding:4px 10px;border-radius:99px;background:rgba(0,0,0,.6);font-size:12px;color:var(--soft)}
+.gal .th{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:6px}
+.gal .th button{aspect-ratio:3/2;border-radius:9px;overflow:hidden;opacity:.5;transition:.2s}
+.gal .th button.on,.gal .th button:hover{opacity:1}
+.gal .th img{width:100%;height:100%;object-fit:cover}
+.info .cls{font-size:13px;color:var(--gold2);font-weight:500}
+.info h2{font-size:clamp(28px,2.8vw,40px);line-height:1.08;margin:4px 0 8px}
+.info .spec{color:var(--soft);font-size:15px}
+.info .from{margin:18px 0 0;font:600 clamp(26px,2.3vw,32px) var(--disp);letter-spacing:-.03em}
+.info .from small{font:400 15px var(--sans);color:var(--muted);letter-spacing:0}
+.rates{margin-top:12px}
+.rates div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;font-size:14px;border-top:1px solid var(--line)}
+.rates span{color:var(--muted)}
+.info .acts{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.info .acts .btn{flex:1 1 170px}
+.info ul{list-style:none;margin-top:18px}
+.info li{padding:4px 0 4px 16px;color:var(--soft);font-size:14px;position:relative;line-height:1.4}
+.info li:before{content:"";position:absolute;left:1px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.info .src{margin-top:10px;font-size:12px;color:#66666b}
+.rec{margin-top:clamp(34px,4vw,54px)}
+.rec .rh{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:14px}
+.rec .rh h3{font-size:clamp(22px,2vw,28px)}
+.rec .rh p{font-size:13px;color:var(--gold2)}
+.rec .rh button{color:var(--gold2);font-size:14px;white-space:nowrap}
+.rec .rh button:hover{text-decoration:underline}
+.rec .cars{grid-template-columns:repeat(4,1fr);gap:10px}
+.rec .car{background:var(--tile2)}
+.rec .car .b{grid-template-columns:1fr;padding:11px 13px 13px}
+.rec .car h3{font-size:15px}
+.rec .car .spec{display:none}
+
+/* order */
+.order{position:fixed;inset:0;z-index:85;display:grid;place-items:center;padding:16px;visibility:hidden}
+.order.on{visibility:visible}
+.o-bg{position:absolute;inset:0;background:rgba(0,0,0,.72);opacity:0;transition:opacity .35s}
+.order.on .o-bg{opacity:1}
+.box{position:relative;width:min(540px,100%);max-height:calc(100svh - 32px);overflow-y:auto;background:#101012;border-radius:var(--r);padding:clamp(22px,3vw,32px);opacity:0;transform:translate3d(0,20px,0);transition:.5s var(--ease)}
+.order.on .box{opacity:1;transform:none}
+.box h3{font-size:26px;padding-right:44px}
+.box .close{position:absolute;top:18px;right:18px}
+.sum{margin:14px 0 16px;background:var(--tile2);border-radius:14px}
+.sum div{display:flex;justify-content:space-between;gap:16px;padding:10px 14px;font-size:14px}
+.sum div+div{border-top:1px solid var(--line)}
+.sum span{color:var(--muted);flex:none}
+.sum b{font-weight:500;text-align:right}
+.box .row{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.box .f{background:var(--tile2);border-radius:14px}
+.box .f:before{display:none}
+.box .f.full{grid-column:1/-1}
+.box .acts{display:grid;gap:8px;margin-top:12px}
+.box .acts .btn{width:100%;height:52px}
+.box .note{font-size:12px;color:#77777c;margin-top:10px;text-align:center}
+.done{text-align:center;padding:18px 0 4px}
+.done>i{display:grid;place-items:center;width:60px;height:60px;margin:0 auto 16px;border-radius:50%;background:var(--gold);color:var(--ink);font-style:normal;font-size:26px}
+.done p{color:var(--soft);margin-top:8px}
+
+.mbar{display:none}
+/* touch screens: page moves only up and down, no live blur */
+.touch .hero,.touch .ticker,.touch .fl-b,.touch .fx,.touch #scen,.touch .city,.touch #trust,.touch .final,.touch footer{touch-action:pan-y pinch-zoom}
+.touch header,.touch .book{backdrop-filter:none;-webkit-backdrop-filter:none}
+.touch header{background:rgba(0,0,0,.94)}
+.touch .book{background:rgb(29,29,32)}
+.touch .fx{height:auto}
+.touch .fx-s{position:relative;height:78svh}
+.touch .fx-m{clip-path:none;will-change:auto}
+.touch .fx-t{opacity:1;transform:none}
+.shot .h-a,.shot .car{animation:none}
+@media (prefers-reduced-motion:reduce){.rv,.h-a,.car{transition:none;animation:none;opacity:1;transform:none}.odo .s{transition:none}}
+
+@media (max-width:1180px){
+  nav.main{display:none}
+  .book{border-radius:26px;padding:6px}
+  .fields{grid-template-columns:repeat(3,1fr);gap:0}
+  .fields .f.addr{grid-column:span 2}
+  .f+.f:before{display:none}
+  .book .btn{grid-column:1/-1;margin:6px 0 0}
+  .cats{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:112px;overflow-x:auto;scrollbar-width:none;margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1);padding:2px var(--pad)}
+  .cats::-webkit-scrollbar{display:none}
+  .cars{grid-template-columns:1fr 1fr}
+  .rec .cars{grid-template-columns:1fr 1fr 1fr}
+  .cv{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .hr .btn,.ic,.tel span{display:none}
+  .tel{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--ink)}
+  .tel svg{display:block;width:17px;height:17px}
+  .menu{inset:0;max-height:none;height:100%;padding-top:57px;clip-path:none;visibility:hidden;transform:translate3d(-100%,0,0);transition:transform .55s var(--ease),visibility .55s;padding-bottom:90px}
+  .menu-on .menu{transform:none}
+  .menu.drag{transition:none;visibility:visible}
+  .scrim{display:none}
+  .m-g{grid-template-columns:1fr;gap:26px}
+  .m-c{columns:1}
+  .m-c a{font-size:24px;line-height:1.45}
+  .hero{height:auto;min-height:100svh;justify-content:flex-start;padding-bottom:16px}
+  .hero picture{height:100svh;bottom:auto}
+  .hero picture img{object-position:50% 100%;-webkit-mask-image:linear-gradient(180deg,transparent 26%,#000 60%);mask-image:linear-gradient(180deg,transparent 26%,#000 60%)}
+  .h-t{padding-top:clamp(26px,6svh,52px)}
+  .h-cta .btn{height:44px;padding:0 18px;font-size:15px}
+  .h-b{position:relative;bottom:auto;margin-top:calc(100svh - 56px - 300px - clamp(26px,6svh,52px))}
+  .fields{grid-template-columns:1fr 1fr}
+  .fields .f.addr,.fields .f.msel,.fields .f.sel{grid-column:1/-1}
+  .book .suggest-pop{top:calc(100% + 6px);bottom:auto;min-width:0}
+  .f input,.f select{height:52px}
+  .cars{grid-template-columns:1fr}
+  .rec .cars{display:flex;overflow-x:auto;margin:0 -16px;padding:0 16px;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .rec .car{flex:0 0 66%;scroll-snap-align:start}
+  .cmp .hd{display:none}
+  .cmp a{grid-template-columns:1fr auto;gap:2px 14px;padding:13px 16px}
+  .cmp a b{grid-column:1;grid-row:1}
+  .cmp a .num:not(.pr){grid-column:1;grid-row:2;color:var(--muted);font-size:14px}
+  .cmp a .pr{grid-column:2;grid-row:1/3;align-self:center;white-space:nowrap}
+  .cmp a i{display:none}
+  .ticker .row span{-webkit-text-stroke-width:1.4px}
+  .st{aspect-ratio:4/5}
+  .t,.t.w7,.t.w5{grid-column:1/-1}
+  .t.n{grid-column:span 4;min-height:132px;padding:14px}
+  .t.n>span{font-size:12px}
+  .odo{font-size:32px}
+  .evs{grid-template-columns:1fr}
+  .fin{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr}
+  footer{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+  .gal .th{grid-template-columns:repeat(5,1fr)}
+  .info .acts{position:sticky;bottom:0;background:#101012;padding:10px 0 calc(10px + env(safe-area-inset-bottom));z-index:3}
+  .pane{border-radius:0}
+  .box .row{grid-template-columns:1fr}
+  .order{place-items:end center;padding:0}.box{border-radius:22px 22px 0 0;max-height:92svh;padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:rgba(0,0,0,.94);border-top:1px solid var(--line)}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></symbol><symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M6 6l12 12M18 6 6 18"/></symbol></svg>
+
+<header><div class="wrap bar">
+  <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"></button>
+  <a class="logo" href="#top" aria-label="Авеню96, на главную">AVENU<em>96</em></a>
+  <nav class="main" aria-label="Основное меню"><a href="#fleet">Автопарк</a><a href="#scen">Услуги</a><a href="#trip">Поездка</a><a href="#trust">Компаниям</a><a href="#contact">Контакты</a></nav>
+  <div class="hr">
+    <a class="tel num" href="tel:+73433282045" aria-label="Позвонить: +7 343 328-20-45"><svg><use href="#i-tel"/></svg><span>+7 343 328-20-45</span></a>
+    <a class="ic" href="https://wa.me/79221882045" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg></a>
+    <a class="btn gold" href="#book">Заказать</a>
+  </div>
+</div></header>
+
+<div class="menu" id="menu" data-lenis-prevent><div class="wrap m-g">
+  <div><h4>Автопарк</h4><div class="m-c" id="menuCats"></div></div>
+  <div class="m-l"><h4>Сервис</h4><a href="#scen">Услуги</a><a href="#trip">Как проходит поездка</a><a href="#trust">Компаниям</a><a href="#contact">Контакты</a></div>
+  <div class="m-l"><h4>Связаться</h4><a class="num" href="tel:+73433282045">+7 343 328-20-45</a><a href="https://wa.me/79221882045">WhatsApp</a><a href="mailto:avenu96@mail.ru">avenu96@mail.ru</a><p>Ежедневно 9:00–22:00</p></div>
+</div></div>
+<div class="scrim" id="scrim"></div>
+
+<main id="top">
+<section class="hero" aria-label="Заказ автомобиля">
+  <picture><source media="(max-width:760px)" srcset="img/ekb/w/s223-m.jpg"><img src="img/ekb/w/sclass-xl.jpg" width="2560" height="1440" fetchpriority="high" alt="Чёрный Mercedes-Benz S-класса на набережной Екатеринбурга ночью"></picture>
+  <div class="h-t">
+    <h1 class="h-a">Автомобили с водителем <span>в Екатеринбурге</span></h1>
+    <p class="sub h-a d1">От Maybach и S-класса до автобусов на 60 мест. На трансфер, на день или на всё мероприятие.</p>
+    <div class="h-cta h-a d2"><a class="btn gold" href="#fleet">Выбрать автомобиль</a><a class="btn ghost" href="https://wa.me/79221882045"><svg><use href="#i-wa"/></svg>Написать в WhatsApp</a></div>
+  </div>
+  <div class="h-b h-a d2">
+    <form class="book" id="book" data-mode="hour" novalidate>
+      <div class="fields">
+        <label class="f sel msel"><span>Услуга</span><select id="modeSel"><option value="hour">От 4 часов</option><option value="transfer">Трансфер</option><option value="event">Мероприятие</option></select></label>
+        <label class="f addr"><span data-lbl>Адрес подачи</span><input type="text" name="from" placeholder="Улица, отель, аэропорт" autocomplete="off" data-suggest required></label>
+        <label class="f"><span>Дата</span><input type="date" name="date" data-picker="date" required></label>
+        <label class="f"><span>Время</span><input type="time" name="time" step="600" value="10:00" data-picker="time" required></label>
+        <label class="f sel" data-show="hour"><span>Длительность</span><select name="hours"><option>4 часа</option><option>5 часов</option><option>6 часов</option><option>8 часов</option><option>Весь день</option><option>Несколько дней</option></select></label>
+        <label class="f" data-show="transfer"><span>Куда</span><input type="text" name="to" placeholder="Кольцово, город" autocomplete="off" data-suggest></label>
+        <label class="f sel" data-show="event"><span>Повод</span><select name="event"><option>Свадьба</option><option>Кортеж</option><option>Делегация, конференция</option><option>Корпоратив, праздник</option></select></label>
+        <label class="f sel"><span>Автомобиль</span><select id="carSel" name="car"><option>Помогите подобрать</option></select></label>
+        <button class="btn gold" type="submit">Узнать стоимость</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="ticker" aria-hidden="true">
+  <div class="row" data-dir="-1"><b>MAYBACH</b><span>S-КЛАСС</span><em>●</em><b>V-КЛАСС</b><span>SPRINTER VIP</span><em>●</em><b>КОРТЕЖИ</b><span>АВТОБУСЫ</span><em>●</em></div>
+  <div class="row" data-dir="1" style="margin-top:.14em"><span>СВАДЬБЫ</span><b>ДЕЛЕГАЦИИ</b><em>●</em><span>КОЛЬЦОВО</span><b>ДЕЛОВЫЕ ВСТРЕЧИ</b><em>●</em><span>ТРАНСФЕРЫ</span><b>ЕКАТЕРИНБУРГ</b><em>●</em></div>
+</section>
+
+<section class="sec" id="fleet" style="padding-top:clamp(40px,5vw,72px)"><div class="wrap fl-b">
+  <h2 class="h rv">Автопарк. <em>Выберите класс.</em></h2>
+  <div class="cats rv" role="tablist" aria-label="Классы автомобилей" id="cats"></div>
+  <div class="fl-h"><h3 id="flT"></h3><p id="flD"></p></div>
+  <div class="cars" id="cars"></div>
+  <div class="fl-more"><button class="btn ghost" id="moreBtn" type="button"><span></span><i>↓</i></button><a class="lnk" href="https://wa.me/79221882045">Подобрать в WhatsApp ›</a></div>
+
+  <h3 class="h rv" style="margin-top:clamp(56px,7vw,100px);font-size:clamp(28px,3.4vw,48px)">Не знаете, какой класс нужен?</h3>
+  <div class="cmp rv" id="cmp"></div>
+</div></section>
+
+<section class="fx" id="fx" aria-label="Салон"><div class="fx-s">
+  <div class="fx-m" id="fxM"><img src="img/ekb/w/business-xl.jpg" width="2400" height="1800" loading="lazy" decoding="async" alt="Пассажирка работает в салоне автомобиля"></div>
+  <div class="fx-t wrap" id="fxT"><h2 class="h">Время в дороге — ваше.</h2><p class="sub">Можно работать, говорить по телефону или просто отдохнуть.</p></div>
+</div></section>
+
+<section class="sec lazy-sec" id="trip">
+  <div class="wrap" style="max-width:none"><h2 class="h rv">От звонка <em>до точки назначения.</em></h2></div>
+  <div class="rail" id="rail" tabindex="0" aria-label="Как проходит поездка">
+    <article class="st"><img src="img/ekb/w/fleet-sclass.jpg" loading="lazy" decoding="async" alt="Mercedes S-класса на набережной"><div><small>1. Подача</small><h3>Машина у адреса к назначенному времени</h3><p>Дом, офис, отель или ЗАГС — водитель заранее знает маршрут и время.</p></div></article>
+    <article class="st"><img src="img/ekb/w/scen-airport.jpg" loading="lazy" decoding="async" alt="Встреча пассажира у автомобиля"><div><small>2. Встреча</small><h3>У машины, в Кольцово или на вокзале</h3><p>Назовите номер рейса или поезда — водитель встретит в нужном месте.</p></div></article>
+    <article class="st"><img src="img/ekb/w/cortege-xl.jpg" loading="lazy" decoding="async" alt="Автомобили на набережной вечером"><div><small>3. В пути</small><h3>Маршрут по вашему плану</h3><p>Встречи, остановки, ожидание — машина работает на ваш график весь заказ.</p></div></article>
+  </div>
+  <div class="r-c"><button type="button" id="rPrev" aria-label="Назад">‹</button><div class="dots" id="dots"><i class="on"></i><i></i><i></i></div><button type="button" id="rNext" aria-label="Вперёд">›</button></div>
+</section>
+
+<section class="sec lazy-sec" id="scen"><div class="wrap">
+  <h2 class="h rv">Под любую задачу. <em>Одна заявка.</em></h2>
+  <div class="bento" id="bento">
+    <div class="t n"><b class="odo" data-odo="400" data-suf="+"></b><span>автомобилей вместе с партнёрами</span></div>
+    <div class="t n"><b class="odo" data-odo="500" data-suf="+"></b><span>компаний-клиентов</span></div>
+    <div class="t n"><b class="odo" data-odo="2008"></b><span>работаем в городе с этого года</span></div>
+    <a class="t p w7" href="#fleet" data-cat="vip"><img src="img/ekb/w/scen-delegation.jpg" loading="lazy" decoding="async" alt="Делегация у автомобилей Mercedes"><h3>Деловые встречи и делегации</h3><p>Maybach, S-класс и V-класс для переговоров и гостей компании.</p></a>
+    <a class="t p w5" href="#fleet" data-cat="business"><img src="img/ekb/w/s223-l.jpg" style="object-position:84% 70%" loading="lazy" decoding="async" alt="Mercedes на набережной"><h3>Трансферы</h3><p>Аэропорт, вокзал, межгород.</p></a>
+    <a class="t p w5" href="#fleet" data-cat="cortege"><img src="img/ekb/w/wedding-xl.jpg" loading="lazy" decoding="async" alt="Свадебный автомобиль Mercedes"><h3>Свадьбы и праздники</h3><p>Ретро, кабриолеты и кортежи из 5–30 машин.</p></a>
+    <a class="t p w7" href="#fleet" data-cat="bus"><img src="img/p/sprinter-vip.jpg" loading="lazy" decoding="async" alt="Mercedes Sprinter VIP"><h3>Группы и мероприятия</h3><p>Минивэны, микроавтобусы и автобусы до 60 мест.</p></a>
+  </div>
+</div></section>
+
+<section class="city lazy-sec" id="city">
+  <div class="word" id="word">ЕКАТЕРИНБУРГ</div>
+  <p class="sub rv">Знаем город, его площадки и дороги.</p>
+  <ul class="rv"><li>Кольцово</li><li>Вокзал</li><li>Екатеринбург-ЭКСПО</li><li>Ельцин Центр</li><li>Hyatt</li><li>Высоцкий</li><li>Храм на Крови</li></ul>
+</section>
+
+<section class="sec lazy-sec" id="trust"><div class="wrap">
+  <h2 class="h rv">Нам доверяют.</h2>
+  <p class="sub rv">Работаем с компаниями: разные способы оплаты, долгосрочная аренда для бизнеса.</p>
+  <div class="evs">
+    <article class="ev rv"><small class="num">2013</small><h3>«Иннопром»</h3><p>Основной подрядчик по автомобилям для международных гостей выставки.</p></article>
+    <article class="ev rv"><small class="num">2015 · 2016</small><h3>WorldSkills Russia</h3><p>Обслуживали чемпионат в Екатеринбурге два года подряд.</p></article>
+    <article class="ev rv"><small class="num">2011 · 2013 · 2015</small><h3>Выставка вооружений</h3><p>Нижний Тагил — обслуживали выставку три раза подряд.</p></article>
+  </div>
+  <p class="clients rv">Среди наших клиентов — <b>Правительство Свердловской области</b>, госкорпорации <b>«Росатом»</b> и <b>«Ростех»</b>, <b>«Роснано»</b>, <b>Министерство спорта РФ</b> и футбольный клуб <b>«Спартак Москва»</b>.</p>
+</div></section>
+
+<section class="final lazy-sec" id="contact"><div class="wrap"><div class="fin">
+  <div>
+    <h2 class="h">Нужна машина на дату?</h2>
+    <a class="bigtel num" href="tel:+73433282045">+7 343 328-20-45</a>
+    <p>Красноармейская, 10, БЦ «Антей», офис 1404. Ежедневно 9:00–22:00.</p>
+  </div>
+  <form class="form" id="cform" novalidate>
+    <div class="row">
+      <label class="f"><span>Имя</span><input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name"></label>
+      <label class="f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" data-phone required></label>
+      <label class="f"><span>Что нужно</span><input type="text" name="need" id="needF" placeholder="V-класс на 5 часов, 14 ноября"></label>
+    </div>
+    <button class="btn gold" type="submit">Отправить заявку</button>
+    <p class="note">Демонстрация дизайна: форма ничего не отправляет</p>
+  </form>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="ft">
+    <div><h4>Автопарк</h4><div id="ftCats"></div></div>
+    <div><h4>Сервис</h4><a href="#scen">Услуги</a><a href="#trip">Как проходит поездка</a><a href="#trust">Компаниям</a></div>
+    <div><h4>Контакты</h4><a class="num" href="tel:+73433282045">+7 343 328-20-45</a><a class="num" href="https://wa.me/79221882045">WhatsApp +7 922 188-20-45</a><a href="mailto:avenu96@mail.ru">avenu96@mail.ru</a></div>
+    <div><h4>Офис</h4><p>Екатеринбург, Красноармейская, 10</p><p>БЦ «Антей», офис 1404</p></div>
+  </div>
+  <p>© 2008—2026 Авеню96. Концепция дизайна. Машины, фото в автопарке и цены — с текущего сайта avenu96.ru; кадры города сгенерированы для макета.</p>
+</div></footer>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <div class="sc-bg" data-close></div>
+  <div class="pane" id="pane" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Карточка автомобиля">
+    <div class="x"><div class="crumb" id="crumb"></div><button class="close" data-close aria-label="Закрыть"><svg><use href="#i-x"/></svg></button></div>
+    <div class="in" id="sheetIn"></div>
+  </div>
+</div>
+<div class="mbar"><a class="btn ghost" href="tel:+73433282045">Позвонить</a><a class="btn gold" href="#book">Заказать</a></div>
+<div class="order" id="order" aria-hidden="true">
+  <div class="o-bg" data-oclose></div>
+  <div class="box" role="dialog" aria-modal="true" aria-labelledby="oTitle" data-lenis-prevent>
+    <button class="close" type="button" data-oclose aria-label="Закрыть"><svg><use href="#i-x"/></svg></button>
+    <div id="oBody"></div>
+  </div>
+</div>
+
+<script src="fleet.js"></script>
+<script src="trip-form.js" defer></script>
+<script>
+const html=document.documentElement,shot=html.classList.contains("shot");
+const still=shot||matchMedia("(prefers-reduced-motion:reduce)").matches;
+const touch=html.classList.contains("touch");
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const rub=n=>n.toLocaleString("ru-RU").replace(/\s/g," ");
+let lenis=null;
+
+/* автопарк */
+const CATS=[
+  ["vip","Представительский","Представительский класс","Maybach и S-класс."],
+  ["business","Бизнес","Бизнес-класс","Mercedes E-класса, Audi, Porsche и Jaguar."],
+  ["bus","Автобусы","Автобусы","Конференции, экскурсии, корпоративы."],
+  ["minibus","Микроавтобусы","Микроавтобусы","Sprinter VIP и другие."],
+  ["minivan","Минивэны","Минивэны","V-класс и Multivan."],
+  ["suv","Внедорожники","Внедорожники","Land Cruiser 200, G-класс, Lexus LX."],
+  ["cabrio","Кабриолеты","Кабриолеты","Для свадеб, съёмок и летних поездок."],
+  ["retro","Ретро","Ретро-автомобили","«Волга», ЗИМ, «Победа» и американская классика."],
+  ["cortege","Кортежи","Кортежи","От 5 до 30 машин одной марки."]];
+const THUMB={vip:"img/ekb/w/fleet-sclass.jpg",minibus:"img/p/sprinter-vip.jpg",minivan:"img/ekb/w/scen-delegation.jpg",suv:"img/p/car-lc200.jpg",cortege:"img/ekb/w/scen-cortege.jpg"};
+const catName=k=>CATS.find(c=>c[0]===k)[2];
+const RELATED={vip:"business",business:"vip",bus:"minibus",minibus:"minivan",minivan:"minibus",suv:"vip",cabrio:"retro",retro:"cabrio",cortege:"vip"};
+const byId=Object.fromEntries(FLEET.map(c=>[c.id,c]));
+const pick=id=>byId[id];
+const CORTEGE=[
+  {id:"k-001",t:"Кортеж Mercedes S-класс W222, номера 001",p:pick("mercedes-s500w222l-001")?.p||1600,unit:"за машину",seats:null,chips:["до 7 машин с одинаковыми номерами"],img:pick("mercedes-s500w222l-001")?.img||[],li:["7 чёрных Mercedes S222 с одинаковым номером 001","для делегаций, официальных визитов и свадеб","водители в костюмах, единый маршрут и связь между машинами"]},
+  {id:"k-black",t:"Деловой кортеж Mercedes S-класс",p:2000,unit:"за машину",chips:["5–30 машин","чёрные"],img:["img/ekb/w/cortege-xl.jpg",...(pick("mercedes-s500-w222-long-amg")?.img||[]).slice(0,3)],li:["чёрные Mercedes S-класса одного поколения","сопровождение делегаций и гостей мероприятий","можно добавить Sprinter VIP для свиты и багажа"]},
+  {id:"k-white",t:"Белый свадебный кортеж Mercedes",p:2000,unit:"за машину",chips:["5–30 машин","белые"],img:[...(pick("novyi-belyi-mersedes-e200-w213")?.img||[]).slice(0,2),...(pick("belyi-mersedes-s5000w222l")?.img||[]).slice(0,2)],li:["белые Mercedes E- и S-класса","украшение машин — по желанию","во главе можно поставить белый Maybach"]},
+  {id:"k-suv",t:"Кортеж внедорожников",p:1400,unit:"за машину",chips:["Land Cruiser 200","Lexus LX","Mercedes GL"],img:[...(pick("toiota-lc200-black-restail")?.img||[]).slice(0,2),...(pick("lexus-lx570")?.img||[]).slice(0,2)],li:["Toyota Land Cruiser 200, Lexus LX570, Mercedes GL — чёрные и белые","для сопровождения и выездов за город"]},
+  {id:"k-retro",t:"Ретро-кортеж",p:null,unit:"",chips:["«Волга» ГАЗ-21","ЗИМ","«Победа»"],img:[...(pick("volga-gaz-21")?.img||[]).slice(0,2),...(pick("zim")?.img||[]).slice(0,2)],li:["советская классика одного стиля для свадеб и съёмок","состав и цену подберём под дату"]}
+].map(k=>({...k,cat:"cortege",min:null,rates:[]}));
+const ALL=[...FLEET,...CORTEGE];ALL.forEach(c=>byId[c.id]=c);
+const inCat=k=>ALL.filter(c=>c.cat===k);
+const plural=(n,a,b,c)=>{const d=n%10,h=n%100;return h>10&&h<20?c:d===1?a:d>=2&&d<=4?b:c};
+const minTxt=c=>c.min?`мин. ${c.min} ${c.min<5?"часа":"часов"}`:"";
+const seatsTxt=c=>c.seats?(c.seats>9?`${c.seats} мест`:`${c.seats} пассаж.`):"";
+const priceTxt=c=>c.p?`от ${rub(c.p)} ₽<small> / час${c.unit?" "+c.unit:""}</small>`:`<small>цена по запросу</small>`;
+const chipsOf=c=>c.chips||[seatsTxt(c),minTxt(c)].filter(Boolean);
+const minPrice=k=>Math.min(...inCat(k).map(c=>c.p).filter(Boolean));
+const card=c=>`<article class="car" data-id="${c.id}" tabindex="0"><div class="im">${c.img[0]?`<img src="${c.img[0]}" alt="${c.t}" loading="lazy" decoding="async">`:""}</div><div class="b"><h3>${c.t}</h3><div class="pr num">${priceTxt(c)}</div><div class="spec">${chipsOf(c).join(" · ")}</div></div></article>`;
+
+const thumbOf=k=>THUMB[k]||inCat(k)[k==="bus"?1:k==="cabrio"?2:k==="retro"?3:0].img[0];
+$("#cats").innerHTML=CATS.map(([k,n])=>`<button class="cat" role="tab" data-f="${k}"><i><img src="${thumbOf(k)}" alt="" width="160" height="160" loading="lazy" decoding="async"></i>${n}</button>`).join("");
+$("#menuCats").innerHTML=CATS.map(([k,,full])=>`<a href="#fleet" data-cat="${k}">${full}</a>`).join("");
+$("#ftCats").innerHTML=CATS.map(([k,,full])=>`<a href="#fleet" data-cat="${k}">${full}</a>`).join("");
+// сравнение классов считается из самого автопарка
+const seatRange=k=>{if(k==="cortege")return"5–30 машин";const s=inCat(k).map(c=>c.seats).filter(Boolean),a=Math.min(...s),b=Math.max(...s);return (a===b?`${b}`:`${a}–${b}`)+" "+plural(b,"место","места","мест")};
+$("#cmp").innerHTML=`<div class="hd"><span>Класс</span><span>Вместимость</span><span>Цена</span><i></i></div>`+CATS.map(([k,,full])=>`<a href="#fleet" data-cat="${k}"><b>${full}</b><span class="num">${seatRange(k)}</span><span class="num pr">от ${rub(minPrice(k))} ₽/час</span><i>›</i></a>`).join("");
+
+const cars=$("#cars"),LIMIT=6,moreBtn=$("#moreBtn"),catsEl=$("#cats");
+const moreLabel=()=>{const n=inCat(cars.dataset.cat).length-LIMIT;moreBtn.firstChild.textContent=cars.classList.contains("all")?"Свернуть":`Показать ещё ${n} ${plural(n,"модель","модели","моделей")}`};
+const showCat=(k,first)=>{if(cars.dataset.cat===k&&!first)return;
+  $$(".cat").forEach(t=>{const on=t.dataset.f===k;t.classList.toggle("on",on);t.setAttribute("aria-selected",on);if(on&&catsEl.scrollWidth>catsEl.clientWidth)catsEl.scrollTo({left:t.offsetLeft-catsEl.clientWidth/2+t.offsetWidth/2,behavior:first?"auto":"smooth"})});
+  const list=inCat(k),n=list.length;
+  $("#flT").textContent=catName(k);
+  $("#flD").innerHTML=`${CATS.find(c=>c[0]===k)[3]} <b class="num">от ${rub(minPrice(k))} ₽/час${k==="cortege"?" за машину":""}</b>`;
+  cars.dataset.cat=k;cars.classList.remove("all");cars.innerHTML=list.map(card).join("");
+  [...cars.children].forEach((el,i)=>{el.style.animationDelay=(i%3)*50+"ms";if(i>=LIMIT)el.classList.add("more")});
+  moreBtn.hidden=n<=LIMIT;moreLabel()};
+moreBtn.addEventListener("click",()=>{const open=cars.classList.toggle("all");moreLabel();if(!open)scrollToY(cars.getBoundingClientRect().top+scrollY-140)});
+catsEl.addEventListener("click",e=>{const t=e.target.closest(".cat");if(t)showCat(t.dataset.f)});
+showCat("vip",true);
+
+const sel=$("#carSel");
+sel.innerHTML+=CATS.map(([k,,full])=>`<option>${full}</option>`).join("");
+const setCar=c=>{let o=[...sel.options].find(o=>o.value===c.t);if(!o){o=new Option(c.t,c.t);sel.add(o,1)}sel.value=c.t};
+
+/* карточка машины */
+const sheet=$("#sheet"),pane=$("#pane"),sin=$("#sheetIn");
+let cur=null,gi=0,lastFocus=null;
+const recBlock=(title,label,list,cat)=>list.length?`<div class="rec"><div class="rh"><div><p>${label}</p><h3>${title}</h3></div><button data-showcat="${cat}">Весь класс ›</button></div><div class="cars">${list.map(card).join("")}</div></div>`:"";
+const render=c=>{cur=c;gi=0;
+  const same=inCat(c.cat).filter(x=>x.id!==c.id).slice(0,4),rel=inCat(RELATED[c.cat]).slice(0,4);
+  const wa="https://wa.me/79221882045?text="+encodeURIComponent(`Здравствуйте! Интересует ${c.t}. Дата и время: `);
+  $("#crumb").innerHTML=`Автопарк · <b>${catName(c.cat)}</b>`;
+  sin.innerHTML=`<div class="cv">
+    <div class="gal"><div class="main"><img id="gMain" src="${c.img[0]||""}" alt="${c.t}"><span class="cnt" id="gCnt">1 / ${c.img.length}</span>${c.img.length>1?`<div class="nav"><button data-g="-1" aria-label="Предыдущее фото">‹</button><button data-g="1" aria-label="Следующее фото">›</button></div>`:""}</div>
+      ${c.img.length>1?`<div class="th">${c.img.map((s,i)=>`<button data-gi="${i}" class="${i?"":"on"}" aria-label="Фото ${i+1}"><img src="${s}" alt="" loading="lazy"></button>`).join("")}</div>`:""}</div>
+    <div class="info"><div class="cls">${catName(c.cat)}</div><h2>${c.t}</h2><div class="spec">${chipsOf(c).join(" · ")}</div>
+      <div class="from num">${priceTxt(c)}</div>
+      ${c.rates.length?`<div class="rates num">${c.rates.map(([a,b])=>`<div><span>${a}</span>${b}</div>`).join("")}</div>`:""}
+      <div class="acts"><button class="btn gold" data-order>Заказать</button><a class="btn ghost" href="${wa}">Спросить в WhatsApp</a></div>
+      ${c.li.length?`<ul>${c.li.map(s=>`<li>${s}</li>`).join("")}</ul>`:""}
+      ${c.src?`<p class="src">Данные и фото — со страницы машины на avenu96.ru</p>`:""}
+    </div></div>
+    ${recBlock("Ещё в этом классе",catName(c.cat),same,c.cat)}
+    ${recBlock(catName(RELATED[c.cat]),"Также подойдут",rel,RELATED[c.cat])}`;
+  pane.scrollTop=0};
+const gShow=i=>{if(!cur||!cur.img.length)return;gi=(i+cur.img.length)%cur.img.length;const m=$("#gMain");m.src=cur.img[gi];m.style.animation="none";m.offsetWidth;m.style.animation="";$("#gCnt").textContent=`${gi+1} / ${cur.img.length}`;$$(".gal .th button").forEach((b,k)=>b.classList.toggle("on",k===gi))};
+const open=(id,push=true)=>{const c=byId[id];if(!c)return;if(!sheet.classList.contains("on"))lastFocus=document.activeElement;render(c);sheet.classList.add("on");sheet.setAttribute("aria-hidden","false");document.body.classList.add("lock");lenis&&lenis.stop();pane.querySelector(".close").focus({preventScroll:true});
+  if(push)history.pushState({car:id},"","#car="+id);else history.replaceState({car:id},"","#car="+id)};
+const close=(back=true)=>{if(!sheet.classList.contains("on"))return;sheet.classList.remove("on");sheet.setAttribute("aria-hidden","true");document.body.classList.remove("lock");lenis&&lenis.start();lastFocus&&lastFocus.focus&&lastFocus.focus({preventScroll:true});if(back&&history.state&&history.state.car)history.back()};
+document.addEventListener("click",e=>{const c=e.target.closest(".car");if(c){open(c.dataset.id,!sheet.classList.contains("on"));return}
+  if(e.target.closest("[data-close]"))close();
+  const g=e.target.closest("[data-g]");if(g)gShow(gi+ +g.dataset.g);
+  const t=e.target.closest("[data-gi]");if(t)gShow(+t.dataset.gi);
+  const sc=e.target.closest("[data-showcat]");if(sc){close();showCat(sc.dataset.showcat);go("#fleet")}
+  if(e.target.closest("[data-order]")){const c=cur;close();setCar(c);$("#needF").value=c.t;go("#book")}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){close();setMenu(false)}if(sheet.classList.contains("on")){if(e.key==="ArrowRight")gShow(gi+1);if(e.key==="ArrowLeft")gShow(gi-1)}
+  if(e.key==="Enter"&&e.target.classList&&e.target.classList.contains("car"))open(e.target.dataset.id)});
+addEventListener("popstate",e=>{if(e.state&&e.state.car)open(e.state.car,false);else close(false)});
+let sx=null;pane.addEventListener("touchstart",e=>{if(e.target.closest(".gal .main"))sx=e.touches[0].clientX},{passive:true});
+pane.addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)gShow(gi+(dx<0?1:-1));sx=null});
+
+/* меню */
+const setMenu=on=>{html.classList.toggle("menu-on",on);$("#burger").setAttribute("aria-expanded",on);$("#burger").setAttribute("aria-label",on?"Закрыть меню":"Открыть меню");if(innerWidth<=760){if(lenis)on?lenis.stop():lenis.start();else document.body.classList.toggle("lock",on)}};
+$("#burger").addEventListener("click",()=>setMenu(!html.classList.contains("menu-on")));
+$("#scrim").addEventListener("click",()=>setMenu(false));
+(()=>{const menu=$("#menu");let t0=null;
+  addEventListener("touchstart",e=>{if(innerWidth>760||sheet.classList.contains("on")||$("#order").classList.contains("on"))return;const t=e.touches[0],on=html.classList.contains("menu-on");
+    if(e.target.closest(".cats,.rail,.rec,.gal,.suggest-pop,.picker-pop,input,select"))return;if(!on&&(t.clientX<24||t.clientX>innerWidth*.45))return;t0={x:t.clientX,y:t.clientY,on,lock:null}},{passive:true});
+  addEventListener("touchmove",e=>{if(!t0)return;const t=e.touches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y;
+    if(t0.lock===null&&Math.abs(dx)+Math.abs(dy)>10){t0.lock=Math.abs(dx)>Math.abs(dy)*1.3;if(t0.lock)menu.classList.add("drag")}
+    if(t0.lock)menu.style.transform=`translate3d(${t0.on?Math.min(0,dx):Math.min(0,dx-innerWidth)}px,0,0)`},{passive:true});
+  addEventListener("touchend",e=>{if(!t0)return;const dx=e.changedTouches[0].clientX-t0.x,lock=t0.lock,on=t0.on;t0=null;if(!lock)return;
+    menu.classList.remove("drag");menu.style.transform="";setMenu(on?dx>-70:dx>70)},{passive:true});
+})();
+
+/* переходы по странице */
+const scrollToY=(y,dur=1.1)=>{if(lenis)lenis.scrollTo(y,{duration:dur,force:true});else scrollTo({top:y,behavior:still?"auto":"smooth"})};
+const go=s=>{const el=$(s);if(!el)return;setMenu(false);const r=el.getBoundingClientRect();
+  let y=r.top+scrollY-56;if(s==="#book")y=Math.max(0,r.bottom+scrollY-innerHeight+(innerWidth<=760?84:28));if(s==="#top")y=0;scrollToY(y)};
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]');if(!a||a.closest(".car"))return;const h=a.getAttribute("href");if(h.length<2)return;e.preventDefault();
+  if(a.dataset.cat)showCat(a.dataset.cat);go(h)});
+
+/* лента поездки: родная прокрутка, стрелки и точки только помогают */
+(()=>{const rail=$("#rail"),ds=[...$("#dots").children],cards=[...rail.children];
+  const step=d=>rail.scrollBy({left:d*(cards[0].offsetWidth+12),behavior:still?"auto":"smooth"});
+  $("#rPrev").addEventListener("click",()=>step(-1));$("#rNext").addEventListener("click",()=>step(1));
+  const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)ds.forEach((d,i)=>d.classList.toggle("on",i===cards.indexOf(e.target)))}),{root:rail,threshold:.6});cards.forEach(c=>io2.observe(c))})();
+
+/* счётчики */
+$$(".odo").forEach(b=>{const s=b.dataset.odo,suf=b.dataset.suf||"";b.setAttribute("aria-label",s+suf);
+  b.innerHTML=[...s].map((ch,i)=>{const d=+ch,seq=[],rounds=still?0:1+i;for(let r=0;r<rounds;r++)for(let n=0;n<10;n++)seq.push(n);for(let n=0;n<=d;n++)seq.push(n);
+    return `<span class="d"><span class="s" style="transition-delay:${i*70}ms" data-n="${seq.length-1}">${seq.map(n=>`<i>${n}</i>`).join("")}</span></span>`}).join("")+(suf?`<span class="pl">${suf}</span>`:"")});
+const odoRun=()=>$$(".odo .s").forEach(s=>{s.style.transform=`translate3d(0,${-(+s.dataset.n)*1.05}em,0)`});
+if(still)odoRun();else new IntersectionObserver((es,o)=>{if(es.some(e=>e.isIntersecting)){odoRun();o.disconnect()}},{threshold:.4}).observe($("#bento"));
+
+/* появление */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -6% 0px"});
+$$(".rv").forEach(el=>io.observe(el));
+
+/* всё, что зависит от прокрутки, считается один раз за кадр и только для видимых блоков */
+const tick=$(".ticker"),rows=$$(".ticker .row").map(r=>{r.innerHTML+=r.innerHTML+r.innerHTML;return {el:r,d:+r.dataset.dir,w:0}});
+const fx=$("#fx"),fxM=$("#fxM"),fxT=$("#fxT"),word=$("#word");
+let vis={tick:true,fx:false,word:false},queued=false;
+const vo=new IntersectionObserver(es=>{es.forEach(e=>vis[e.target.dataset.v]=e.isIntersecting);ask()},{rootMargin:"10% 0px"});
+[[tick,"tick"],[fx,"fx"],[word,"word"]].forEach(([el,k])=>{el.dataset.v=k;vo.observe(el)});
+const frame=()=>{queued=false;const y=scrollY,h=innerHeight;
+  if(vis.tick&&!still)rows.forEach(r=>{if(!r.w)return;const x=((r.d*y*.3)%r.w+r.w)%r.w-2*r.w;r.el.style.transform=`translate3d(${x.toFixed(1)}px,0,0)`});
+  if(vis.fx&&!touch){const r=fx.getBoundingClientRect(),p=shot?1:clamp(-r.top/(r.height-h)),e=1-Math.pow(1-clamp(p/.8),3),k=1-e;
+    fxM.style.clipPath=`inset(${(k*11).toFixed(2)}vh ${(k*11).toFixed(2)}vw round ${(k*28).toFixed(1)}px)`;const t=clamp((p-.6)/.3);fxT.style.opacity=t.toFixed(3);fxT.style.transform=`translate3d(0,${((1-t)*20).toFixed(1)}px,0)`}
+  if(vis.word){const r=word.getBoundingClientRect();word.style.setProperty("--py",(clamp((h-r.top)/(h+r.height))*100).toFixed(1)+"%")}};
+const ask=()=>{if(!queued){queued=true;requestAnimationFrame(frame)}};
+addEventListener("scroll",ask,{passive:true});
+const fit=()=>{word.style.fontSize="";word.style.display="inline-block";const w=word.parentElement.clientWidth*.95,fs=parseFloat(getComputedStyle(word).fontSize),real=word.getBoundingClientRect().width;if(real)word.style.fontSize=(fs*w/real).toFixed(1)+"px";word.style.display="block";rows.forEach(r=>r.w=r.el.scrollWidth/3);ask()};
+document.fonts&&document.fonts.ready.then(fit);addEventListener("load",fit);fit();
+let rw=innerWidth;addEventListener("resize",()=>{if(innerWidth!==rw){rw=innerWidth;fit()}});
+
+/* плавная прокрутка только на компьютере и только когда страница уже загрузилась */
+if(!touch&&!still)addEventListener("load",()=>{const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js";s.onload=()=>{lenis=new Lenis({lerp:.1,wheelMultiplier:.9});const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf)};document.head.append(s)});
+
+/* форма */
+const lbl=$("[data-lbl]"),book=$("#book"),modeSel=$("#modeSel");
+const setMode=m=>{book.dataset.mode=m;modeSel.value=m;$$("[data-show]").forEach(x=>x.classList.toggle("vis",x.dataset.show===m));lbl.textContent=m==="transfer"?"Откуда":"Адрес подачи";book.elements.to.required=m==="transfer"};
+modeSel.addEventListener("change",()=>setMode(modeSel.value));setMode("hour");
+const fmtPhone=v=>{let d=v.replace(/\D/g,"");if(d[0]==="8")d="7"+d.slice(1);if(d&&d[0]!=="7")d="7"+d;d=d.slice(0,11);const p=d.slice(1);
+  return d?"+7"+(p.length?" ("+p.slice(0,3):"")+(p.length>3?") "+p.slice(3,6):"")+(p.length>6?"-"+p.slice(6,8):"")+(p.length>8?"-"+p.slice(8,10):""):""};
+document.addEventListener("input",e=>{if(e.target.matches("[data-phone]"))e.target.value=fmtPhone(e.target.value)});
+document.addEventListener("focusin",e=>{if(e.target.matches("[data-phone]")&&!e.target.value)e.target.value="+7 ("});
+const phoneOk=v=>v.replace(/\D/g,"").length===11;
+const check=form=>{let first=null;[...form.querySelectorAll("[required]")].forEach(i=>{const box=i.closest(".f");if(!box||box.closest("[data-show]:not(.vis)"))return;
+  const bad=i.matches("[data-phone]")?!phoneOk(i.value):!i.value.trim();box.classList.toggle("err",bad);if(bad&&!first)first=box.querySelector("input:not([type=hidden]),select")});
+  if(first)first.focus({preventScroll:true});return !first};
+document.addEventListener("input",e=>{const box=e.target.closest(".f.err");if(box)box.classList.remove("err")});
+document.addEventListener("change",e=>{const box=e.target.closest(".f.err");if(box)box.classList.remove("err")});
+const order=$("#order"),oBody=$("#oBody");
+const dateTxt=v=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(v||"");return m?new Date(+m[1],m[2]-1,+m[3]).toLocaleDateString("ru-RU",{day:"numeric",month:"long",weekday:"short"}):v};
+const tripRows=()=>{const f=book.elements,mode=book.dataset.mode;
+  return [["Услуга",{hour:"Аренда с водителем",transfer:"Трансфер",event:"Мероприятие"}[mode]],[mode==="transfer"?"Откуда":"Подача",f.from.value],mode==="transfer"?["Куда",f.to.value]:null,
+    ["Когда",dateTxt(f.date.value)+", "+f.time.value],mode==="hour"?["Длительность",f.hours.value]:null,mode==="event"?["Повод",f.event.value]:null,["Автомобиль",f.car.value]].filter(Boolean)};
+const waText=(rows,o)=>"Здравствуйте! Заявка с сайта Авеню96.\n"+rows.map(([a,b])=>`${a}: ${b}`).join("\n")+(o.name?`\nИмя: ${o.name}`:"")+(o.phone?`\nТелефон: ${o.phone}`:"")+(o.note?`\nКомментарий: ${o.note}`:"");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+const doneHtml=(name,ph)=>`<div class="done"><i>✓</i><h3 style="padding:0">Заявка принята</h3><p>${esc(name||"Спасибо")}, менеджер перезвонит на ${esc(ph)} в рабочее время (9:00–22:00).</p><p style="font-size:12px;color:#77777c;margin-top:16px">Демо: заявка никуда не отправлена — куда её получать, решим с Александром.</p><div class="acts"><button class="btn ghost" type="button" data-oclose>Готово</button></div></div>`;
+const showOrder=()=>{order.classList.add("on");order.setAttribute("aria-hidden","false");document.body.classList.add("lock");lenis&&lenis.stop()};
+const openOrder=rows=>{
+  oBody.innerHTML=`<form id="oform" novalidate><h3 id="oTitle">Проверьте заявку</h3><div class="sum">${rows.map(([a,b])=>`<div><span>${a}</span><b>${esc(b)}</b></div>`).join("")}</div>
+    <div class="row"><label class="f"><span>Имя</span><input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name"></label>
+    <label class="f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" data-phone required></label>
+    <label class="f full"><span>Комментарий</span><input type="text" name="note" placeholder="Номер рейса, детское кресло"></label></div>
+    <div class="acts"><button class="btn gold" type="submit">Отправить заявку</button><a class="btn ghost" id="oWa" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a></div>
+    <p class="note">Менеджер перезвонит, подтвердит машину и назовёт стоимость. Демо: заявка пока никуда не уходит.</p></form>`;
+  const of=$("#oform"),wa=$("#oWa");
+  const vals=()=>({name:of.elements.name.value.trim(),phone:fmtPhone(of.elements.phone.value.trim()),note:of.elements.note.value.trim()});
+  const upd=()=>wa.href="https://wa.me/79221882045?text="+encodeURIComponent(waText(rows,vals()));upd();of.addEventListener("input",upd);
+  of.addEventListener("submit",e=>{e.preventDefault();if(!check(of))return;const v=vals();oBody.innerHTML=doneHtml(v.name,v.phone)});
+  showOrder();setTimeout(()=>of.elements.phone.focus({preventScroll:true}),300)};
+const closeOrder=()=>{if(!order.classList.contains("on"))return;order.classList.remove("on");order.setAttribute("aria-hidden","true");document.body.classList.remove("lock");lenis&&lenis.start()};
+document.addEventListener("click",e=>{if(e.target.closest("[data-oclose]"))closeOrder()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeOrder()});
+book.addEventListener("submit",e=>{e.preventDefault();if(check(book))openOrder(tripRows())});
+$("#cform").addEventListener("submit",e=>{e.preventDefault();const f=e.target;if(!check(f))return;oBody.innerHTML=doneHtml(f.elements.name.value.trim(),f.elements.phone.value);showOrder();f.reset()});
+
+const m=location.hash.match(/^#car=(.+)$/);if(m&&byId[m[1]]){history.replaceState(null,"",location.pathname+location.search);open(m[1])}
+</script>
+</body>
+</html>
