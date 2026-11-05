@@ -433,6 +433,9 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 .touch .hero,.touch .ticker,.touch .stage,.touch .fl-b,.touch .film,.touch .svc,.touch .city,.touch .trust,.touch .about,.touch .final,.touch footer{touch-action:pan-y pinch-zoom}
 /* телефоны: без живого размытия и зерна, бегущие слова на CSS */
 .touch body:after{display:none}
+/* Екатеринбург на телефоне: без смешивания слоёв, только сдвиг и прозрачность — их Safari ведёт без перерисовки */
+.touch .city-m{mix-blend-mode:normal;background:var(--bg);will-change:opacity}
+.touch .city-w{color:transparent;background:url(img/ekb/w/city.jpg) 50% 58%/cover;-webkit-background-clip:text;background-clip:text}
 .touch header.solid,.touch .tabs-w,.touch .mbar,.touch .book,.touch .btn.glass,.touch .car .ph-n,.touch .city-t li,.touch .sheet .x{backdrop-filter:none;-webkit-backdrop-filter:none}
 .touch header.solid{background:rgba(8,9,11,.95)}
 .touch .tabs-w,.touch .mbar{background:rgba(8,9,11,.97)}
@@ -940,7 +943,7 @@ const draw=()=>{const y=scrollY,h=innerHeight,dy=y-lastY;
     fb.style.setProperty("--p",p.toFixed(4));
     const a=Math.min(3,Math.floor(seg+.5));if(a!==lastF){lastF=a;frs.forEach((f,i)=>f.classList.toggle("on",i===a));fbs.forEach((f,i)=>f.classList.toggle("on",i<=a))}}
   const cr=city.getBoundingClientRect();
-  if(cr.bottom>0&&cr.top<h){const p=prog(city),z=easeIO(clamp(p/.62)),S=Math.pow(34,z);
+  if(cr.bottom>0&&cr.top<h){const p=prog(city),z=easeIO(clamp(p/.62)),S=Math.pow(touch?12:34,z);
     cityW.style.transform=`scale(${S.toFixed(3)})`;
     const fade=clamp((p-.42)/.18);cityM.style.opacity=(1-fade).toFixed(3);cityM.style.visibility=fade>=1?"hidden":"visible";
     const tx=clamp((p-.58)/.14);citySh.style.opacity=tx.toFixed(3);cityT.style.opacity=tx.toFixed(3);cityT.style.transform=`translate3d(0,${((1-tx)*36).toFixed(1)}px,0)`}
