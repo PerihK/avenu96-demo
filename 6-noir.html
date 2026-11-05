@@ -195,7 +195,7 @@ nav.main a:hover:after{transform:scaleX(1);transform-origin:left}
 /* moving words */
 .ticker{padding:clamp(28px,3.4vw,52px) 0;overflow:hidden}
 .ticker .row{display:flex;width:max-content;gap:.55em;white-space:nowrap;font:800 clamp(28px,4vw,68px)/1.08 var(--logo);letter-spacing:-.02em;will-change:transform}
-.ticker .row span{color:transparent;-webkit-text-stroke:1.2px rgba(244,241,234,.38)}
+.ticker .row span{color:var(--bg);-webkit-text-stroke:2.4px #6a6b6c;paint-order:stroke fill}
 .ticker .row b{font-weight:800;color:var(--text)}
 .ticker .row em{font-style:normal;color:var(--gold);font-size:.42em;align-self:center}
 
@@ -431,7 +431,7 @@ footer{position:relative;overflow:hidden;background:var(--gold);color:var(--ink)
 html,body{overflow-x:clip;overscroll-behavior-x:none}
 .hero,.ticker,#fleet,.film,.svc,.city,.trust,.about,.final,footer{overflow-x:clip;max-width:100%}
 .touch .hero,.touch .ticker,.touch .stage,.touch .fl-b,.touch .film,.touch .svc,.touch .city,.touch .trust,.touch .about,.touch .final,.touch footer{touch-action:pan-y pinch-zoom}
-/* телефоны: без живого размытия и зерна, бегущие слова на CSS */
+/* телефоны: без живого размытия и зерна */
 .touch body:after{display:none}
 /* Екатеринбург на телефоне: без смешивания слоёв, только сдвиг и прозрачность — их Safari ведёт без перерисовки */
 .touch .city-m{mix-blend-mode:normal;background:var(--bg);will-change:opacity}
@@ -441,9 +441,6 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 .touch .tabs-w,.touch .mbar{background:rgba(8,9,11,.97)}
 .touch .book{background:rgba(13,15,18,.92)}
 .touch .sheet .x{background:rgb(14,16,19)}
-.touch .ticker .row{animation:tk 34s linear infinite}
-.touch .ticker .row[data-dir="1"]{animation-direction:reverse}
-@keyframes tk{to{transform:translate3d(-33.333%,0,0)}}
 @media (prefers-reduced-motion:reduce){.sp .w>i,.rv,.h-a{transition:none}.intro{display:none}.ac,.film-f{transition:none}}
 
 @media (max-width:1280px){
@@ -928,15 +925,14 @@ const measure=()=>rows.forEach(r=>r.w=r.el.scrollWidth/3);
 const prog=el=>{const r=el.getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight))};
 const film=$("#trip"),ffs=$$(".film-f"),fis=ffs.map(f=>f.querySelector("img")),frs=$$(".fr"),fb=$("#fb"),fbs=[...fb.children];
 const city=$("#city"),cityM=$("#cityM"),cityW=$("#cityW"),cityO=$("#cityO"),cityT=$("#cityT"),citySh=$("#citySh");
-const wm=$("#wm"),hdr=$("#top");
-let lastY=scrollY,vel=0,lastF=-1,hh=-1;
+const wm=$("#wm"),hdr=$("#top"),tick=$(".ticker");
+let lastY=scrollY,lastF=-1,hh=-1;
 const draw=()=>{const y=scrollY,h=innerHeight,dy=y-lastY;
-  vel+=(dy-vel)*.12;
   hdr.classList.toggle("solid",y>40);
   const hhN=y>h*.9&&dy>2?0:dy<-2||y<h*.9?(phoneW()?64:70):hh;if(hhN!==hh){hh=hhN;hdr.classList.toggle("hide",!hh);html.style.setProperty("--hh",hh+"px")}
   lastY=y;
   if(y<h*1.1&&!still&&!touch)par.style.transform=`translate3d(0,${(y*.14).toFixed(1)}px,0)`;
-  if(!still&&!touch)rows.forEach(r=>{r.x+=r.d*(.55+Math.abs(vel)*.5);if(r.w){if(r.x<-r.w)r.x+=r.w;if(r.x>0)r.x-=r.w}r.el.style.transform=`translate3d(${r.x.toFixed(1)}px,0,0)`});
+  const tb=tick.getBoundingClientRect();if(!still&&tb.bottom>0&&tb.top<h)rows.forEach(r=>{if(!r.w)return;const x=((r.d*y*.3)%r.w+r.w)%r.w-2*r.w;r.el.style.transform=`translate3d(${x.toFixed(1)}px,0,0)`});
   const fr=film.getBoundingClientRect();
   if(fr.bottom>0&&fr.top<h){const p=prog(film),seg=p*3;
     ffs.forEach((f,i)=>{if(!i)return;const y=((1-easeIO(clamp((seg-(i-1)-.18)/.64)))*100).toFixed(2);f.style.transform=`translate3d(0,${y}%,0)`;fis[i].style.transform=`translate3d(0,-${y}%,0)`});
