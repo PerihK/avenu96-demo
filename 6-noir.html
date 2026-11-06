@@ -444,6 +444,24 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 .touch .tabs-w,.touch .mbar{background:rgba(8,9,11,.97)}
 .touch .book{background:rgba(13,15,18,.92)}
 .touch .sheet .x{background:rgb(14,16,19)}
+/* телефоны: вместо закреплённых сцен обычные блоки, при прокрутке ничего не двигается скриптом */
+.touch .film,.touch .city{height:auto}
+.touch .film-s{position:static;height:auto;overflow:visible;background:none;display:grid;gap:12px;padding:clamp(56px,10vw,90px) var(--pad) 0}
+.touch .film-s:after,.touch .film-t,.touch .film-b{display:none}
+.touch .film-h{position:static;order:-1;padding:0;margin-bottom:10px}
+.touch .film-f{position:relative;inset:auto;transform:none!important;will-change:auto;aspect-ratio:4/5;border-radius:20px}
+.touch .film-f:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,9,11,.88) 0%,rgba(8,9,11,0) 62%)}
+.touch .film-f img{transform:none!important;will-change:auto}
+.touch .film-f .fr{position:absolute;z-index:1;left:18px;right:18px;bottom:18px;max-width:none;opacity:1;transform:none;transition:none}
+.touch .film-f .fr .no{font-size:40px}
+.touch .film-f .fr h3{font-size:24px;margin:8px 0 6px}
+.touch .city-s{position:static;height:auto;overflow:visible;background:none;display:flex;flex-direction:column;isolation:auto;padding-top:clamp(56px,10vw,90px)}
+.touch .city-m{position:static;order:-1;background:none;padding:0 var(--pad) 18px;will-change:auto}
+.touch .city-w{font-size:8.6vw;will-change:auto}
+.touch .city-s>img{position:relative;inset:auto;height:auto;aspect-ratio:4/3}
+.touch .city-sh{display:none}
+.touch .city-t{position:static;opacity:1;transform:none;padding:20px var(--pad) 0}
+@media (min-width:761px){.touch .film-f{aspect-ratio:16/10}.touch .city-s>img{aspect-ratio:21/9}}
 @media (prefers-reduced-motion:reduce){.sp .w>i,.rv,.h-a{transition:none}.intro{display:none}.ac,.film-f{transition:none}}
 
 @media (max-width:1280px){
@@ -927,27 +945,29 @@ const prog=el=>{const r=el.getBoundingClientRect();return clamp(-r.top/(r.height
 const film=$("#trip"),ffs=$$(".film-f"),fis=ffs.map(f=>f.querySelector("img")),frs=$$(".fr"),fb=$("#fb"),fbs=[...fb.children];
 const city=$("#city"),cityM=$("#cityM"),cityW=$("#cityW"),cityO=$("#cityO"),cityT=$("#cityT"),citySh=$("#citySh");
 const wm=$("#wm"),hdr=$("#top"),tick=$(".ticker");
+if(touch)frs.forEach((f,i)=>ffs[i].append(f));
 let lastY=scrollY,lastF=-1,hh=-1;
 const draw=()=>{const y=scrollY,h=innerHeight,dy=y-lastY;
   hdr.classList.toggle("solid",y>40);
-  const hhN=y>h*.9&&dy>2?0:dy<-2||y<h*.9?(phoneW()?64:70):hh;if(hhN!==hh){hh=hhN;hdr.classList.toggle("hide",!hh);html.style.setProperty("--hh",hh+"px")}
+  const hhN=touch?(phoneW()?64:70):y>h*.9&&dy>2?0:dy<-2||y<h*.9?(phoneW()?64:70):hh;if(hhN!==hh){hh=hhN;hdr.classList.toggle("hide",!hh);html.style.setProperty("--hh",hh+"px")}
   lastY=y;
   if(y<h*1.1&&!still&&!touch)par.style.transform=`translate3d(0,${(y*.14).toFixed(1)}px,0)`;
   const tb=tick.getBoundingClientRect();if(!still&&tb.bottom>0&&tb.top<h)rows.forEach(r=>{if(!r.w)return;const x=((r.d*y*.3)%r.w+r.w)%r.w-2*r.w;r.el.style.transform=`translate3d(${x.toFixed(1)}px,0,0)`});
   const fr=film.getBoundingClientRect();
-  if(fr.bottom>0&&fr.top<h){const p=prog(film),seg=p*3;
+  if(!touch&&fr.bottom>0&&fr.top<h){const p=prog(film),seg=p*3;
     ffs.forEach((f,i)=>{if(!i)return;const y=((1-easeIO(clamp((seg-(i-1)-.18)/.64)))*100).toFixed(2);f.style.transform=`translate3d(0,${y}%,0)`;fis[i].style.transform=`translate3d(0,-${y}%,0)`});
     fb.style.setProperty("--p",p.toFixed(4));
     const a=Math.min(3,Math.floor(seg+.5));if(a!==lastF){lastF=a;frs.forEach((f,i)=>f.classList.toggle("on",i===a));fbs.forEach((f,i)=>f.classList.toggle("on",i<=a))}}
   const cr=city.getBoundingClientRect();
-  if(cr.bottom>0&&cr.top<h){const p=prog(city),z=easeIO(clamp(p/.62)),S=Math.pow(touch?12:34,z);
+  if(!touch&&cr.bottom>0&&cr.top<h){const p=prog(city),z=easeIO(clamp(p/.62)),S=Math.pow(touch?12:34,z);
     cityW.style.transform=`scale(${S.toFixed(3)})`;
     const fade=clamp((p-.42)/.18);cityM.style.opacity=(1-fade).toFixed(3);cityM.style.visibility=fade>=1?"hidden":"visible";
     const tx=clamp((p-.58)/.14);citySh.style.opacity=tx.toFixed(3);cityT.style.opacity=tx.toFixed(3);cityT.style.transform=`translate3d(0,${((1-tx)*36).toFixed(1)}px,0)`}
   const cl=clients.getBoundingClientRect();
   if(cl.top<h&&cl.bottom>0){const p=shot?1:clamp((h*.82-cl.top)/(cl.height+h*.3)),n=Math.round(p*xs.length);xs.forEach((x,i)=>x.classList.toggle("on",i<n))}
   const wr=wm.getBoundingClientRect();if(wr.top<h&&!still&&!touch)wm.style.setProperty("--wy",(clamp((wr.top)/h)*60).toFixed(1)+"px")};
-const loop=t=>{if(lenis)lenis.raf(t);draw();requestAnimationFrame(loop)};requestAnimationFrame(loop);
+if(touch){let q=false;const ask=()=>{if(!q){q=true;requestAnimationFrame(()=>{q=false;draw()})}};addEventListener("scroll",ask,{passive:true});addEventListener("load",ask);ask()}
+else{const loop=t=>{if(lenis)lenis.raf(t);draw();requestAnimationFrame(loop)};requestAnimationFrame(loop)}
 
 const fit=(el,k=.94,box)=>{el.style.fontSize="";const w=(box||el.parentElement).clientWidth*k,fs=parseFloat(getComputedStyle(el).fontSize),s=el.getBoundingClientRect().width/(el===cityW?1:1);const real=el.scrollWidth||s;if(real)el.style.fontSize=(fs*w/real).toFixed(1)+"px"};
 const fitAll=()=>{cityW.style.transform="";fit(cityW,.92,cityM);

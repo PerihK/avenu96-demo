@@ -356,7 +356,7 @@ footer{margin-top:clamp(36px,4vw,60px);padding:clamp(26px,3vw,40px) 0 clamp(30px
 .touch .hero,.touch .ticker,.touch .fl-b,.touch .fx,.touch #scen,.touch .city,.touch #trust,.touch .final,.touch footer{touch-action:pan-y pinch-zoom}
 .touch header,.touch .book{backdrop-filter:none;-webkit-backdrop-filter:none}
 .touch header{background:rgba(0,0,0,.94)}
-.touch .book{background:rgb(29,29,32)}
+.touch .book{background:rgba(29,29,32,.94)}
 .touch .fx{height:auto}
 .touch .fx-s{position:relative;height:78svh}
 .touch .fx-m{clip-path:none;will-change:auto}
@@ -389,14 +389,21 @@ footer{margin-top:clamp(36px,4vw,60px);padding:clamp(26px,3vw,40px) 0 clamp(30px
   .m-g{grid-template-columns:1fr;gap:26px}
   .m-c{columns:1}
   .m-c a{font-size:24px;line-height:1.45}
-  .hero{height:auto;min-height:100svh;justify-content:flex-start;padding-bottom:16px}
-  .hero picture{height:100svh;bottom:auto}
-  .hero picture img{object-position:50% 100%;-webkit-mask-image:linear-gradient(180deg,transparent 26%,#000 60%);mask-image:linear-gradient(180deg,transparent 26%,#000 60%)}
+  .hero{--ft:max(74svh,440px);height:calc(var(--ft) + 296px);min-height:0;justify-content:flex-start}
+  .hero picture{top:-8svh;height:108svh;bottom:auto}
+  .hero picture img{object-position:50% 100%;-webkit-mask-image:linear-gradient(180deg,transparent 28%,#000 58%,#000 86%,transparent 100%);mask-image:linear-gradient(180deg,transparent 28%,#000 58%,#000 86%,transparent 100%)}
   .h-t{padding-top:clamp(26px,6svh,52px)}
   .h-cta .btn{height:44px;padding:0 18px;font-size:15px}
-  .h-b{position:relative;bottom:auto;margin-top:calc(100svh - 56px - 300px - clamp(26px,6svh,52px))}
+  .h-b{top:var(--ft);bottom:auto;padding:0 12px}
   .fields{grid-template-columns:1fr 1fr}
-  .fields .f.addr,.fields .f.msel,.fields .f.sel{grid-column:1/-1}
+  .fields .f{order:3}
+  .fields .f.msel{order:0}
+  .fields [data-show]{order:1}
+  .fields .f.addr{order:2;grid-column:1/-1}
+  .fields .f.csel{order:4;grid-column:1/-1}
+  .book .btn{order:5}
+  .book[data-mode=transfer] .f.msel,.book[data-mode=transfer] [data-show=transfer]{grid-column:1/-1}
+  .book[data-mode=transfer] [data-show=transfer]{order:2}
   .book .suggest-pop{top:calc(100% + 6px);bottom:auto;min-width:0}
   .f input,.f select{height:52px}
   .cars{grid-template-columns:1fr}
@@ -466,7 +473,7 @@ footer{margin-top:clamp(36px,4vw,60px);padding:clamp(26px,3vw,40px) 0 clamp(30px
         <label class="f sel" data-show="hour"><span>Длительность</span><select name="hours"><option>4 часа</option><option>5 часов</option><option>6 часов</option><option>8 часов</option><option>Весь день</option><option>Несколько дней</option></select></label>
         <label class="f" data-show="transfer"><span>Куда</span><input type="text" name="to" placeholder="Кольцово, город" autocomplete="off" data-suggest></label>
         <label class="f sel" data-show="event"><span>Повод</span><select name="event"><option>Свадьба</option><option>Кортеж</option><option>Делегация, конференция</option><option>Корпоратив, праздник</option></select></label>
-        <label class="f sel"><span>Автомобиль</span><select id="carSel" name="car"><option>Помогите подобрать</option></select></label>
+        <label class="f sel csel"><span>Автомобиль</span><select id="carSel" name="car"><option>Помогите подобрать</option></select></label>
         <button class="btn gold" type="submit">Узнать стоимость</button>
       </div>
     </form>
@@ -733,7 +740,7 @@ const frame=()=>{queued=false;const y=scrollY,h=innerHeight;
   if(vis.tick&&!still)rows.forEach(r=>{if(!r.w)return;const x=((r.d*y*.3)%r.w+r.w)%r.w-2*r.w;r.el.style.transform=`translate3d(${x.toFixed(1)}px,0,0)`});
   if(vis.fx&&!touch){const r=fx.getBoundingClientRect(),p=shot?1:clamp(-r.top/(r.height-h)),e=1-Math.pow(1-clamp(p/.8),3),k=1-e;
     fxM.style.clipPath=`inset(${(k*11).toFixed(2)}vh ${(k*11).toFixed(2)}vw round ${(k*28).toFixed(1)}px)`;const t=clamp((p-.6)/.3);fxT.style.opacity=t.toFixed(3);fxT.style.transform=`translate3d(0,${((1-t)*20).toFixed(1)}px,0)`}
-  if(vis.word){const r=word.getBoundingClientRect();word.style.setProperty("--py",(clamp((h-r.top)/(h+r.height))*100).toFixed(1)+"%")}};
+  if(vis.word&&!touch){const r=word.getBoundingClientRect();word.style.setProperty("--py",(clamp((h-r.top)/(h+r.height))*100).toFixed(1)+"%")}};
 const ask=()=>{if(!queued){queued=true;requestAnimationFrame(frame)}};
 addEventListener("scroll",ask,{passive:true});
 const fit=()=>{word.style.fontSize="";word.style.display="inline-block";const w=word.parentElement.clientWidth*.95,fs=parseFloat(getComputedStyle(word).fontSize),real=word.getBoundingClientRect().width;if(real)word.style.fontSize=(fs*w/real).toFixed(1)+"px";word.style.display="block";rows.forEach(r=>r.w=r.el.scrollWidth/3);ask()};
