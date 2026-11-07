@@ -473,13 +473,18 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 .touch .film-f .fr{position:absolute;z-index:1;left:18px;right:18px;bottom:18px;max-width:none;opacity:1;transform:none;transition:none}
 .touch .film-f .fr .no{font-size:40px}
 .touch .film-f .fr h3{font-size:24px;margin:8px 0 6px}
-.touch .city-s{position:static;height:auto;overflow:visible;background:none;display:flex;flex-direction:column;isolation:auto;padding-top:clamp(56px,10vw,90px)}
-.touch .city-m{position:static;order:-1;background:none;padding:0 var(--pad) 18px;will-change:auto}
-.touch .city-w{font-size:8.6vw;will-change:auto}
-.touch .city-s>img{position:relative;inset:auto;height:auto;aspect-ratio:4/3}
-.touch .city-sh{display:none}
-.touch .city-t{position:static;opacity:1;transform:none;padding:20px var(--pad) 0}
-@media (min-width:761px){.touch .film-f{aspect-ratio:16/10}.touch .city-s>img{aspect-ratio:21/9}}
+/* на сенсорных экранах «нырок» в слово проигрывается один раз при появлении блока, без привязки к прокрутке */
+.touch .city-s{position:relative;top:auto;height:100vh;height:100svh;min-height:560px;max-height:900px}
+.touch .city-s>img{transform:scale(1.18);transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
+.touch .city-m{transition:opacity .9s ease .8s;will-change:auto}
+.touch .city-w{font-size:8.6vw;transition:transform 1.6s cubic-bezier(.75,0,.25,1),opacity .7s ease .95s;will-change:transform}
+.touch .city-sh{transition:opacity .9s ease 1.25s}
+.touch .city-t{transition:opacity .8s ease 1.35s,transform 1.1s var(--ease) 1.35s}
+.touch .city.dive .city-s>img{transform:none}
+.touch .city.dive .city-m{opacity:0}
+.touch .city.dive .city-w{transform:scale(9);opacity:0}
+.touch .city.dive .city-sh,.touch .city.dive .city-t{opacity:1;transform:none}
+@media (min-width:761px){.touch .film-f{aspect-ratio:16/10}}
 @media (prefers-reduced-motion:reduce){.sp .w>i,.rv,.h-a{transition:none}.intro{display:none}.ac,.film-f{transition:none}}
 
 @media (max-width:1280px){
@@ -958,6 +963,8 @@ const measure=()=>rows.forEach(r=>r.w=r.el.scrollWidth/3);
 const prog=el=>{const r=el.getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight))};
 const film=$("#trip"),ffs=$$(".film-f"),fis=ffs.map(f=>f.querySelector("img")),frs=$$(".fr"),fb=$("#fb"),fbs=[...fb.children];
 const city=$("#city"),cityM=$("#cityM"),cityW=$("#cityW"),cityO=$("#cityO"),cityT=$("#cityT"),citySh=$("#citySh");
+if(touch){const dive=()=>{const r=cityO.getBoundingClientRect(),w=cityW.getBoundingClientRect();cityW.style.transformOrigin=`${(r.left+r.width/2-w.left).toFixed(1)}px 50%`;city.classList.add("dive")};
+  if(still)dive();else{const io2=new IntersectionObserver(es=>{if(es[0].isIntersecting){dive();io2.disconnect()}},{threshold:.55});io2.observe(city)}}
 const wm=$("#wm"),hdr=$("#top"),tick=$(".ticker");
 if(touch)frs.forEach((f,i)=>ffs[i].append(f));
 let lastY=scrollY,lastF=-1,hh=-1;

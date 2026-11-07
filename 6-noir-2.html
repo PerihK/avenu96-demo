@@ -202,6 +202,64 @@ nav.main a:hover:after{transform:scaleX(1);transform-origin:left}
 .ticker .row b{font-weight:800;color:var(--text)}
 .ticker .row em{font-style:normal;color:var(--gold);font-size:.42em;align-self:center}
 
+/* автопарк: горизонтальное меню классов и разделы с картинками */
+.fl-h{padding-top:clamp(80px,9vw,140px);padding-bottom:clamp(24px,2.6vw,38px);max-width:none}
+.fl-h h2{margin-top:18px;font-size:clamp(32px,4.2vw,68px)}
+.tabs-w{position:sticky;top:var(--hh);z-index:20;background:rgba(8,9,11,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);transition:top .6s var(--ease)}
+.tabs{display:flex;gap:clamp(18px,2.3vw,40px);overflow-x:auto;scrollbar-width:none;max-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{position:relative;flex:none;height:66px;font-size:15px;color:var(--muted);transition:color .25s;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.tab small{font-size:11px;color:#62666d}
+.tab:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.tab.on{color:var(--text)}.tab.on:after{transform:none}
+.tab:hover{color:var(--text)}
+.touch .tabs-w{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(8,9,11,.97)}
+.cb{padding:clamp(30px,3.6vw,56px) 0;border-top:1px solid var(--line)}
+.cb:first-child{border-top:0}
+.cb-h{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,4vw,72px);align-items:center}
+.cb-i{position:relative;display:block;width:100%;aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;background:#15171b;cursor:pointer}
+.cb-i img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.cb-i:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);transition:box-shadow .5s}
+@media (hover:hover){.cb-i:hover img{transform:scale(1.03)}.cb-i:hover:after{box-shadow:inset 0 0 0 1px rgba(224,180,92,.65)}}
+.cb-n{font:500 13px var(--sans);letter-spacing:.2em;color:var(--gold)}
+.cb h3{font-size:clamp(30px,3.4vw,56px);line-height:1.02;margin:14px 0 16px}
+.cb p{color:var(--soft);max-width:440px}
+.cb-m{display:flex;align-items:baseline;gap:8px 26px;flex-wrap:wrap;margin-top:22px;color:var(--muted);font-size:14px}
+.cb-m b{font:500 clamp(18px,1.5vw,22px) var(--disp);color:var(--gold2);letter-spacing:-.02em}
+.cb-a{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.cb-a .btn{height:50px;padding:0 24px;font-size:14px}
+.cb-a .btn i{font-style:normal;transition:transform .5s var(--ease)}
+.cb.open .cb-a .tg i{transform:rotate(180deg)}
+.cb .cars{margin-top:clamp(28px,3vw,44px)}
+.cb .cars[hidden]{display:none}
+@media (max-width:760px){
+  .tab{height:56px;font-size:14px}
+  .cb-h{grid-template-columns:1fr;gap:18px}
+  .cb-i{aspect-ratio:3/2}
+  .cb h3{font-size:clamp(28px,8.4vw,36px);margin:10px 0}
+  .cb-m{margin-top:16px}
+  .cb-a{margin-top:20px}
+  .cb-a .btn{padding:0 18px}
+  .cb-a .tg{flex:1 1 auto}
+}
+/* компьютер и планшет: компактная сетка карточек классов, модели раскрываются под рядом */
+@media (min-width:761px){
+  .fl-h,.tabs,#fleet .fl-b{max-width:1560px}
+  .cls{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(34px,3vw,52px) clamp(14px,1.5vw,26px)}
+  .cb{display:contents}
+  .cb-h{display:flex;flex-direction:column;align-items:stretch;gap:0;cursor:pointer;text-align:left}
+  .cb-i{aspect-ratio:3/2}
+  .cb-t{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding-top:14px}
+  .cb-n,.cb p,.cb-a{display:none}
+  .cb h3{grid-column:1;margin:0;font-size:clamp(19px,1.5vw,24px);line-height:1.18;transition:color .3s}
+  .cb-m{display:contents}
+  .cb-m b{grid-column:2;grid-row:1;align-self:baseline;white-space:nowrap;text-align:right;font-size:clamp(17px,1.3vw,20px)}
+  .cb-m span{grid-column:1;grid-row:2;color:var(--muted);font-size:14px}
+  .cb-h:hover h3,.cb.open h3{color:var(--gold2)}
+  .cb.open .cb-i:after{box-shadow:inset 0 0 0 1px rgba(224,180,92,.85)}
+  .cb .cars{grid-column:1/-1;margin:0;padding:clamp(6px,1vw,14px) 0 clamp(26px,2.6vw,40px);border-bottom:1px solid var(--line)}
+}
+@media (min-width:761px) and (max-width:1100px){.cls{grid-template-columns:1fr 1fr}}
 /* showroom */
 .stage{position:relative;display:flex;flex-direction:column;justify-content:center;min-height:clamp(640px,100vh,1000px);overflow:hidden;background:#000;isolation:isolate}
 .st-l{position:absolute;inset:0;z-index:-2}
@@ -474,13 +532,18 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 .touch .film-f .fr{position:absolute;z-index:1;left:18px;right:18px;bottom:18px;max-width:none;opacity:1;transform:none;transition:none}
 .touch .film-f .fr .no{font-size:40px}
 .touch .film-f .fr h3{font-size:24px;margin:8px 0 6px}
-.touch .city-s{position:static;height:auto;overflow:visible;background:none;display:flex;flex-direction:column;isolation:auto;padding-top:clamp(56px,10vw,90px)}
-.touch .city-m{position:static;order:-1;background:none;padding:0 var(--pad) 18px;will-change:auto}
-.touch .city-w{font-size:8.6vw;will-change:auto}
-.touch .city-s>img{position:relative;inset:auto;height:auto;aspect-ratio:4/3}
-.touch .city-sh{display:none}
-.touch .city-t{position:static;opacity:1;transform:none;padding:20px var(--pad) 0}
-@media (min-width:761px){.touch .film-f{aspect-ratio:16/10}.touch .city-s>img{aspect-ratio:21/9}}
+/* на сенсорных экранах «нырок» в слово проигрывается один раз при появлении блока, без привязки к прокрутке */
+.touch .city-s{position:relative;top:auto;height:100vh;height:100svh;min-height:560px;max-height:900px}
+.touch .city-s>img{transform:scale(1.18);transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
+.touch .city-m{transition:opacity .9s ease .8s;will-change:auto}
+.touch .city-w{font-size:8.6vw;transition:transform 1.6s cubic-bezier(.75,0,.25,1),opacity .7s ease .95s;will-change:transform}
+.touch .city-sh{transition:opacity .9s ease 1.25s}
+.touch .city-t{transition:opacity .8s ease 1.35s,transform 1.1s var(--ease) 1.35s}
+.touch .city.dive .city-s>img{transform:none}
+.touch .city.dive .city-m{opacity:0}
+.touch .city.dive .city-w{transform:scale(9);opacity:0}
+.touch .city.dive .city-sh,.touch .city.dive .city-t{opacity:1;transform:none}
+@media (min-width:761px){.touch .film-f{aspect-ratio:16/10}}
 @media (prefers-reduced-motion:reduce){.sp .w>i,.rv,.h-a{transition:none}.intro{display:none}.ac,.film-f{transition:none}}
 
 @media (max-width:1280px){
@@ -647,16 +710,11 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 </section>
 
 <section id="fleet">
-  <div class="stage" id="stage">
-    <div class="wrap st-c">
-      <span class="lbl">Автопарк</span>
-      <div class="kl" id="tabs"></div>
-      <div class="kl-f"><p id="klD"></p><div class="kl-a"><button class="btn gold" id="klO" type="button">Заказать этот класс</button><a class="btn glass" href="https://wa.me/79221882045" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg></a></div></div>
-    </div>
-  </div>
+  <div class="wrap fl-h"><span class="lbl">Автопарк</span><h2>9 классов автомобилей с водителем</h2></div>
+  <div class="tabs-w" id="tabsW"><div class="wrap tabs" id="tabs" data-lenis-prevent-touch></div></div>
   <div class="wrap fl-b">
-    <div class="cars" id="cars"></div>
-    <div class="fl-more"><button class="btn glass" id="moreBtn" type="button"><span></span><i>↓</i></button><button class="btn glass" id="clsBtn" type="button"><span>Все классы</span><i>↑</i></button><a class="btn glass" href="https://wa.me/79221882045"><svg><use href="#i-wa"/></svg>Подобрать в WhatsApp</a></div>
+    <div class="cls" id="clsList"></div>
+    <div class="fl-more"><a class="btn glass" href="https://wa.me/79221882045"><svg><use href="#i-wa"/></svg>Подобрать в WhatsApp</a></div>
   </div>
 </section>
 
@@ -808,10 +866,9 @@ const priceTxt=c=>c.p?`от ${rub(c.p)} ₽<small> / час${c.unit?" "+c.unit:"
 const chipsOf=c=>c.chips||[seatsTxt(c),minTxt(c)].filter(Boolean);
 const card=c=>`<article class="car" data-id="${c.id}" tabindex="0"><div class="im">${c.img[0]?`<img src="${c.img[0]}" alt="${c.t}" loading="lazy">`:""}${c.img[1]?`<img src="${c.img[1]}" alt="" loading="lazy">`:""}${c.img.length>1?`<span class="ph-n">${c.img.length} фото</span>`:""}</div><div class="b"><h3>${c.t}</h3><div class="pr num">${priceTxt(c)}</div><div class="spec">${chipsOf(c).join(" · ")}</div></div></article>`;
 
-const tabs=$("#tabs"),cars=$("#cars"),stage=$("#stage");
+const tabs=$("#tabs"),clsList=$("#clsList");
 const minPrice=k=>Math.min(...inCat(k).map(c=>c.p).filter(Boolean));
 const seatRange=k=>{if(k==="cortege")return"5–30 машин";const s=inCat(k).map(c=>c.seats).filter(Boolean),a=Math.min(...s),b=Math.max(...s);return (a===b?`${b}`:`${a}–${b}`)+" "+plural(b,"место","места","мест")};
-tabs.innerHTML=CATS.map(([k,,full])=>`<button class="kl-r" type="button" data-f="${k}" aria-pressed="false"><b>${full}</b><span class="num">${seatRange(k)}</span><em class="num">от ${rub(minPrice(k))} ₽/час</em></button>`).join("");
 $("#menuCats").innerHTML=CATS.map(([k,n,full],i)=>`<a href="#fleet" data-cat="${k}" style="transition-delay:${.08+i*.04}s">${full}<small>${inCat(k).length}</small></a>`).join("");
 const coverSrc=k=>{const c=COVER[k];return c.full||inCat(k)[c.frame].img[0]};
 $("#menuPic").innerHTML=CATS.map(([k],i)=>`<img src="${coverSrc(k)}" alt="" loading="lazy" data-k="${k}" class="${i?"":"on"}">`).join("");
@@ -819,36 +876,34 @@ $("#menuCats").addEventListener("mouseover",e=>{const a=e.target.closest("a");if
 // подгружаем обложки заранее, чтобы смена вкладки была мгновенной
 if(!still)addEventListener("load",()=>CATS.forEach(([k])=>{new Image().src=coverSrc(k)}));
 
-const layer=(k,anim)=>{const c=COVER[k],l=document.createElement("div");l.className="st-l"+(anim?" in":"")+(c.frame!==undefined?" frm":"");
-  const s=coverSrc(k);l.innerHTML=c.frame!==undefined?`<img class="bg" src="${s}" alt=""><img class="fg" src="${s}" alt="${catName(k)}">`:`<img src="${s}" alt="${catName(k)}" style="${c.pos?`object-position:${c.pos};`:""}${c.dim?`filter:brightness(${c.dim});`:""}">`;
-  const old=[...stage.querySelectorAll('.st-l')];old.forEach(o=>o.style.zIndex=-3);stage.insertBefore(l,stage.querySelector('.st-c'));
-  if(anim)l.addEventListener('animationend',()=>old.forEach(o=>o.remove()),{once:true});else old.forEach(o=>o.remove())};
-// карточки классов: одна картинка на класс, нажатие открывает модели класса
+// разделы классов: картинка, описание, модели раскрываются под картинкой
 const classImg=k=>k==="vip"?inCat("vip")[0].img[0]:coverSrc(k);
-const classCard=([k,,full])=>`<article class="car" data-k="${k}" tabindex="0"><div class="im"><img src="${classImg(k)}" alt="${full}" loading="lazy"></div><div class="b"><h3>${full}</h3><div class="pr num">от ${rub(minPrice(k))} ₽<small> / час</small></div><div class="spec">${seatRange(k)}</div></div></article>`;
-const toCars=()=>{const y=cars.getBoundingClientRect().top;if(y<90)scrollToY(y+scrollY-90)};
-const LIMIT=6,moreBtn=$("#moreBtn");
-const moreLabel=()=>{const n=inCat(cars.dataset.cat).length-LIMIT;moreBtn.firstChild.textContent=cars.classList.contains("all")?"Свернуть":`Показать ещё ${n} ${plural(n,"модель","модели","моделей")}`};
-const showCat=(k,first)=>{if(cars.dataset.cat===k&&!first)return;
-  $$(".kl-r").forEach(t=>{const on=t.dataset.f===k;t.classList.toggle("on",on);t.setAttribute("aria-pressed",on)});
-  const list=inCat(k);
-  layer(k,!first&&!still);
-  $("#klD").textContent=CATS.find(c=>c[0]===k)[3];
-  cars.dataset.cat=k;cars.classList.remove("all");cars.innerHTML=list.map(card).join("");
-  [...cars.children].forEach((el,i)=>{el.style.animationDelay=(i%3)*70+Math.floor(i%LIMIT/3)*50+"ms";if(i>=LIMIT)el.classList.add("more")});
-  moreBtn.hidden=list.length<=LIMIT;moreLabel();$("#clsBtn").hidden=false;$("#klO").textContent="Заказать этот класс"};
-const showAll=first=>{if(!first&&!cars.dataset.cat)return;
-  $$(".kl-r").forEach(t=>{t.classList.remove("on");t.setAttribute("aria-pressed",false)});
-  if(first)layer("vip",false);
-  $("#klD").textContent="9 классов автомобилей с водителем: выберите подходящий.";
-  cars.dataset.cat="";cars.classList.remove("all");cars.innerHTML=CATS.map(classCard).join("");
-  [...cars.children].forEach((el,i)=>{el.style.animationDelay=(i%3)*70+"ms"});
-  moreBtn.hidden=true;$("#clsBtn").hidden=true;$("#klO").textContent="Подобрать автомобиль"};
-moreBtn.addEventListener("click",()=>{const open=cars.classList.toggle("all");moreLabel();if(!open)scrollToY(cars.getBoundingClientRect().top+scrollY-150)});
-tabs.addEventListener("click",e=>{const t=e.target.closest(".kl-r");if(t)showCat(t.dataset.f)});
-$("#clsBtn").addEventListener("click",()=>{showAll();toCars()});
-$("#klO").addEventListener("click",()=>{const k=cars.dataset.cat;sel.value=k?catName(k):"Помогите подобрать";go("#book",()=>sel.closest(".f").animate([{borderColor:"#e0b45c"},{borderColor:"transparent"}],{duration:1800}))});
-showAll(true);
+const modelsTxt=n=>`Смотреть ${n} ${plural(n,"модель","модели","моделей")}`;
+const deskW=()=>innerWidth>760;
+const posOf=el=>el.firstElementChild.getBoundingClientRect().top;
+// на компьютере панель моделей встаёт сразу под рядом, в котором карточка класса
+const placePanels=()=>{if(!deskW())return;const n=getComputedStyle(clsList).gridTemplateColumns.split(" ").length||1;
+  [...clsList.children].forEach((el,i)=>{el.firstElementChild.style.order=i*10;el.lastElementChild.style.order=Math.min(Math.floor(i/n)*n+n-1,CATS.length-1)*10+5})};
+const offTop=()=>(parseFloat(getComputedStyle(html).getPropertyValue("--hh"))||0)+$("#tabsW").offsetHeight;
+tabs.innerHTML=CATS.map(([k,n])=>`<button class="tab" type="button" data-f="${k}">${n}<small>${inCat(k).length}</small></button>`).join("");
+clsList.innerHTML=CATS.map(([k,,full,desc],i)=>{const n=inCat(k).length;return `<article class="cb" id="c-${k}" data-k="${k}"><div class="cb-h"><button class="cb-i" type="button" data-tg aria-label="Показать модели: ${full}"><img src="${classImg(k)}" alt="${full}" loading="lazy"></button><div class="cb-t"><span class="cb-n num">${String(i+1).padStart(2,"0")}</span><h3>${full}</h3><p>${desc}</p><div class="cb-m"><b class="num">от ${rub(minPrice(k))} ₽/час${k==="cortege"?" за машину":""}</b><span class="num">${seatRange(k)}</span></div><div class="cb-a"><button class="btn glass tg" type="button" data-tg><span>${modelsTxt(n)}</span><i>↓</i></button><button class="btn gold" type="button" data-ord>Заказать</button></div></div></div><div class="cars" hidden></div></article>`}).join("");
+const toggleCls=(el,open)=>{const box=el.querySelector(".cars"),on=open===undefined?box.hidden:open;
+  if(on&&deskW())[...clsList.children].forEach(o=>{if(o!==el&&o.classList.contains("open"))toggleCls(o,false)});
+  if(on&&!box.childElementCount){box.innerHTML=inCat(el.dataset.k).map(card).join("");[...box.children].forEach((c,i)=>{c.style.animationDelay=(i%3)*70+"ms"})}
+  box.hidden=!on;el.classList.toggle("open",on);el.querySelector(".tg span").textContent=on?"Свернуть":modelsTxt(inCat(el.dataset.k).length);};
+let spyLock=false,activeK="";
+const setActive=(k,instant)=>{if(k===activeK)return;activeK=k;$$(".tab").forEach(t=>{const on=t.dataset.f===k;t.classList.toggle("on",on);if(on)tabs.scrollTo({left:t.offsetLeft-tabs.clientWidth/2+t.offsetWidth/2,behavior:instant||still?"auto":"smooth"})})};
+const goCls=(k,open)=>{const el=$("#c-"+k);if(!el)return;setMenu(false);if(open||deskW())toggleCls(el,true);setActive(k);spyLock=true;
+  scrollToY(posOf(el)+scrollY-offTop()-8,()=>{spyLock=false});setTimeout(()=>{spyLock=false},1800)};
+const spy=()=>{if(spyLock)return;
+  if(deskW()){const o=clsList.querySelector(".cb.open");if(o){const r=o.lastElementChild.getBoundingClientRect();if(r.bottom>offTop()&&r.top<innerHeight){setActive(o.dataset.k);return}}}
+  const line=offTop()+innerHeight*.3;let k=CATS[0][0],bt=-1e9;for(const el of clsList.children){const t=posOf(el);if(t<=line&&t>bt+1){bt=t;k=el.dataset.k}}setActive(k)};
+let spyQ=false;addEventListener("scroll",()=>{if(spyQ)return;spyQ=true;requestAnimationFrame(()=>{spyQ=false;spy()})},{passive:true});
+tabs.addEventListener("click",e=>{const t=e.target.closest(".tab");if(t)goCls(t.dataset.f)});
+clsList.addEventListener("click",e=>{const el=e.target.closest(".cb");if(!el)return;
+  if(e.target.closest("[data-tg]")||(deskW()&&e.target.closest(".cb-h")))toggleCls(el);
+  else if(e.target.closest("[data-ord]")){sel.value=catName(el.dataset.k);go("#book",()=>sel.closest(".f").animate([{borderColor:"#e0b45c"},{borderColor:"transparent"}],{duration:1800}))}});
+setActive("vip",true);placePanels();addEventListener("resize",placePanels);
 
 const sel=$("#carSel");
 sel.innerHTML+=CATS.map(([k,,full])=>`<option>${full}</option>`).join("");
@@ -879,14 +934,14 @@ const gShow=i=>{if(!cur||!cur.img.length)return;gi=(i+cur.img.length)%cur.img.le
 const open=(id,push=true)=>{const c=byId[id];if(!c)return;render(c);sheet.classList.add("on");sheet.setAttribute("aria-hidden","false");document.body.classList.add("lock");lenis&&lenis.stop();
   if(push)history.pushState({car:id},"","#car="+id);else history.replaceState({car:id},"","#car="+id)};
 const close=(back=true)=>{if(!sheet.classList.contains("on"))return;sheet.classList.remove("on");sheet.setAttribute("aria-hidden","true");document.body.classList.remove("lock");lenis&&lenis.start();if(back&&history.state&&history.state.car)history.back()};
-document.addEventListener("click",e=>{const c=e.target.closest(".car");if(c){if(c.dataset.k){showCat(c.dataset.k);toCars();return}open(c.dataset.id,!sheet.classList.contains("on"));return}
+document.addEventListener("click",e=>{const c=e.target.closest(".car");if(c){open(c.dataset.id,!sheet.classList.contains("on"));return}
   if(e.target.closest("[data-close]"))close();
   const g=e.target.closest("[data-g]");if(g)gShow(gi+ +g.dataset.g);
   const t=e.target.closest("[data-gi]");if(t)gShow(+t.dataset.gi);
-  const sc=e.target.closest("[data-showcat]");if(sc){close();showCat(sc.dataset.showcat);go("#stage")}
+  const sc=e.target.closest("[data-showcat]");if(sc){close();goCls(sc.dataset.showcat,true)}
   if(e.target.closest("[data-order]")){const c=cur;close();setCar(c);$("#needF").value=c.t;go("#book",()=>sel.closest(".f").animate([{borderColor:"#e0b45c"},{borderColor:"transparent"}],{duration:1800}))}});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){close();setMenu(false)}if(sheet.classList.contains("on")){if(e.key==="ArrowRight")gShow(gi+1);if(e.key==="ArrowLeft")gShow(gi-1)}
-  if(e.key==="Enter"&&e.target.classList&&e.target.classList.contains("car")){if(e.target.dataset.k){showCat(e.target.dataset.k);toCars()}else open(e.target.dataset.id)}});
+  if(e.key==="Enter"&&e.target.classList&&e.target.classList.contains("car"))open(e.target.dataset.id)});
 addEventListener("popstate",e=>{if(e.state&&e.state.car)open(e.state.car,false);else close(false)});
 let sx=null;pane.addEventListener("touchstart",e=>{if(e.target.closest(".gal .main"))sx=e.touches[0].clientX},{passive:true});
 pane.addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)gShow(gi+(dx<0?1:-1));sx=null});
@@ -897,7 +952,7 @@ $("#burger").addEventListener("click",()=>setMenu(!html.classList.contains("menu
 // телефон: свайп вправо открывает меню, влево закрывает. Первые 24px не ловим — там жест «назад» в Safari
 (()=>{const menu=$("#menu");let t0=null;
   addEventListener("touchstart",e=>{if(innerWidth>760||sheet.classList.contains("on")||$("#order").classList.contains("on"))return;const t=e.touches[0],on=html.classList.contains("menu-on");
-    if(e.target.closest(".rec,.gal,.suggest-pop,.picker-pop,input,select"))return;if(!on&&(t.clientX<24||t.clientX>innerWidth*.45))return;t0={x:t.clientX,y:t.clientY,on,lock:null}},{passive:true});
+    if(e.target.closest(".tabs,.rec,.gal,.suggest-pop,.picker-pop,input,select"))return;if(!on&&(t.clientX<24||t.clientX>innerWidth*.45))return;t0={x:t.clientX,y:t.clientY,on,lock:null}},{passive:true});
   addEventListener("touchmove",e=>{if(!t0)return;const t=e.touches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y;
     if(t0.lock===null&&Math.abs(dx)+Math.abs(dy)>10){t0.lock=Math.abs(dx)>Math.abs(dy)*1.3;if(t0.lock){menu.classList.add("drag");lenis&&lenis.stop()}}
     if(t0.lock)menu.style.transform=`translate3d(${t0.on?Math.min(0,dx):Math.min(0,dx-innerWidth)}px,0,0)`},{passive:true});
@@ -913,7 +968,7 @@ const go=(s,done)=>{const el=$(s);if(!el)return;setMenu(false);const r=el.getBou
   if(s==="#hero")y=0;
   scrollToY(y,done,Math.abs(y-scrollY)>6000?2:1.4)};
 document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]');if(!a||a.closest(".car"))return;const h=a.getAttribute("href");if(h.length<2)return;e.preventDefault();
-  if(a.dataset.cat){showCat(a.dataset.cat);go("#stage")}else go(h)});
+  if(a.dataset.cat)goCls(a.dataset.cat);else go(h)});
 
 /* ---------- фары: заставка, вспышка, свет идёт за курсором ---------- */
 const lit=$("#hLit"),base=$(".h-base"),par=$("#hPar"),fl=$("#hFl"),heroEl=$("#hero");
@@ -970,6 +1025,8 @@ const measure=()=>rows.forEach(r=>r.w=r.el.scrollWidth/3);
 const prog=el=>{const r=el.getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight))};
 const film=$("#trip"),ffs=$$(".film-f"),fis=ffs.map(f=>f.querySelector("img")),frs=$$(".fr"),fb=$("#fb"),fbs=[...fb.children];
 const city=$("#city"),cityM=$("#cityM"),cityW=$("#cityW"),cityO=$("#cityO"),cityT=$("#cityT"),citySh=$("#citySh");
+if(touch){const dive=()=>{const r=cityO.getBoundingClientRect(),w=cityW.getBoundingClientRect();cityW.style.transformOrigin=`${(r.left+r.width/2-w.left).toFixed(1)}px 50%`;city.classList.add("dive")};
+  if(still)dive();else{const io2=new IntersectionObserver(es=>{if(es[0].isIntersecting){dive();io2.disconnect()}},{threshold:.55});io2.observe(city)}}
 const wm=$("#wm"),hdr=$("#top"),tick=$(".ticker");
 if(touch)frs.forEach((f,i)=>ffs[i].append(f));
 let lastY=scrollY,lastF=-1,hh=-1;
