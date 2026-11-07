@@ -213,7 +213,11 @@ nav.main a:hover:after{transform:scaleX(1);transform-origin:left}
 .tab:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
 .tab.on{color:var(--text)}.tab.on:after{transform:none}
 .tab:hover{color:var(--text)}
-.touch .tabs-w{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(8,9,11,.97);transition:none;transform:translateZ(0)}
+/* на сенсорных экранах вместо sticky (в Safari дёргается) полоса переключается в fixed скриптом */
+.touch #fleet{position:relative}
+.touch .tabs-w{position:relative;top:auto;backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(8,9,11,.97);transition:none}
+.touch .tabs-w.fix{position:fixed;top:var(--hh);left:0;right:0}
+.touch .tabs-w.end{position:absolute;top:auto;bottom:0;left:0;right:0}
 .touch .tab:after{transition:transform .35s ease}
 .cb{padding:clamp(30px,3.6vw,56px) 0;border-top:1px solid var(--line)}
 .cb:first-child{border-top:0}
@@ -712,6 +716,7 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 
 <section id="fleet">
   <div class="wrap fl-h"><span class="lbl">Автопарк</span><h2>9 классов автомобилей с водителем</h2></div>
+  <div class="tabs-ph" id="tabsPh"></div>
   <div class="tabs-w" id="tabsW"><div class="wrap tabs" id="tabs" data-lenis-prevent-touch></div></div>
   <div class="wrap fl-b">
     <div class="cls" id="clsList"></div>
@@ -902,7 +907,11 @@ const goCls=(k,open)=>{const el=$("#c-"+k);if(!el)return;setMenu(false);if(open|
 const spy=()=>{if(spyLock)return;
   if(deskW()){const o=clsList.querySelector(".cb.open");if(o){const r=o.lastElementChild.getBoundingClientRect();if(r.bottom>offTop()&&r.top<innerHeight){setActive(o.dataset.k);return}}}
   const line=offTop()+innerHeight*.3;let k=CATS[0][0],bt=-1e9;for(const el of clsList.children){const t=posOf(el);if(t<=line&&t>bt+1){bt=t;k=el.dataset.k}}setActive(k)};
-let spyQ=false;addEventListener("scroll",()=>{if(spyQ)return;spyQ=true;requestAnimationFrame(()=>{spyQ=false;spy()})},{passive:true});
+const tabsPh=$("#tabsPh"),tabsW=$("#tabsW"),fleetS=$("#fleet");
+const stick=()=>{if(!touch)return;const h=tabsW.offsetHeight,top=parseFloat(getComputedStyle(html).getPropertyValue("--hh"))||0,p=tabsPh.getBoundingClientRect().top,b=fleetS.getBoundingClientRect().bottom;
+  const st=p<=top?(b-h<=top?"end":"fix"):"";if(st===tabsW.dataset.st)return;tabsW.dataset.st=st;tabsW.classList.toggle("fix",st==="fix");tabsW.classList.toggle("end",st==="end");tabsPh.style.height=st?h+"px":"0"};
+let spyQ=false;addEventListener("scroll",()=>{stick();if(spyQ)return;spyQ=true;requestAnimationFrame(()=>{spyQ=false;spy()})},{passive:true});
+addEventListener("resize",()=>{tabsW.dataset.st="x";stick()});
 tabs.addEventListener("click",e=>{const t=e.target.closest(".tab");if(t)goCls(t.dataset.f)});
 clsList.addEventListener("click",e=>{const el=e.target.closest(".cb");if(!el)return;
   if(e.target.closest("[data-tg]")||(deskW()&&e.target.closest(".cb-h")))toggleCls(el);
