@@ -753,6 +753,9 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 .flt button:hover{color:var(--text);border-color:rgba(255,255,255,.3)}
 .flt button.on{background:var(--gold);border-color:var(--gold);color:var(--ink)}.flt button.on small{color:var(--ink);opacity:.6}
 .cars .car.off{display:none}
+.bus-g{grid-template-columns:repeat(3,1fr)}
+#busList{scroll-margin-top:110px;padding-top:clamp(36px,4vw,60px)}
+#busList[hidden]{display:none}
 .flt-empty{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;padding:clamp(22px,2.6vw,36px);border:1px solid var(--line);border-radius:var(--r);background:var(--bg2)}
 .flt-empty[hidden]{display:none}
 .flt-empty p{flex:1 1 300px;color:var(--soft);font-size:clamp(16px,1.2vw,18px)}
@@ -929,7 +932,7 @@ const PAGE=document.body.dataset.page||"",HOME="6-noir-2.html",PAGES={vip:"vip.h
 const CATS=[
   ["vip","Представительский","Представительский класс","Maybach и S-класс для переговоров, гостей компании и встречи в Кольцово."],
   ["business","Бизнес","Бизнес-класс","Mercedes E-класса, Audi, Porsche и Jaguar на трансфер или на весь день."],
-  ["bus","Автобусы","Автобусы","От 24 до 55 мест — конференции, экскурсии, корпоративы."],
+  ["bus","Автобусы","Автобусы","От 24 до 60 мест — конференции, экскурсии, корпоративы."],
   ["minibus","Микроавтобусы","Микроавтобусы","Sprinter VIP и другие — от 9 до 20 мест."],
   ["minivan","Минивэны","Минивэны","V-класс и Multivan для компании до 7 человек."],
   ["suv","Внедорожники","Внедорожники","Land Cruiser 200, G-класс, Lexus LX и Escalade."],
@@ -999,7 +1002,7 @@ const stick=()=>{if(!(touch||html.classList.contains("sfx"))||!tabsW)return;cons
   const st=p<=top?(b-h<=top?"end":"fix"):"";if(st===tabsW.dataset.st)return;tabsW.dataset.st=st;tabsW.classList.toggle("fix",st==="fix");tabsW.classList.toggle("end",st==="end");tabsPh.style.height=st?h+"px":"0"};
 let spyQ=false;addEventListener("scroll",()=>{stick();if(spyQ)return;spyQ=true;requestAnimationFrame(()=>{spyQ=false;spy()})},{passive:true});
 if(tabsW)addEventListener("resize",()=>{tabsW.dataset.st="x";stick()});
-if(tabs)tabs.addEventListener("click",e=>{const t=e.target.closest(".tab");if(t)goCls(t.dataset.f)});
+if(tabs)tabs.addEventListener("click",e=>{const t=e.target.closest(".tab");if(t)openCat(t.dataset.f)});
 if(clsList)clsList.addEventListener("click",e=>{const el=e.target.closest(".cb");if(!el)return;
   if(PAGES[el.dataset.k]&&!e.target.closest("[data-ord]")){if(e.target.closest("[data-tg]")||(deskW()&&e.target.closest(".cb-h"))){e.preventDefault();location.href=PAGES[el.dataset.k]}return}
   if(e.target.closest("[data-tg]")||(deskW()&&e.target.closest(".cb-h")))toggleCls(el);
@@ -1022,14 +1025,14 @@ const SVC={
     tips:[["Машина молодожёнов","Задаёт стиль всего дня. Для классической свадьбы — представительский седан, белый или чёрный: в просторном салоне не помнётся платье."],
       ["Фотопрогулка","Кабриолет или ретро — «Волга», ЗИМ, «Победа», американская классика — хорошо смотрятся в кадре."],
       ["Кортеж","Машины одной марки и цвета выглядят цельно: белый свадебный кортеж Mercedes, чёрные S-класс или внедорожники, от 5 до 30 машин."],
-      ["Гости","Чтобы гости приехали вместе и вовремя — минивэн до 7 человек, микроавтобус до 20 или автобус до 55 мест."],
+      ["Гости","Чтобы гости приехали вместе и вовремя — минивэн до 7 человек, микроавтобус до 20 или автобус до 60 мест."],
       ["Время","Регистрация, прогулка и ресторан занимают больше, чем кажется. Закладывайте запас: у большинства машин минимальный заказ 3–5 часов."],
       ["Дополнительно","Украшение автомобилей, фото- и видеосъёмка, шары с гелием и голуби — уточните у менеджера при заказе."]],
     cats:["cortege","vip","cabrio","retro","minivan","minibus","bus"]},
-  gruppy:{t:"Группы и мероприятия",img:"img/p/sprinter-vip.jpg",lead:"Минивэны, микроавтобусы и автобусы до 55 мест — конференции, экскурсии, корпоративы.",h:"Как выбрать транспорт для группы",
+  gruppy:{t:"Группы и мероприятия",img:"img/p/sprinter-vip.jpg",lead:"Минивэны, микроавтобусы и автобусы до 60 мест — конференции, экскурсии, корпоративы.",h:"Как выбрать транспорт для группы",
     tips:[["До 7 человек","Минивэн: V-класс или Multivan."],
       ["9–20 человек","Микроавтобус: Sprinter VIP и другие."],
-      ["24–55 человек","Автобус: конференции, экскурсии, корпоративы."],
+      ["24–60 человек","Автобус: конференции, экскурсии, корпоративы."],
       ["Большое мероприятие","Можно заказать несколько машин разных классов — напишите число гостей и маршрут, подберём состав."]],
     cats:["minivan","minibus","bus"]}};
 const svp=$("#svp"),svpPg=$("#svpPg");let svcCur="";

@@ -753,6 +753,9 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 .flt button:hover{color:var(--text);border-color:rgba(255,255,255,.3)}
 .flt button.on{background:var(--gold);border-color:var(--gold);color:var(--ink)}.flt button.on small{color:var(--ink);opacity:.6}
 .cars .car.off{display:none}
+.bus-g{grid-template-columns:repeat(3,1fr)}
+#busList{scroll-margin-top:110px;padding-top:clamp(36px,4vw,60px)}
+#busList[hidden]{display:none}
 .flt-empty{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;padding:clamp(22px,2.6vw,36px);border:1px solid var(--line);border-radius:var(--r);background:var(--bg2)}
 .flt-empty[hidden]{display:none}
 .flt-empty p{flex:1 1 300px;color:var(--soft);font-size:clamp(16px,1.2vw,18px)}
@@ -834,7 +837,7 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 <p class="lead">Машина молодожёнов, кортеж и транспорт для гостей — с водителем на весь день.</p>
 <div class="cp-act"><a class="btn gold" href="#book">Подобрать на дату</a><a class="btn glass" href="https://wa.me/79221882045"><svg><use href="#i-wa"/></svg>Написать в WhatsApp</a></div></div>
 <div class="cp-pic wide"><img src="img/ekb/w/wedding-xl.jpg" alt="Свадебный автомобиль Mercedes"></div></div></section>
-<section class="wrap kts" id="models"><h2 class="kts-h">Автомобили и цены</h2><div class="kt-g"><a class="kt" href="kabriolety.html"><div class="cp-pic"><img src="img/fleet/bmw-cabrio-restyle-0.jpg" alt="Кабриолеты" loading="lazy"></div><h3>Кабриолеты</h3><small><b class="num">от 2 000 ₽/час</b> · <span class="num">3–4 места</span></small><p>Для драйва и летней фотопрогулки.</p></a><a class="kt" href="vip.html"><div class="cp-pic"><img src="img/fleet/belyi-mersedes-s5000w222l-0.jpg" alt="Представительский класс" loading="lazy"></div><h3>Представительский класс</h3><small><b class="num">от 1 500 ₽/час</b> · <span class="num">3–4 места</span></small><p>Классика: S-класс и Maybach, белые и чёрные.</p></a><a class="kt" href="biznes-klass.html"><div class="cp-pic"><img src="img/fleet/novyi-belyi-mersedes-e200-w213-0.jpg" alt="Бизнес-класс" loading="lazy"></div><h3>Бизнес-класс</h3><small><b class="num">от 1 500 ₽/час</b> · <span class="num">4 места</span></small><p>Скромнее: Mercedes E-класса, Toyota Camry.</p></a><a class="kt" href="retro.html"><div class="cp-pic"><img src="img/fleet/volga-gaz-21-0.jpg" alt="Ретро-автомобили" loading="lazy"></div><h3>Ретро-автомобили</h3><small><b class="num">от 1 900 ₽/час</b> · <span class="num">3–4 места</span></small><p>«Волга», ЗИМ, «Победа» и американская классика.</p></a><a class="kt" href="6-noir-2.html#c-cortege"><div class="cp-pic"><img src="img/ekb/w/cortege-xl.jpg" alt="Кортежи" loading="lazy"></div><h3>Кортежи</h3><small><b class="num">от 1 400 ₽/час за машину</b> · <span class="num">5–30 машин</span></small><p>5–30 машин одной марки и цвета.</p></a><a class="kt" href="avtobusy.html"><div class="cp-pic"><img src="img/a1/a1-higer-6128-0.webp" alt="Автобусы" loading="lazy"></div><h3>Автобусы</h3><small><b class="num">от 2 000 ₽/час</b> · <span class="num">24–55 мест</span></small><p>Гости едут вместе и приезжают вовремя.</p></a><a class="kt" href="mikroavtobusy.html"><div class="cp-pic"><img src="img/p/sprinter-vip.jpg" alt="Микроавтобусы" loading="lazy"></div><h3>Микроавтобусы</h3><small><b class="num">от 1 000 ₽/час</b> · <span class="num">9–20 мест</span></small><p>Для гостей и родственников — до 20 мест.</p></a><a class="kt" href="miniveny.html"><div class="cp-pic"><img src="img/ekb/w/scen-delegation.jpg" alt="Минивэны" loading="lazy"></div><h3>Минивэны</h3><small><b class="num">от 1 100 ₽/час</b> · <span class="num">4–7 мест</span></small><p>Для свидетелей и семьи — до 7 человек.</p></a></div></section>
+<section class="wrap kts" id="models"><h2 class="kts-h">Автомобили и цены</h2><div class="kt-g"><a class="kt" href="kabriolety.html"><div class="cp-pic"><img src="img/fleet/bmw-cabrio-restyle-0.jpg" alt="Кабриолеты" loading="lazy"></div><h3>Кабриолеты</h3><small><b class="num">от 2 000 ₽/час</b> · <span class="num">3–4 места</span></small><p>Для драйва и летней фотопрогулки.</p></a><a class="kt" href="vip.html"><div class="cp-pic"><img src="img/fleet/belyi-mersedes-s5000w222l-0.jpg" alt="Представительский класс" loading="lazy"></div><h3>Представительский класс</h3><small><b class="num">от 1 500 ₽/час</b> · <span class="num">3–4 места</span></small><p>Классика: S-класс и Maybach, белые и чёрные.</p></a><a class="kt" href="biznes-klass.html"><div class="cp-pic"><img src="img/fleet/novyi-belyi-mersedes-e200-w213-0.jpg" alt="Бизнес-класс" loading="lazy"></div><h3>Бизнес-класс</h3><small><b class="num">от 1 500 ₽/час</b> · <span class="num">4 места</span></small><p>Скромнее: Mercedes E-класса, Toyota Camry.</p></a><a class="kt" href="retro.html"><div class="cp-pic"><img src="img/fleet/volga-gaz-21-0.jpg" alt="Ретро-автомобили" loading="lazy"></div><h3>Ретро-автомобили</h3><small><b class="num">от 1 900 ₽/час</b> · <span class="num">3–4 места</span></small><p>«Волга», ЗИМ, «Победа» и американская классика.</p></a><a class="kt" href="6-noir-2.html#c-cortege"><div class="cp-pic"><img src="img/ekb/w/cortege-xl.jpg" alt="Кортежи" loading="lazy"></div><h3>Кортежи</h3><small><b class="num">от 1 400 ₽/час за машину</b> · <span class="num">5–30 машин</span></small><p>5–30 машин одной марки и цвета.</p></a><a class="kt" href="avtobusy.html"><div class="cp-pic"><img src="img/a1/a1-higer-6128-0.webp" alt="Автобусы" loading="lazy"></div><h3>Автобусы</h3><small><b class="num">от 2 000 ₽/час</b> · <span class="num">24–60 мест</span></small><p>Гости едут вместе и приезжают вовремя.</p></a><a class="kt" href="mikroavtobusy.html"><div class="cp-pic"><img src="img/p/sprinter-vip.jpg" alt="Микроавтобусы" loading="lazy"></div><h3>Микроавтобусы</h3><small><b class="num">от 1 000 ₽/час</b> · <span class="num">9–20 мест</span></small><p>Для гостей и родственников — до 20 мест.</p></a><a class="kt" href="miniveny.html"><div class="cp-pic"><img src="img/ekb/w/scen-delegation.jpg" alt="Минивэны" loading="lazy"></div><h3>Минивэны</h3><small><b class="num">от 1 100 ₽/час</b> · <span class="num">4–7 мест</span></small><p>Для свидетелей и семьи — до 7 человек.</p></a></div></section>
 <article class="wrap art">
 <h2>Какой автомобиль выбрать на свадьбу</h2>
 <p>Машина молодожёнов задаёт стиль всего дня. Выбор зависит от сезона, бюджета и того, какой вы видите свадьбу.</p>
@@ -849,7 +852,7 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 <h3>Кортеж</h3>
 <p>Машины одной марки и цвета смотрятся цельно: <a href="6-noir-2.html#c-cortege">белый свадебный кортеж Mercedes</a>, чёрные S-класс, внедорожники или ретро — от 5 до 30 машин.</p>
 <h3>Гости</h3>
-<p>Чтобы гости приехали вместе и вовремя, закажите <a href="avtobusy.html">автобус</a> на 24–55 мест, <a href="mikroavtobusy.html">микроавтобус</a> до 20 или <a href="miniveny.html">минивэн</a> до 7 человек.</p>
+<p>Чтобы гости приехали вместе и вовремя, закажите <a href="avtobusy.html">автобус</a> на 24–60 мест, <a href="mikroavtobusy.html">микроавтобус</a> до 20 или <a href="miniveny.html">минивэн</a> до 7 человек.</p>
 <h3>Время и дополнительные услуги</h3>
 <p>Регистрация, прогулка и ресторан занимают больше времени, чем кажется: у большинства машин минимальный заказ 3–5 часов. Украшение автомобилей, фото- и видеосъёмку, шары и голубей уточните у менеджера при заказе.</p>
 </article><section class="wrap cp-oth"><h2>Другие классы</h2><div class="cp-chips"><a href="vip.html">Представительский класс</a><a href="biznes-klass.html">Бизнес-класс</a><a href="avtobusy.html">Автобусы</a><a href="mikroavtobusy.html">Микроавтобусы</a><a href="miniveny.html">Минивэны</a><a href="vnedorozhniki.html">Внедорожники</a><a href="kabriolety.html">Кабриолеты</a><a href="retro.html">Ретро-автомобили</a><a href="6-noir-2.html#c-cortege">Кортежи</a></div></section>
@@ -932,7 +935,7 @@ const PAGE=document.body.dataset.page||"",HOME="6-noir-2.html",PAGES={vip:"vip.h
 const CATS=[
   ["vip","Представительский","Представительский класс","Maybach и S-класс для переговоров, гостей компании и встречи в Кольцово."],
   ["business","Бизнес","Бизнес-класс","Mercedes E-класса, Audi, Porsche и Jaguar на трансфер или на весь день."],
-  ["bus","Автобусы","Автобусы","От 24 до 55 мест — конференции, экскурсии, корпоративы."],
+  ["bus","Автобусы","Автобусы","От 24 до 60 мест — конференции, экскурсии, корпоративы."],
   ["minibus","Микроавтобусы","Микроавтобусы","Sprinter VIP и другие — от 9 до 20 мест."],
   ["minivan","Минивэны","Минивэны","V-класс и Multivan для компании до 7 человек."],
   ["suv","Внедорожники","Внедорожники","Land Cruiser 200, G-класс, Lexus LX и Escalade."],
@@ -1002,7 +1005,7 @@ const stick=()=>{if(!(touch||html.classList.contains("sfx"))||!tabsW)return;cons
   const st=p<=top?(b-h<=top?"end":"fix"):"";if(st===tabsW.dataset.st)return;tabsW.dataset.st=st;tabsW.classList.toggle("fix",st==="fix");tabsW.classList.toggle("end",st==="end");tabsPh.style.height=st?h+"px":"0"};
 let spyQ=false;addEventListener("scroll",()=>{stick();if(spyQ)return;spyQ=true;requestAnimationFrame(()=>{spyQ=false;spy()})},{passive:true});
 if(tabsW)addEventListener("resize",()=>{tabsW.dataset.st="x";stick()});
-if(tabs)tabs.addEventListener("click",e=>{const t=e.target.closest(".tab");if(t)goCls(t.dataset.f)});
+if(tabs)tabs.addEventListener("click",e=>{const t=e.target.closest(".tab");if(t)openCat(t.dataset.f)});
 if(clsList)clsList.addEventListener("click",e=>{const el=e.target.closest(".cb");if(!el)return;
   if(PAGES[el.dataset.k]&&!e.target.closest("[data-ord]")){if(e.target.closest("[data-tg]")||(deskW()&&e.target.closest(".cb-h"))){e.preventDefault();location.href=PAGES[el.dataset.k]}return}
   if(e.target.closest("[data-tg]")||(deskW()&&e.target.closest(".cb-h")))toggleCls(el);
@@ -1025,14 +1028,14 @@ const SVC={
     tips:[["Машина молодожёнов","Задаёт стиль всего дня. Для классической свадьбы — представительский седан, белый или чёрный: в просторном салоне не помнётся платье."],
       ["Фотопрогулка","Кабриолет или ретро — «Волга», ЗИМ, «Победа», американская классика — хорошо смотрятся в кадре."],
       ["Кортеж","Машины одной марки и цвета выглядят цельно: белый свадебный кортеж Mercedes, чёрные S-класс или внедорожники, от 5 до 30 машин."],
-      ["Гости","Чтобы гости приехали вместе и вовремя — минивэн до 7 человек, микроавтобус до 20 или автобус до 55 мест."],
+      ["Гости","Чтобы гости приехали вместе и вовремя — минивэн до 7 человек, микроавтобус до 20 или автобус до 60 мест."],
       ["Время","Регистрация, прогулка и ресторан занимают больше, чем кажется. Закладывайте запас: у большинства машин минимальный заказ 3–5 часов."],
       ["Дополнительно","Украшение автомобилей, фото- и видеосъёмка, шары с гелием и голуби — уточните у менеджера при заказе."]],
     cats:["cortege","vip","cabrio","retro","minivan","minibus","bus"]},
-  gruppy:{t:"Группы и мероприятия",img:"img/p/sprinter-vip.jpg",lead:"Минивэны, микроавтобусы и автобусы до 55 мест — конференции, экскурсии, корпоративы.",h:"Как выбрать транспорт для группы",
+  gruppy:{t:"Группы и мероприятия",img:"img/p/sprinter-vip.jpg",lead:"Минивэны, микроавтобусы и автобусы до 60 мест — конференции, экскурсии, корпоративы.",h:"Как выбрать транспорт для группы",
     tips:[["До 7 человек","Минивэн: V-класс или Multivan."],
       ["9–20 человек","Микроавтобус: Sprinter VIP и другие."],
-      ["24–55 человек","Автобус: конференции, экскурсии, корпоративы."],
+      ["24–60 человек","Автобус: конференции, экскурсии, корпоративы."],
       ["Большое мероприятие","Можно заказать несколько машин разных классов — напишите число гостей и маршрут, подберём состав."]],
     cats:["minivan","minibus","bus"]}};
 const svp=$("#svp"),svpPg=$("#svpPg");let svcCur="";
