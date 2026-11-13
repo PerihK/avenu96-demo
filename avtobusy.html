@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Аренда автобуса с водителем в Екатеринбурге — Авеню96</title>
-<meta name="description" content="Автобусы с водителем в Екатеринбурге на 29–57 мест: King Long, Neoplan, SETRA, MAN, Hyundai, Yutong. Конференции, экскурсии, корпоративы. От 1 500 ₽/час.">
+<meta name="description" content="Автобусы с водителем в Екатеринбурге на 24–55 мест: Yutong, Higer, Нефаз, ПАЗ Vector Next. Конференции, экскурсии, корпоративы, трансфер. От 2 000 ₽/час.">
 <meta name="theme-color" content="#08090b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -496,6 +496,16 @@ footer{position:relative;overflow:hidden;background:var(--gold);color:var(--ink)
 .foot{background:#08090b;color:var(--muted);padding-top:clamp(36px,4vw,60px);font-size:13px;border-radius:clamp(20px,3vw,40px) clamp(20px,3vw,40px) 0 0;overflow:hidden}
 .foot .t{display:flex;justify-content:space-between;gap:12px 30px;flex-wrap:wrap}
 .foot .t a:hover{color:var(--text)}
+.foot .t{padding-top:22px;padding-bottom:calc(26px + env(safe-area-inset-bottom));border-top:1px solid var(--line);font-size:12px;color:#62666d}
+.ft{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:clamp(28px,4vw,64px);padding-bottom:clamp(36px,4vw,56px)}
+.ft-c,.ft-n{display:flex;flex-direction:column;gap:9px;font-size:14px;line-height:1.45}
+.ft-c .wm{padding:0 0 6px}
+.ft-c p{color:var(--muted);max-width:300px}
+.ft-tel{font:500 22px var(--disp);color:var(--text);letter-spacing:-.02em;margin-top:6px}
+.ft-n h4{font:500 12px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.ft a{color:var(--soft);transition:color .25s;width:fit-content}.ft a:hover{color:var(--gold2)}
+@media (max-width:1100px){.ft{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.ft{grid-template-columns:1fr 1fr;gap:30px 16px}.ft-c{grid-column:1/-1}.ft-n{font-size:13px}.foot .t{flex-direction:column;gap:6px;padding-bottom:calc(96px + env(safe-area-inset-bottom))}}
 .wm{display:block;max-width:none;padding-top:clamp(22px,2.4vw,34px);padding-bottom:clamp(26px,3vw,40px);font:800 clamp(21px,1.6vw,26px)/1 var(--logo);letter-spacing:.01em;white-space:nowrap;color:var(--text)}
 .wm em{font-style:normal;color:var(--gold)}
 
@@ -532,6 +542,9 @@ footer{position:relative;overflow:hidden;background:var(--gold);color:var(--ink)
 .rates{margin-top:14px;border-top:1px solid var(--line)}
 .rates div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;font-size:14px;border-bottom:1px solid var(--line)}
 .rates span{color:var(--muted)}
+.rates b{font-weight:500;text-align:right}
+.info .rates{margin-top:22px;border-top:0;border:1px solid var(--line);border-radius:16px;padding:4px 18px}
+.info .rates div:last-child{border-bottom:0}
 .info .acts{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
 .info .acts .btn{flex:1 1 180px}
 .info ul{list-style:none;margin-top:24px}
@@ -807,7 +820,7 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
       <div class="m-c" id="menuCats"></div>
       <div class="m-b">
         <div><h4>Услуги</h4><a href="#delovye" data-svc="delovye">Деловые поездки</a><a href="#transfer" data-svc="transfer">Трансфер в Кольцово</a><a href="svadby.html">Свадьбы и праздники</a><a href="#gruppy" data-svc="gruppy">Группы и мероприятия</a></div>
-        <div><h4>Компания</h4><a href="#trust">Компаниям</a><a href="#trip">Как проходит поездка</a><a href="#about">О сервисе</a><a href="#contact">Контакты</a></div>
+        <div><h4>Компания</h4><a href="#trust">Компаниям</a><a href="#trip">Как проходит поездка</a><a href="#about">Почему выбирают нас</a><a href="#contact">Контакты</a></div>
         <div><h4>Связаться</h4><a class="big num" href="tel:+73433282045">+7 343 328-20-45</a><a href="https://wa.me/79221882045">WhatsApp · +7 922 188-20-45</a><a href="mailto:avenu96@mail.ru">avenu96@mail.ru</a><p>Ежедневно 9:00–22:00</p></div>
       </div>
     </div>
@@ -817,44 +830,41 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 
 <main class="pg-main">
 <section class="wrap cp-h-w"><nav class="cp-cr" aria-label="Хлебные крошки"><a href="6-noir-2.html">Главная</a><i>/</i><a href="6-noir-2.html#fleet">Автопарк</a><i>/</i><span>Автобусы</span></nav><div class="cp-h"><div><span class="lbl">Автопарк</span><h1>Аренда автобуса с водителем</h1>
-<p class="lead">От 29 до 57 мест — конференции, экскурсии, корпоративы, трансфер гостей. Подберём автобус под размер группы.</p>
-<div class="cp-meta num"><div><b>от 1 500 ₽</b>в час</div><div><b>29–57</b>мест</div><div><b>10</b>автобусов</div></div>
+<p class="lead">От 24 до 55 мест — конференции, экскурсии, корпоративы, трансфер гостей. Подберём автобус под размер группы.</p>
+<div class="cp-meta num"><div><b>от 2 000 ₽</b>в час</div><div><b>24–55</b>мест</div><div><b>8</b>автобусов</div><div><b>4 часа</b>минимальный заказ</div></div>
 <div class="cp-act"><a class="btn gold" href="#book">Заказать автобус</a><a class="btn glass" href="https://wa.me/79221882045"><svg><use href="#i-wa"/></svg>Написать в WhatsApp</a></div></div>
-<div class="cp-pic"><img src="img/fleet/man-lions-coach-vip-belyi-0.jpg" alt="Автобус Man Lions Coach VIP"></div></div></section>
-<section class="wrap cp-cars" id="models"><h2>Аренда автобусов по количеству мест</h2><div class="flt" id="flt"><button type="button" data-g="s30" data-a="0" data-b="30" data-n="До 30 мест" class="on">До 30 мест<small>1</small></button><button type="button" data-g="s40" data-a="31" data-b="42" data-n="30–40 мест" class="">30–40 мест<small>0</small></button><button type="button" data-g="s60" data-a="43" data-b="99" data-n="43–60 мест" class="">43–60 мест<small>9</small></button></div><div class="cars" id="busGrid"><article class="car" data-id="iveko-neman-29-mest" data-seats="29" tabindex="0"><div class="im"><img src="img/fleet/iveko-neman-29-mest-0.jpg" alt="Iveco Неман VIP, 29+1 мест" loading="lazy"><img src="img/fleet/iveko-neman-29-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">2 фото</span></div><div class="b"><h3>Iveco Неман VIP, 29+1 мест</h3><div class="pr num">от 1 600 ₽<small> / час</small></div><div class="spec">29 мест · мин. 4 часа</div></div></article><article class="car off" data-id="hyundai-universe-43-mesta" data-seats="43" tabindex="0"><div class="im"><img src="img/fleet/hyundai-universe-43-mesta-0.jpg" alt="Hyundai Universe 43 места" loading="lazy"><img src="img/fleet/hyundai-universe-43-mesta-1.jpg" alt="" loading="lazy"><span class="ph-n">4 фото</span></div><div class="b"><h3>Hyundai Universe 43 места</h3><div class="pr num">от 1 500 ₽<small> / час</small></div><div class="spec">43 мест</div></div></article><article class="car off" data-id="hyundai-universe-space-luxury-431-mest" data-seats="45" tabindex="0"><div class="im"><img src="img/fleet/hyundai-universe-space-luxury-431-mest-0.jpg" alt="Hyundai Universe Space Luxury, 45 мест" loading="lazy"><img src="img/fleet/hyundai-universe-space-luxury-431-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">2 фото</span></div><div class="b"><h3>Hyundai Universe Space Luxury, 45 мест</h3><div class="pr num">от 1 650 ₽<small> / час</small></div><div class="spec">45 мест</div></div></article><article class="car off" data-id="yutong-48-mest" data-seats="48" tabindex="0"><div class="im"><img src="img/fleet/yutong-48-mest-0.jpg" alt="Yutong 48 мест" loading="lazy"><img src="img/fleet/yutong-48-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">5 фото</span></div><div class="b"><h3>Yutong 48 мест</h3><div class="pr num">от 2 000 ₽<small> / час</small></div><div class="spec">48 мест</div></div></article><article class="car off" data-id="man-lions-coach-50-mest-tsvet-belyi-50-mest" data-seats="50" tabindex="0"><div class="im"><img src="img/fleet/man-lions-coach-50-mest-tsvet-belyi-50-mest-0.jpg" alt="Man Lions Coach 50 мест, цвет белый" loading="lazy"><img src="img/fleet/man-lions-coach-50-mest-tsvet-belyi-50-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">4 фото</span></div><div class="b"><h3>Man Lions Coach 50 мест, цвет белый</h3><div class="pr num">от 2 000 ₽<small> / час</small></div><div class="spec">50 мест · мин. 5 часов</div></div></article><article class="car off" data-id="man-lions-coach-vip-belyi" data-seats="50" tabindex="0"><div class="im"><img src="img/fleet/man-lions-coach-vip-belyi-0.jpg" alt="Man Lions Coach Vip белый 50 мест" loading="lazy"><img src="img/fleet/man-lions-coach-vip-belyi-1.jpg" alt="" loading="lazy"><span class="ph-n">3 фото</span></div><div class="b"><h3>Man Lions Coach Vip белый 50 мест</h3><div class="pr num">от 2 300 ₽<small> / час</small></div><div class="spec">50 мест · мин. 5 часов</div></div></article><article class="car off" data-id="king-long-511-mesto" data-seats="51" tabindex="0"><div class="im"><img src="img/fleet/king-long-511-mesto-0.jpg" alt="King Long, 51+1 место" loading="lazy"><img src="img/fleet/king-long-511-mesto-1.jpg" alt="" loading="lazy"><span class="ph-n">2 фото</span></div><div class="b"><h3>King Long, 51+1 место</h3><div class="pr num">от 1 800 ₽<small> / час</small></div><div class="spec">51 мест · мин. 4 часа</div></div></article><article class="car off" data-id="setra-511-mest" data-seats="51" tabindex="0"><div class="im"><img src="img/fleet/setra-511-mest-0.jpg" alt="SETRA 51+1 мест" loading="lazy"><img src="img/fleet/setra-511-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">4 фото</span></div><div class="b"><h3>SETRA 51+1 мест</h3><div class="pr num">от 2 000 ₽<small> / час</small></div><div class="spec">51 мест · мин. 5 часов</div></div></article><article class="car off" data-id="neoplan" data-seats="55" tabindex="0"><div class="im"><img src="img/fleet/neoplan-0.jpg" alt="Neoplan 55+2 места" loading="lazy"><img src="img/fleet/neoplan-1.jpg" alt="" loading="lazy"><span class="ph-n">5 фото</span></div><div class="b"><h3>Neoplan 55+2 места</h3><div class="pr num">от 2 500 ₽<small> / час</small></div><div class="spec">55 мест</div></div></article><article class="car off" data-id="king-long-60-mest" data-seats="57" tabindex="0"><div class="im"><img src="img/fleet/king-long-60-mest-0.jpg" alt="King Long 57+2 места" loading="lazy"><img src="img/fleet/king-long-60-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">4 фото</span></div><div class="b"><h3>King Long 57+2 места</h3><div class="pr num">от 2 000 ₽<small> / час</small></div><div class="spec">57 мест</div></div></article></div>
+<div class="cp-pic"><img src="img/a1/a1-yutong-6128-0.webp" alt="Автобус Yutong 6128"></div></div></section>
+<section class="wrap cp-cars" id="models"><h2>Аренда автобусов по количеству мест</h2><div class="flt" id="flt"><button type="button" data-g="s30" data-a="0" data-b="30" data-n="До 30 мест" class="on">До 30 мест<small>3</small></button><button type="button" data-g="s40" data-a="31" data-b="42" data-n="30–40 мест" class="">30–40 мест<small>1</small></button><button type="button" data-g="s60" data-a="43" data-b="99" data-n="43–60 мест" class="">43–60 мест<small>4</small></button></div><div class="cars" id="busGrid"><article class="car" data-id="a1-paz" data-seats="24" tabindex="0"><div class="im"><img src="img/a1/a1-paz-0.webp" alt="ПАЗ 3205" loading="lazy"><img src="img/a1/a1-paz-1.webp" alt="" loading="lazy"><span class="ph-n">8 фото</span></div><div class="b"><h3>ПАЗ 3205</h3><div class="pr num">от 2 000 ₽<small> / час</small></div><div class="spec">24 мест · мин. 4 часа</div></div></article><article class="car" data-id="a1-paz-vektor-next" data-seats="25" tabindex="0"><div class="im"><img src="img/a1/a1-paz-vektor-next-0.jpg" alt="ПАЗ Vector Next 7,6" loading="lazy"><img src="img/a1/a1-paz-vektor-next-1.jpg" alt="" loading="lazy"><span class="ph-n">7 фото</span></div><div class="b"><h3>ПАЗ Vector Next 7,6</h3><div class="pr num">от 2 200 ₽<small> / час</small></div><div class="spec">25 мест · мин. 4 часа</div></div></article><article class="car" data-id="a1-paz-vektor-next-30-mest" data-seats="30" tabindex="0"><div class="im"><img src="img/a1/a1-paz-vektor-next-30-mest-0.webp" alt="ПАЗ Vector Next 8,8" loading="lazy"><img src="img/a1/a1-paz-vektor-next-30-mest-1.webp" alt="" loading="lazy"><span class="ph-n">5 фото</span></div><div class="b"><h3>ПАЗ Vector Next 8,8</h3><div class="pr num">от 2 500 ₽<small> / час</small></div><div class="spec">30 мест · мин. 4 часа</div></div></article><article class="car off" data-id="a1-higer-6952" data-seats="39" tabindex="0"><div class="im"><img src="img/a1/a1-higer-6952-0.webp" alt="Higer 6952" loading="lazy"><img src="img/a1/a1-higer-6952-1.webp" alt="" loading="lazy"><span class="ph-n">8 фото</span></div><div class="b"><h3>Higer 6952</h3><div class="pr num">от 2 700 ₽<small> / час</small></div><div class="spec">39 мест · мин. 4 часа</div></div></article><article class="car off" data-id="a1-nefaz" data-seats="44" tabindex="0"><div class="im"><img src="img/a1/a1-nefaz-0.jpg" alt="Нефаз 5299" loading="lazy"><img src="img/a1/a1-nefaz-1.jpg" alt="" loading="lazy"><span class="ph-n">6 фото</span></div><div class="b"><h3>Нефаз 5299</h3><div class="pr num">от 2 500 ₽<small> / час</small></div><div class="spec">44 мест · мин. 4 часа</div></div></article><article class="car off" data-id="a1-6122" data-seats="51" tabindex="0"><div class="im"><img src="img/a1/a1-6122-0.jpg" alt="Yutong 6122" loading="lazy"><img src="img/a1/a1-6122-1.jpeg" alt="" loading="lazy"><span class="ph-n">9 фото</span></div><div class="b"><h3>Yutong 6122</h3><div class="pr num">от 3 000 ₽<small> / час</small></div><div class="spec">51 мест · мин. 4 часа</div></div></article><article class="car off" data-id="a1-yutong-6128" data-seats="53" tabindex="0"><div class="im"><img src="img/a1/a1-yutong-6128-0.webp" alt="Yutong 6128" loading="lazy"><img src="img/a1/a1-yutong-6128-1.webp" alt="" loading="lazy"><span class="ph-n">7 фото</span></div><div class="b"><h3>Yutong 6128</h3><div class="pr num">от 3 500 ₽<small> / час</small></div><div class="spec">53 мест · мин. 4 часа</div></div></article><article class="car off" data-id="a1-higer-6128" data-seats="55" tabindex="0"><div class="im"><img src="img/a1/a1-higer-6128-0.webp" alt="Higer 6128" loading="lazy"><img src="img/a1/a1-higer-6128-1.webp" alt="" loading="lazy"><span class="ph-n">8 фото</span></div><div class="b"><h3>Higer 6128</h3><div class="pr num">от 3 500 ₽<small> / час</small></div><div class="spec">55 мест · мин. 4 часа</div></div></article></div>
 <div class="flt-empty" id="fltEmpty" hidden><p>Подберём автобус на <span></span> под вашу дату — напишите число гостей и маршрут.</p><a class="btn gold" href="#book">Заказать автобус</a></div></section>
 <article class="wrap art" data-cut><div class="art-in">
 <h2>Заказ автобуса: как выбрать под группу</h2>
 <p>Главное — число пассажиров. Возьмите автобус с запасом в несколько мест: для сопровождающих, ручной клади и тех, кто присоединится в последний момент. Ниже — какие автобусы подходят под разный размер группы, для каких поездок их берут, сколько стоит аренда и что написать менеджеру, чтобы быстро получить расчёт.</p>
 <h3>До 30 человек</h3>
-<p>Категория небольших пассажирских автобусов. В ней представлены как бюджетные варианты — Исузу Богдан, ГАЗ Вектор, ПАЗ, — так и комфортные туристические автобусы <a href="#car=iveko-neman-29-mest">Iveco Неман</a>, Хайгер — для небольшой делегации, экскурсии или трансфера гостей.</p>
+<p>Категория небольших пассажирских автобусов. В ней представлены как бюджетные варианты — Исузу Богдан, <a href="#car=a1-paz-vektor-next">Вектор</a>, <a href="#car=a1-paz">ПАЗ</a>, — так и комфортные туристические автобусы Iveco Неман, Хайгер — для небольшой делегации, экскурсии или трансфера гостей.</p>
+<p>В каталоге: <a href="#car=a1-paz">ПАЗ 3205</a> на 24 места, <a href="#car=a1-paz-vektor-next">ПАЗ Vector Next 7,6</a> на 25 и <a href="#car=a1-paz-vektor-next-30-mest">Vector Next 8,8</a> на 30 мест.</p>
 <p>Если всё же группа не превышает 20 человек, дешевле и удобнее заказать <a href="mikroavtobusy.html">микроавтобус</a> — Форд Транзит, Mercedes Sprinter и другие.</p>
 <h3>30–40 человек</h3>
 <p>Самая востребованная в пассажирских перевозках категория автобусов. Чаще всего заказывают именно автобусы на 30–35 мест. Особенно популярной является модель автобуса Yutong 35 мест.</p>
-<p>Для такой группы берите автобус с запасом — <a href="#car=hyundai-universe-43-mesta">Hyundai Universe на 43 места</a>. Уточнить по занятости и забронировать автобус на выбранную вами дату поможет менеджер.</p>
+<p>Для такой группы подойдёт <a href="#car=a1-higer-6952">Higer 6952 на 39 мест</a>, а если нужен запас — <a href="#car=a1-nefaz">Нефаз 5299 на 44 места</a>. Уточнить по занятости и забронировать автобус на выбранную вами дату поможет менеджер.</p>
 <p>Запас мест особенно нужен, когда группа едет с багажом — в аэропорт, на базу отдыха или на выездное мероприятие с реквизитом. Если вещей много, сразу скажите об этом менеджеру: он подберёт автобус с подходящим багажным отделением.</p>
 <h3>43–60 человек</h3>
 <p>Большие туристические автобусы — для конференций, корпоративов, экскурсий и больших групп одним рейсом:</p>
 <ul>
-<li><a href="#car=hyundai-universe-43-mesta">Hyundai Universe на 43 места</a> — две широкие двери с удобными ступенями, климат-контроль, двойные стеклопакеты, аудио-видео система для экскурсий.</li>
-<li>Hyundai Universe Space Luxury на 45 мест.</li>
-<li><a href="#car=yutong-48-mest">Yutong на 48 мест</a> — TV, DVD, микрофон, холодильник, мягкие сиденья с подлокотниками, индивидуальные системы кондиционирования.</li>
-<li>Man Lions Coach на 50 мест, белый, и <a href="#car=man-lions-coach-vip-belyi">Man Lions Coach VIP</a> — у VIP-версии сиденья с ремнями безопасности, DVD и монитор, холодильник, микрофон и караоке.</li>
-<li>King Long на 51+1 место — откидные кожаные сиденья, два кондиционера, климат-контроль, TV и DVD, микрофон, холодильник.</li>
-<li><a href="#car=setra-511-mest">SETRA на 51+1 место</a>.</li>
-<li><a href="#car=neoplan">Neoplan на 55+2 места</a> — сиденья с ремнями безопасности, полки для ручной клади, большое багажное отделение на 11 м³, солнцезащитные шторки.</li>
-<li><a href="#car=king-long-60-mest">King Long на 57+2 места</a> — самый вместительный автобус в автопарке.</li>
+<li><a href="#car=a1-nefaz">Нефаз 5299</a> на 44 места — класс «бюджет».</li>
+<li><a href="#car=a1-6122">Yutong 6122</a> на 51 место — класс «бюджет».</li>
+<li><a href="#car=a1-yutong-6128">Yutong 6128</a> на 53 места — класс «люкс».</li>
+<li><a href="#car=a1-higer-6128">Higer 6128</a> на 55 мест — класс «комфорт», самый вместительный автобус в каталоге.</li>
 </ul>
 <h3>Для каких поездок заказывают автобус</h3>
 <ul>
 <li><b>Конференции и деловые мероприятия</b> — встретить участников, развезти по гостиницам, доставить на площадку и обратно.</li>
-<li><b>Экскурсии</b> — по Екатеринбургу и области. Для гида пригодятся микрофон и аудио-видео система: они есть в Hyundai Universe на 43 места, Yutong, King Long и Man Lions Coach VIP.</li>
-<li><b>Корпоративы и выезды за город</b> — на базу отдыха, турбазу, в загородный клуб. Поездки за город считаются по километрам, тариф указан в карточке автобуса.</li>
-<li><b>Трансфер гостей</b> — в аэропорт, на вокзал, в гостиницу. Для поездки в одну сторону у многих автобусов есть фиксированная цена трансфера.</li>
+<li><b>Экскурсии</b> — по Екатеринбургу и области. Если нужен микрофон для гида, скажите об этом менеджеру при заказе.</li>
+<li><b>Корпоративы и выезды за город</b> — на базу отдыха, турбазу, в загородный клуб.</li>
+<li><b>Трансфер гостей</b> — в аэропорт, на вокзал, в гостиницу.</li>
 <li><b><a href="svadby.html">Свадьбы</a> и праздники</b> — привезти гостей на регистрацию, банкет и развезти по домам.</li>
 </ul>
 <h3>Сколько стоит</h3>
-<p>От 1 500 до 2 500 ₽ в час. У части автобусов минимальный заказ — 4–5 часов, при долгой аренде час обычно дешевле. Трансфер в одну сторону — от 7 500 до 10 000 ₽, поездки за город — от 40 до 65 ₽ за километр. Точные тарифы — в карточке каждого автобуса.</p>
+<p>От 2 000 до 3 500 ₽ в час, минимальный заказ — 4 часа. Цена «от» указана в карточке каждого автобуса.</p>
 <p>Итоговую стоимость менеджер назовёт по маршруту и времени: она зависит от числа часов, расстояния и того, нужна ли машина на весь день или только на подачу.</p>
 <h3>Если гостей больше</h3>
 <p>Для большого мероприятия подберём несколько автобусов и микроавтобусов. Напишите число гостей, дату и маршрут — например, для <a href="svadby.html">свадьбы</a> или выездной конференции.</p>
@@ -893,8 +903,21 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 </div></section>
 
 <footer><div class="foot">
-  <div class="wrap t" style="max-width:none"><span>© 2008—2026 · Екатеринбург</span><span>Концепция дизайна. Машины, фото в автопарке и цены — с текущего сайта avenu96.ru; кадры города сгенерированы для макета</span></div>
-  <span class="wrap wm" id="wm" aria-hidden="true">AVENU<em>96</em></span>
+  <div class="wrap ft" style="max-width:none">
+    <div class="ft-c">
+      <span class="wm" id="wm">AVENU<em>96</em></span>
+      <p>Аренда автомобилей и автобусов с водителем в Екатеринбурге с 2008 года.</p>
+      <a class="ft-tel num" href="tel:+73433282045">+7 343 328-20-45</a>
+      <a href="https://wa.me/79221882045">WhatsApp: +7 922 188-20-45</a>
+      <a href="mailto:avenu96@mail.ru">avenu96@mail.ru</a>
+      <span>Красноармейская, 10, БЦ «Антей», офис 1404</span>
+      <span>Ежедневно 9:00–22:00</span>
+    </div>
+    <nav class="ft-n" aria-label="Автопарк"><h4>Автопарк</h4><a href="vip.html">Представительский класс</a><a href="biznes-klass.html">Бизнес-класс</a><a href="miniveny.html">Минивэны</a><a href="mikroavtobusy.html">Микроавтобусы</a><a href="avtobusy.html">Автобусы</a><a href="vnedorozhniki.html">Внедорожники</a><a href="kabriolety.html">Кабриолеты</a><a href="retro.html">Ретро-автомобили</a><a href="6-noir-2.html#c-cortege">Кортежи</a></nav>
+    <nav class="ft-n" aria-label="Услуги"><h4>Услуги</h4><a href="#delovye" data-svc="delovye">Деловые встречи и делегации</a><a href="#transfer" data-svc="transfer">Трансферы и Кольцово</a><a href="svadby.html">Свадьбы и праздники</a><a href="#gruppy" data-svc="gruppy">Группы и мероприятия</a></nav>
+    <nav class="ft-n" aria-label="Компания"><h4>Компания</h4><a href="#about">Почему выбирают нас</a><a href="#trust">Нам доверяют</a><a href="#trip">Как проходит поездка</a><a href="#contact">Контакты</a></nav>
+  </div>
+  <div class="wrap t" style="max-width:none"><span>© 2008—2026 Авеню96 · Екатеринбург</span><span>Концепция дизайна. Машины, фото и цены — с avenu96.ru, автобусы — с avtobus1.ru; кадры города сгенерированы для макета</span></div>
 </div></footer>
 
 <div class="sheet" id="sheet" aria-hidden="true">
@@ -936,7 +959,7 @@ const PAGE=document.body.dataset.page||"",HOME="6-noir-2.html",PAGES={vip:"vip.h
 const CATS=[
   ["vip","Представительский","Представительский класс","Maybach и S-класс для переговоров, гостей компании и встречи в Кольцово."],
   ["business","Бизнес","Бизнес-класс","Mercedes E-класса, Audi, Porsche и Jaguar на трансфер или на весь день."],
-  ["bus","Автобусы","Автобусы","От 29 до 57 мест — конференции, экскурсии, корпоративы."],
+  ["bus","Автобусы","Автобусы","От 24 до 55 мест — конференции, экскурсии, корпоративы."],
   ["minibus","Микроавтобусы","Микроавтобусы","Sprinter VIP и другие — от 9 до 20 мест."],
   ["minivan","Минивэны","Минивэны","V-класс и Multivan для компании до 7 человек."],
   ["suv","Внедорожники","Внедорожники","Land Cruiser 200, G-класс, Lexus LX и Escalade."],
@@ -944,7 +967,7 @@ const CATS=[
   ["retro","Ретро","Ретро-автомобили","«Волга», ЗИМ, «Победа» и американская классика."],
   ["cortege","Кортежи","Кортежи","От 5 до 30 машин одной марки — для делегаций и свадеб."]];
 // обложки категорий: кадр на всю ширину или реальное фото в рамке, пока нет кадра нужного качества
-const COVER={vip:{full:"img/ekb/w/sclass-xl.jpg"},business:{full:"img/ekb/w/scen-airport.jpg"},minibus:{full:"img/p/sprinter-vip.jpg"},minivan:{full:"img/ekb/w/scen-delegation.jpg"},suv:{full:"img/w/c-lc200.jpg",pos:"70% 60%",dim:.72},cortege:{full:"img/ekb/w/cortege-xl.jpg"},bus:{frame:1},cabrio:{full:"img/fleet/bmw-black-0.jpg"},retro:{frame:3}};
+const COVER={vip:{full:"img/ekb/w/sclass-xl.jpg"},business:{full:"img/ekb/w/scen-airport.jpg"},minibus:{full:"img/p/sprinter-vip.jpg"},minivan:{full:"img/ekb/w/scen-delegation.jpg"},suv:{full:"img/w/c-lc200.jpg",pos:"70% 60%",dim:.72},cortege:{full:"img/ekb/w/cortege-xl.jpg"},bus:{full:"img/a1/a1-yutong-6128-0.webp"},cabrio:{full:"img/fleet/bmw-black-0.jpg"},retro:{frame:3}};
 const catName=k=>CATS.find(c=>c[0]===k)[2];
 const RELATED={vip:"business",business:"vip",bus:"minibus",minibus:"minivan",minivan:"minibus",suv:"vip",cabrio:"retro",retro:"cabrio",cortege:"vip"};
 const byId=Object.fromEntries(FLEET.map(c=>[c.id,c]));
@@ -1029,14 +1052,14 @@ const SVC={
     tips:[["Машина молодожёнов","Задаёт стиль всего дня. Для классической свадьбы — представительский седан, белый или чёрный: в просторном салоне не помнётся платье."],
       ["Фотопрогулка","Кабриолет или ретро — «Волга», ЗИМ, «Победа», американская классика — хорошо смотрятся в кадре."],
       ["Кортеж","Машины одной марки и цвета выглядят цельно: белый свадебный кортеж Mercedes, чёрные S-класс или внедорожники, от 5 до 30 машин."],
-      ["Гости","Чтобы гости приехали вместе и вовремя — минивэн до 7 человек, микроавтобус до 20 или автобус до 57 мест."],
+      ["Гости","Чтобы гости приехали вместе и вовремя — минивэн до 7 человек, микроавтобус до 20 или автобус до 55 мест."],
       ["Время","Регистрация, прогулка и ресторан занимают больше, чем кажется. Закладывайте запас: у большинства машин минимальный заказ 3–5 часов."],
       ["Дополнительно","Украшение автомобилей, фото- и видеосъёмка, шары с гелием и голуби — уточните у менеджера при заказе."]],
     cats:["cortege","vip","cabrio","retro","minivan","minibus","bus"]},
-  gruppy:{t:"Группы и мероприятия",img:"img/p/sprinter-vip.jpg",lead:"Минивэны, микроавтобусы и автобусы до 57 мест — конференции, экскурсии, корпоративы.",h:"Как выбрать транспорт для группы",
+  gruppy:{t:"Группы и мероприятия",img:"img/p/sprinter-vip.jpg",lead:"Минивэны, микроавтобусы и автобусы до 55 мест — конференции, экскурсии, корпоративы.",h:"Как выбрать транспорт для группы",
     tips:[["До 7 человек","Минивэн: V-класс или Multivan."],
       ["9–20 человек","Микроавтобус: Sprinter VIP и другие."],
-      ["29–57 человек","Автобус: конференции, экскурсии, корпоративы."],
+      ["24–55 человек","Автобус: конференции, экскурсии, корпоративы."],
       ["Большое мероприятие","Можно заказать несколько машин разных классов — напишите число гостей и маршрут, подберём состав."]],
     cats:["minivan","minibus","bus"]}};
 const svp=$("#svp"),svpPg=$("#svpPg");let svcCur="";
@@ -1080,8 +1103,7 @@ const render=c=>{cur=c;gi=0;
     <div class="gal"><div class="main"><img id="gMain" src="${c.img[0]||""}" alt="${c.t}"><span class="cnt" id="gCnt">1 / ${c.img.length}</span>${c.img.length>1?`<div class="nav"><button data-g="-1" aria-label="Предыдущее фото">←</button><button data-g="1" aria-label="Следующее фото">→</button></div>`:""}</div>
       ${c.img.length>1?`<div class="th">${c.img.map((s,i)=>`<button data-gi="${i}" class="${i?"":"on"}"><img src="${s}" alt="" loading="lazy"></button>`).join("")}</div>`:""}</div>
     <div class="info"><div class="cls">${catName(c.cat)}</div><h2>${c.t}</h2><div class="spec">${chipsOf(c).join(" · ")}</div>
-      <div class="from num">${priceTxt(c)}</div>
-      ${c.rates.length?`<div class="rates num">${c.rates.map(([a,b])=>`<div><span>${a}</span>${b}</div>`).join("")}</div>`:""}
+      <div class="rates num">${[c.seats?["Вместимость",`${c.seats} ${c.seats%10===1&&c.seats%100!==11?"место":[2,3,4].includes(c.seats%10)&&![12,13,14].includes(c.seats%100)?"места":"мест"}`]:null,["Цена ₽/час",c.p?`от ${rub(c.p)} ₽${c.unit?" "+c.unit:""}`:"по запросу"],c.min?["Минимальное время заказа",`${c.min} ${c.min<5?"часа":"часов"}`]:null,["Класс",c.cls||catName(c.cat)]].filter(Boolean).map(([a,b])=>`<div><span>${a}</span><b>${b}</b></div>`).join("")}</div>
       <div class="acts"><button class="btn gold" data-order>Заказать</button><a class="btn glass" href="${wa}">Спросить в WhatsApp</a></div>
       <form class="cf" id="cf" novalidate><h3>Рассчитать стоимость</h3><p class="cf-s">Оставьте телефон — менеджер проверит, свободна ли машина на вашу дату, и назовёт цену.</p>
         <div class="row"><label class="f"><span>Имя</span><input type="text" name="name" placeholder="Ваше имя" autocomplete="name"></label>
