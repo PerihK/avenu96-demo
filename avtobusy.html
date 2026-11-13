@@ -247,8 +247,8 @@ nav.main a:hover:after{transform:scaleX(1);transform-origin:left}
   .cb-a .btn{padding:0 18px}
   .cb-a .tg{flex:1 1 auto}
 }
-/* компьютер и планшет: компактная сетка карточек классов, модели раскрываются под рядом */
-@media (min-width:761px){
+/* сетка карточек классов с картинками (компьютер, планшет и телефон), модели раскрываются под рядом */
+@media all{
   .fl-h,.tabs,#fleet .fl-b{max-width:1560px}
   .cls{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(34px,3vw,52px) clamp(14px,1.5vw,26px)}
   .cb{display:contents}
@@ -260,11 +260,20 @@ nav.main a:hover:after{transform:scaleX(1);transform-origin:left}
   .cb-m{display:contents}
   .cb-m b{grid-column:2;grid-row:1;align-self:baseline;white-space:nowrap;text-align:right;font-size:clamp(17px,1.3vw,20px)}
   .cb-m span{grid-column:1;grid-row:2;color:var(--muted);font-size:14px}
-  .cb-h:hover h3,.cb.open h3{color:var(--gold2)}
+  .cb-h:hover h3,.cb.open .cb-h h3{color:var(--gold2)}
   .cb.open .cb-i:after{box-shadow:inset 0 0 0 1px rgba(224,180,92,.85)}
   .cb .cars{grid-column:1/-1;margin:0;padding:clamp(6px,1vw,14px) 0 clamp(26px,2.6vw,40px);border-bottom:1px solid var(--line)}
 }
 @media (min-width:761px) and (max-width:1100px){.cls{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .cls{grid-template-columns:1fr 1fr;gap:24px 12px;padding-top:22px}
+  .cb-i{border-radius:12px}
+  .cb-t{grid-template-columns:1fr;gap:3px;padding-top:10px}
+  .cb h3{font-size:15px;line-height:1.22;letter-spacing:-.01em}
+  .cb-m b{grid-column:1;grid-row:auto;text-align:left;font-size:15px;white-space:normal}
+  .cb-m span{grid-row:auto;font-size:12px}
+  .cb .cars{padding:4px 0 26px}
+}
 /* страницы услуг: открываются поверх сайта со своим адресом (#svadby и т. д.), «Назад» возвращает на место */
 .svp{position:fixed;inset:0;z-index:75;visibility:hidden;transition:visibility .8s}
 .svp.on{visibility:visible}
@@ -461,6 +470,13 @@ nav.main a:hover:after{transform:scaleX(1);transform-origin:left}
 .ab-l div{padding:18px 0;border-top:1px solid var(--line2)}
 .ab-l h3{font:500 18px/1.3 var(--sans);letter-spacing:0}
 .ab-l p{color:var(--muted);font-size:15px;margin-top:3px}
+.wy{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,16px)}
+.wy-i{padding:clamp(20px,2vw,28px);border:1px solid var(--line);border-radius:var(--r);background:var(--bg2)}
+.wy-i svg{width:30px;height:30px;fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.wy-i h3{font:500 clamp(17px,1.3vw,19px)/1.3 var(--sans);letter-spacing:0;margin-top:18px}
+.wy-i p{color:var(--muted);font-size:14px;line-height:1.5;margin-top:6px}
+@media (max-width:1100px){.wy{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.wy{gap:8px}.wy-i{padding:16px 14px}.wy-i svg{width:26px;height:26px}.wy-i h3{font-size:15px;margin-top:12px}.wy-i p{font-size:13px}}
 
 /* final */
 .final{background:var(--gold);color:var(--ink);padding:clamp(70px,9vw,140px) 0 clamp(50px,6vw,90px);position:relative;z-index:1;border-radius:clamp(20px,3vw,40px) clamp(20px,3vw,40px) 0 0}
@@ -521,6 +537,17 @@ footer{position:relative;overflow:hidden;background:var(--gold);color:var(--ink)
 .info li{padding:9px 0 9px 20px;color:var(--soft);font-size:14px;position:relative;line-height:1.45}
 .info li:before{content:"";position:absolute;left:1px;top:17px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
 .info .src{margin-top:12px;font-size:12px;color:#62666d}
+.cf{margin-top:26px;padding:clamp(18px,2vw,26px);border:1px solid var(--line2);border-radius:20px;background:rgba(255,255,255,.025)}
+.cf h3{font-size:clamp(21px,1.7vw,26px);letter-spacing:-.02em}
+.cf-s{margin:6px 0 16px;color:var(--soft);font-size:14px;line-height:1.5}
+.cf .row{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.cf .f.full{grid-column:1/-1}
+.cf>.btn{width:100%;margin-top:10px}
+.cf-n{margin-top:10px;font-size:12px;color:#6c7077;text-align:center}
+.cf .done{text-align:center;padding:8px 0}
+.cf .done i{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:var(--gold);color:var(--ink);font-style:normal;font-size:24px}
+.cf .done p{color:var(--soft);margin:8px 0 14px}
+.cf .done .btn{width:100%}
 .rec{margin-top:clamp(44px,5vw,72px)}
 .rec .rh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:18px}
 .rec .rh p{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
@@ -645,7 +672,14 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
   .book .btn{grid-column:1/-1}
   .book .suggest-pop{top:calc(100% + 6px);bottom:auto;min-width:0}
   .st-l.frm>.fg{left:18px;right:18px;top:64px;width:auto;transform:none}
-  .cars{grid-template-columns:1fr;gap:26px}
+  .cars{grid-template-columns:1fr 1fr;gap:24px 12px}
+  .car .im{border-radius:12px}
+  .car .ph-n{right:6px;bottom:6px;padding:2px 7px;font-size:11px}
+  .car .b{grid-template-columns:1fr;gap:3px;padding-top:10px}
+  .car h3{font-size:15px;line-height:1.22;letter-spacing:-.01em}
+  .car .pr{text-align:left;font-size:15px;white-space:normal}
+  .car .pr small{font-size:12px}
+  .car .spec{font-size:12px;line-height:1.4}
   .fl-b{padding-bottom:60px}
   .rec .cars{display:flex;overflow-x:auto;margin:0 calc(var(--pad)*-1);padding:0 var(--pad);scroll-snap-type:x mandatory;scrollbar-width:none}
   .rec .car{flex:0 0 68%;scroll-snap-align:start}
@@ -718,6 +752,9 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 .art a{color:var(--gold2);border-bottom:1px solid rgba(224,180,92,.35);transition:border-color .25s}
 .art a:hover{border-color:var(--gold2)}
 .art .note{margin-top:30px;font-size:13px;color:var(--muted)}
+.art-in{transition:max-height .7s cubic-bezier(.2,.7,.2,1)}
+.art.cut .art-in{overflow:hidden;-webkit-mask-image:linear-gradient(#000 45%,transparent);mask-image:linear-gradient(#000 45%,transparent)}
+.art-more{margin-top:22px}
 .cp-oth{padding-top:clamp(64px,8vw,120px);padding-bottom:clamp(70px,9vw,140px)}
 .cp-chips{display:flex;flex-wrap:wrap;gap:8px}
 .cp-chips a{height:46px;display:inline-flex;align-items:center;padding:0 20px;border-radius:99px;border:1px solid var(--line);color:var(--soft);transition:color .25s,border-color .25s}
@@ -785,21 +822,52 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 <div class="cp-pic"><img src="img/fleet/man-lions-coach-vip-belyi-0.jpg" alt="Автобус Man Lions Coach VIP"></div></div></section>
 <section class="wrap cp-cars" id="models"><h2>Аренда автобусов по количеству мест</h2><div class="flt" id="flt"><button type="button" data-g="s30" data-a="0" data-b="30" data-n="До 30 мест" class="on">До 30 мест<small>1</small></button><button type="button" data-g="s40" data-a="31" data-b="42" data-n="30–40 мест" class="">30–40 мест<small>0</small></button><button type="button" data-g="s60" data-a="43" data-b="99" data-n="43–60 мест" class="">43–60 мест<small>9</small></button></div><div class="cars" id="busGrid"><article class="car" data-id="iveko-neman-29-mest" data-seats="29" tabindex="0"><div class="im"><img src="img/fleet/iveko-neman-29-mest-0.jpg" alt="Iveco Неман VIP, 29+1 мест" loading="lazy"><img src="img/fleet/iveko-neman-29-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">2 фото</span></div><div class="b"><h3>Iveco Неман VIP, 29+1 мест</h3><div class="pr num">от 1 600 ₽<small> / час</small></div><div class="spec">29 мест · мин. 4 часа</div></div></article><article class="car off" data-id="hyundai-universe-43-mesta" data-seats="43" tabindex="0"><div class="im"><img src="img/fleet/hyundai-universe-43-mesta-0.jpg" alt="Hyundai Universe 43 места" loading="lazy"><img src="img/fleet/hyundai-universe-43-mesta-1.jpg" alt="" loading="lazy"><span class="ph-n">4 фото</span></div><div class="b"><h3>Hyundai Universe 43 места</h3><div class="pr num">от 1 500 ₽<small> / час</small></div><div class="spec">43 мест</div></div></article><article class="car off" data-id="hyundai-universe-space-luxury-431-mest" data-seats="45" tabindex="0"><div class="im"><img src="img/fleet/hyundai-universe-space-luxury-431-mest-0.jpg" alt="Hyundai Universe Space Luxury, 45 мест" loading="lazy"><img src="img/fleet/hyundai-universe-space-luxury-431-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">2 фото</span></div><div class="b"><h3>Hyundai Universe Space Luxury, 45 мест</h3><div class="pr num">от 1 650 ₽<small> / час</small></div><div class="spec">45 мест</div></div></article><article class="car off" data-id="yutong-48-mest" data-seats="48" tabindex="0"><div class="im"><img src="img/fleet/yutong-48-mest-0.jpg" alt="Yutong 48 мест" loading="lazy"><img src="img/fleet/yutong-48-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">5 фото</span></div><div class="b"><h3>Yutong 48 мест</h3><div class="pr num">от 2 000 ₽<small> / час</small></div><div class="spec">48 мест</div></div></article><article class="car off" data-id="man-lions-coach-50-mest-tsvet-belyi-50-mest" data-seats="50" tabindex="0"><div class="im"><img src="img/fleet/man-lions-coach-50-mest-tsvet-belyi-50-mest-0.jpg" alt="Man Lions Coach 50 мест, цвет белый" loading="lazy"><img src="img/fleet/man-lions-coach-50-mest-tsvet-belyi-50-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">4 фото</span></div><div class="b"><h3>Man Lions Coach 50 мест, цвет белый</h3><div class="pr num">от 2 000 ₽<small> / час</small></div><div class="spec">50 мест · мин. 5 часов</div></div></article><article class="car off" data-id="man-lions-coach-vip-belyi" data-seats="50" tabindex="0"><div class="im"><img src="img/fleet/man-lions-coach-vip-belyi-0.jpg" alt="Man Lions Coach Vip белый 50 мест" loading="lazy"><img src="img/fleet/man-lions-coach-vip-belyi-1.jpg" alt="" loading="lazy"><span class="ph-n">3 фото</span></div><div class="b"><h3>Man Lions Coach Vip белый 50 мест</h3><div class="pr num">от 2 300 ₽<small> / час</small></div><div class="spec">50 мест · мин. 5 часов</div></div></article><article class="car off" data-id="king-long-511-mesto" data-seats="51" tabindex="0"><div class="im"><img src="img/fleet/king-long-511-mesto-0.jpg" alt="King Long, 51+1 место" loading="lazy"><img src="img/fleet/king-long-511-mesto-1.jpg" alt="" loading="lazy"><span class="ph-n">2 фото</span></div><div class="b"><h3>King Long, 51+1 место</h3><div class="pr num">от 1 800 ₽<small> / час</small></div><div class="spec">51 мест · мин. 4 часа</div></div></article><article class="car off" data-id="setra-511-mest" data-seats="51" tabindex="0"><div class="im"><img src="img/fleet/setra-511-mest-0.jpg" alt="SETRA 51+1 мест" loading="lazy"><img src="img/fleet/setra-511-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">4 фото</span></div><div class="b"><h3>SETRA 51+1 мест</h3><div class="pr num">от 2 000 ₽<small> / час</small></div><div class="spec">51 мест · мин. 5 часов</div></div></article><article class="car off" data-id="neoplan" data-seats="55" tabindex="0"><div class="im"><img src="img/fleet/neoplan-0.jpg" alt="Neoplan 55+2 места" loading="lazy"><img src="img/fleet/neoplan-1.jpg" alt="" loading="lazy"><span class="ph-n">5 фото</span></div><div class="b"><h3>Neoplan 55+2 места</h3><div class="pr num">от 2 500 ₽<small> / час</small></div><div class="spec">55 мест</div></div></article><article class="car off" data-id="king-long-60-mest" data-seats="57" tabindex="0"><div class="im"><img src="img/fleet/king-long-60-mest-0.jpg" alt="King Long 57+2 места" loading="lazy"><img src="img/fleet/king-long-60-mest-1.jpg" alt="" loading="lazy"><span class="ph-n">4 фото</span></div><div class="b"><h3>King Long 57+2 места</h3><div class="pr num">от 2 000 ₽<small> / час</small></div><div class="spec">57 мест</div></div></article></div>
 <div class="flt-empty" id="fltEmpty" hidden><p>Подберём автобус на <span></span> под вашу дату — напишите число гостей и маршрут.</p><a class="btn gold" href="#book">Заказать автобус</a></div></section>
-<article class="wrap art">
+<article class="wrap art" data-cut><div class="art-in">
 <h2>Заказ автобуса: как выбрать под группу</h2>
-<p>Главное — число пассажиров. Возьмите автобус с запасом в несколько мест: для сопровождающих, ручной клади и тех, кто присоединится в последний момент.</p>
+<p>Главное — число пассажиров. Возьмите автобус с запасом в несколько мест: для сопровождающих, ручной клади и тех, кто присоединится в последний момент. Ниже — какие автобусы подходят под разный размер группы, для каких поездок их берут, сколько стоит аренда и что написать менеджеру, чтобы быстро получить расчёт.</p>
 <h3>До 30 человек</h3>
-<p><a href="#car=iveko-neman-29-mest">Iveco Неман VIP на 29+1 мест</a> — для небольшой делегации, экскурсии или трансфера гостей. Если едет до 20 человек, дешевле и удобнее <a href="6-noir-2.html#c-minibus">микроавтобус</a> — Mercedes Sprinter VIP и другие.</p>
+<p>Категория небольших пассажирских автобусов. В ней представлены как бюджетные варианты — Исузу Богдан, ГАЗ Вектор, ПАЗ, — так и комфортные туристические автобусы <a href="#car=iveko-neman-29-mest">Iveco Неман</a>, Хайгер — для небольшой делегации, экскурсии или трансфера гостей.</p>
+<p>Если всё же группа не превышает 20 человек, дешевле и удобнее заказать <a href="6-noir-2.html#c-minibus">микроавтобус</a> — Форд Транзит, Mercedes Sprinter и другие.</p>
 <h3>30–40 человек</h3>
-<p>Для такой группы берите автобус с запасом — <a href="#car=hyundai-universe-43-mesta">Hyundai Universe на 43 места</a>. Свободные машины на вашу дату подберёт менеджер.</p>
+<p>Самая востребованная в пассажирских перевозках категория автобусов. Чаще всего заказывают именно автобусы на 30–35 мест. Особенно популярной является модель автобуса Yutong 35 мест.</p>
+<p>Для такой группы берите автобус с запасом — <a href="#car=hyundai-universe-43-mesta">Hyundai Universe на 43 места</a>. Уточнить по занятости и забронировать автобус на выбранную вами дату поможет менеджер.</p>
+<p>Запас мест особенно нужен, когда группа едет с багажом — в аэропорт, на базу отдыха или на выездное мероприятие с реквизитом. Если вещей много, сразу скажите об этом менеджеру: он подберёт автобус с подходящим багажным отделением.</p>
 <h3>43–60 человек</h3>
-<p><a href="#car=hyundai-universe-43-mesta">Hyundai Universe на 43 места</a>, Hyundai Universe Space Luxury на 45, <a href="#car=yutong-48-mest">Yutong на 48</a>, два Man Lions Coach на 50 — белый и <a href="#car=man-lions-coach-vip-belyi">VIP</a>, King Long и <a href="#car=setra-511-mest">SETRA на 51+1</a>, <a href="#car=neoplan">Neoplan на 55+2</a> и <a href="#car=king-long-60-mest">King Long на 57+2</a>. Для конференций, корпоративов и больших групп одним рейсом.</p>
+<p>Большие туристические автобусы — для конференций, корпоративов, экскурсий и больших групп одним рейсом:</p>
+<ul>
+<li><a href="#car=hyundai-universe-43-mesta">Hyundai Universe на 43 места</a> — две широкие двери с удобными ступенями, климат-контроль, двойные стеклопакеты, аудио-видео система для экскурсий.</li>
+<li>Hyundai Universe Space Luxury на 45 мест.</li>
+<li><a href="#car=yutong-48-mest">Yutong на 48 мест</a> — TV, DVD, микрофон, холодильник, мягкие сиденья с подлокотниками, индивидуальные системы кондиционирования.</li>
+<li>Man Lions Coach на 50 мест, белый, и <a href="#car=man-lions-coach-vip-belyi">Man Lions Coach VIP</a> — у VIP-версии сиденья с ремнями безопасности, DVD и монитор, холодильник, микрофон и караоке.</li>
+<li>King Long на 51+1 место — откидные кожаные сиденья, два кондиционера, климат-контроль, TV и DVD, микрофон, холодильник.</li>
+<li><a href="#car=setra-511-mest">SETRA на 51+1 место</a>.</li>
+<li><a href="#car=neoplan">Neoplan на 55+2 места</a> — сиденья с ремнями безопасности, полки для ручной клади, большое багажное отделение на 11 м³, солнцезащитные шторки.</li>
+<li><a href="#car=king-long-60-mest">King Long на 57+2 места</a> — самый вместительный автобус в автопарке.</li>
+</ul>
+<h3>Для каких поездок заказывают автобус</h3>
+<ul>
+<li><b>Конференции и деловые мероприятия</b> — встретить участников, развезти по гостиницам, доставить на площадку и обратно.</li>
+<li><b>Экскурсии</b> — по Екатеринбургу и области. Для гида пригодятся микрофон и аудио-видео система: они есть в Hyundai Universe на 43 места, Yutong, King Long и Man Lions Coach VIP.</li>
+<li><b>Корпоративы и выезды за город</b> — на базу отдыха, турбазу, в загородный клуб. Поездки за город считаются по километрам, тариф указан в карточке автобуса.</li>
+<li><b>Трансфер гостей</b> — в аэропорт, на вокзал, в гостиницу. Для поездки в одну сторону у многих автобусов есть фиксированная цена трансфера.</li>
+<li><b><a href="svadby.html">Свадьбы</a> и праздники</b> — привезти гостей на регистрацию, банкет и развезти по домам.</li>
+</ul>
 <h3>Сколько стоит</h3>
-<p>От 1 500 до 2 500 ₽ в час. У части автобусов минимальный заказ — 4–5 часов, он указан в карточке. Точную стоимость менеджер назовёт по маршруту и времени.</p>
+<p>От 1 500 до 2 500 ₽ в час. У части автобусов минимальный заказ — 4–5 часов, при долгой аренде час обычно дешевле. Трансфер в одну сторону — от 7 500 до 10 000 ₽, поездки за город — от 40 до 65 ₽ за километр. Точные тарифы — в карточке каждого автобуса.</p>
+<p>Итоговую стоимость менеджер назовёт по маршруту и времени: она зависит от числа часов, расстояния и того, нужна ли машина на весь день или только на подачу.</p>
 <h3>Если гостей больше</h3>
 <p>Для большого мероприятия подберём несколько автобусов и микроавтобусов. Напишите число гостей, дату и маршрут — например, для <a href="svadby.html">свадьбы</a> или выездной конференции.</p>
+<h3>Что написать менеджеру</h3>
+<ul>
+<li>дату и время подачи;</li>
+<li>адрес подачи, маршрут и остановки;</li>
+<li>число пассажиров и сколько у них багажа;</li>
+<li>формат: трансфер в одну сторону, аренда на несколько часов или поездка за город;</li>
+<li>пожелания: микрофон, монитор, холодильник, определённая модель автобуса.</li>
+</ul>
 <h3>Как заказать автобус</h3>
-<p>Нажмите «Заказать» или напишите в WhatsApp: дата, время, адрес подачи, маршрут и число пассажиров. Менеджер проверит, какие автобусы свободны, и назовёт стоимость аренды.</p>
+<p>Нажмите «Заказать» или напишите в WhatsApp. Менеджер проверит, какие автобусы свободны на вашу дату, и назовёт стоимость аренды.</p>
+</div><button class="btn glass art-more" type="button" hidden><span>Читать дальше</span><i>↓</i></button>
 </article><section class="wrap cp-oth"><h2>Другие классы</h2><div class="cp-chips"><a href="6-noir-2.html#c-vip">Представительский класс</a><a href="6-noir-2.html#c-business">Бизнес-класс</a><a href="6-noir-2.html#c-minibus">Микроавтобусы</a><a href="6-noir-2.html#c-minivan">Минивэны</a><a href="6-noir-2.html#c-suv">Внедорожники</a><a href="6-noir-2.html#c-cabrio">Кабриолеты</a><a href="retro.html">Ретро-автомобили</a><a href="6-noir-2.html#c-cortege">Кортежи</a></div></section>
 </main>
 
@@ -875,7 +943,7 @@ const CATS=[
   ["retro","Ретро","Ретро-автомобили","«Волга», ЗИМ, «Победа» и американская классика."],
   ["cortege","Кортежи","Кортежи","От 5 до 30 машин одной марки — для делегаций и свадеб."]];
 // обложки категорий: кадр на всю ширину или реальное фото в рамке, пока нет кадра нужного качества
-const COVER={vip:{full:"img/ekb/w/sclass-xl.jpg"},business:{full:"img/ekb/w/scen-airport.jpg"},minibus:{full:"img/p/sprinter-vip.jpg"},minivan:{full:"img/ekb/w/scen-delegation.jpg"},suv:{full:"img/w/c-lc200.jpg",pos:"70% 60%",dim:.72},cortege:{full:"img/ekb/w/cortege-xl.jpg"},bus:{frame:1},cabrio:{frame:2},retro:{frame:3}};
+const COVER={vip:{full:"img/ekb/w/sclass-xl.jpg"},business:{full:"img/ekb/w/scen-airport.jpg"},minibus:{full:"img/p/sprinter-vip.jpg"},minivan:{full:"img/ekb/w/scen-delegation.jpg"},suv:{full:"img/w/c-lc200.jpg",pos:"70% 60%",dim:.72},cortege:{full:"img/ekb/w/cortege-xl.jpg"},bus:{frame:1},cabrio:{full:"img/fleet/bmw-black-0.jpg"},retro:{frame:3}};
 const catName=k=>CATS.find(c=>c[0]===k)[2];
 const RELATED={vip:"business",business:"vip",bus:"minibus",minibus:"minivan",minivan:"minibus",suv:"vip",cabrio:"retro",retro:"cabrio",cortege:"vip"};
 const byId=Object.fromEntries(FLEET.map(c=>[c.id,c]));
@@ -909,7 +977,7 @@ if(!still)addEventListener("load",()=>CATS.forEach(([k])=>{new Image().src=cover
 // разделы классов: картинка, описание, модели раскрываются под картинкой
 const classImg=k=>k==="vip"?inCat("vip")[0].img[0]:coverSrc(k);
 const modelsTxt=n=>`Смотреть ${n} ${plural(n,"модель","модели","моделей")}`;
-const deskW=()=>innerWidth>760;
+const deskW=()=>true; // сетка классов одинакова на всех ширинах
 const posOf=el=>el.firstElementChild.getBoundingClientRect().top;
 // на компьютере панель моделей встаёт сразу под рядом, в котором карточка класса
 const placePanels=()=>{if(!clsList||!deskW())return;const n=getComputedStyle(clsList).gridTemplateColumns.split(" ").length||1;
@@ -1014,6 +1082,13 @@ const render=c=>{cur=c;gi=0;
       <div class="from num">${priceTxt(c)}</div>
       ${c.rates.length?`<div class="rates num">${c.rates.map(([a,b])=>`<div><span>${a}</span>${b}</div>`).join("")}</div>`:""}
       <div class="acts"><button class="btn gold" data-order>Заказать</button><a class="btn glass" href="${wa}">Спросить в WhatsApp</a></div>
+      <form class="cf" id="cf" novalidate><h3>Рассчитать стоимость</h3><p class="cf-s">Оставьте телефон — менеджер проверит, свободна ли машина на вашу дату, и назовёт цену.</p>
+        <div class="row"><label class="f"><span>Имя</span><input type="text" name="name" placeholder="Ваше имя" autocomplete="name"></label>
+        <label class="f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" data-phone required></label>
+        <label class="f"><span>Дата и время</span><input type="text" name="when" placeholder="20 ноября, 10:00"></label>
+        <label class="f"><span>Часов</span><input type="text" name="hours" inputmode="numeric" placeholder="${c.min?"от "+c.min:"4"}"></label>
+        <label class="f full"><span>Маршрут, комментарий</span><input type="text" name="note" placeholder="Откуда и куда, сколько пассажиров"></label></div>
+        <button class="btn gold" type="submit">Рассчитать стоимость</button><p class="cf-n">Демо: заявка пока никуда не уходит.</p></form>
       ${c.li.length?`<ul>${c.li.map(s=>`<li>${s}</li>`).join("")}</ul>`:""}
       ${c.src?`<p class="src">Данные и фото — со страницы машины на avenu96.ru</p>`:""}
     </div></div>
@@ -1029,7 +1104,7 @@ document.addEventListener("click",e=>{const c=e.target.closest(".car");if(c){ope
   const g=e.target.closest("[data-g]");if(g)gShow(gi+ +g.dataset.g);
   const t=e.target.closest("[data-gi]");if(t)gShow(+t.dataset.gi);
   const sc=e.target.closest("[data-showcat]");if(sc){close();openCat(sc.dataset.showcat,true)}
-  if(e.target.closest("[data-order]")){const c=cur;close();if(!book){openOrder([["Автомобиль",c.t]]);return}setCar(c);$("#needF").value=c.t;go("#book",()=>sel.closest(".f").animate([{borderColor:"#e0b45c"},{borderColor:"transparent"}],{duration:1800}))}});
+  if(e.target.closest("[data-order]")){const cf=$("#cf");if(cf){cf.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>cf.elements.phone.focus({preventScroll:true}),450)}}});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){close();setMenu(false)}if(sheet.classList.contains("on")){if(e.key==="ArrowRight")gShow(gi+1);if(e.key==="ArrowLeft")gShow(gi-1)}
   if(e.key==="Enter"&&e.target.classList&&e.target.classList.contains("car"))open(e.target.dataset.id)});
 addEventListener("popstate",e=>{if(e.state&&e.state.car)open(e.state.car,false);else close(false)});
@@ -1198,6 +1273,9 @@ const openOrder=rows=>{
   of.addEventListener("submit",e=>{e.preventDefault();if(!check(of))return;const v=vals();oBody.innerHTML=doneHtml(v.name,v.phone)});
   order.classList.add("on");order.setAttribute("aria-hidden","false");document.body.classList.add("lock");lenis&&lenis.stop();
   setTimeout(()=>of.elements.phone.focus({preventScroll:true}),350)};
+document.addEventListener("submit",e=>{const f=e.target;if(f.id!=="cf")return;e.preventDefault();if(!check(f))return;const v=n=>f.elements[n].value.trim();
+  const rows=[["Автомобиль",cur?cur.t:""],v("when")?["Когда",v("when")]:null,v("hours")?["Часов",v("hours")]:null].filter(Boolean),o={name:v("name"),phone:fmtPhone(v("phone")),note:v("note")};
+  f.innerHTML=`<div class="done"><i>✓</i><h3>Заявка принята</h3><p>${esc(o.name||"Спасибо")}, менеджер перезвонит на ${esc(o.phone)} и назовёт стоимость ${esc(cur?cur.t:"")}.</p><a class="btn glass" target="_blank" rel="noopener" href="https://wa.me/79221882045?text=${encodeURIComponent(waText(rows,o))}">Продублировать в WhatsApp</a><p class="cf-n">Демо: заявка никуда не отправлена — куда её получать, решим с Александром.</p></div>`});
 const closeOrder=()=>{if(!order.classList.contains("on"))return;order.classList.remove("on");order.setAttribute("aria-hidden","true");document.body.classList.remove("lock");lenis&&lenis.start()};
 document.addEventListener("click",e=>{if(e.target.closest("[data-oclose]"))closeOrder()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeOrder()});
@@ -1212,5 +1290,8 @@ const m=location.hash.match(/^#car=(.+)$/);if(m&&byId[m[1]]){history.replaceStat
   const set=(b,mark=true)=>{$$("#flt button").forEach(x=>x.classList.toggle("on",x===b));const a=+b.dataset.a,z=+b.dataset.b;let n=0;$$("#busGrid .car").forEach(c=>{const s=+c.dataset.seats,off=s<a||s>z;c.classList.toggle("off",off);if(!off)n++});
     em.hidden=n>0;em.querySelector("span").textContent=b.dataset.n.toLowerCase();if(mark)history.replaceState(history.state,"","#"+b.dataset.g)};
   f.addEventListener("click",e=>{const b=e.target.closest("button");if(b)set(b)});const h=location.hash.slice(1),b=f.querySelector(`[data-g="${h}"]`);set(b||f.querySelector("button"),false)})()</script>
+<script>$$(".art[data-cut]").forEach(a=>{const w=a.querySelector(".art-in"),b=a.querySelector(".art-more"),full=w.scrollHeight;if(full<900)return;
+  w.style.maxHeight=Math.max(380,Math.round(full*.2))+"px";a.classList.add("cut");b.hidden=false;
+  b.addEventListener("click",()=>{w.style.maxHeight=w.scrollHeight+"px";a.classList.remove("cut");b.hidden=true;setTimeout(()=>{w.style.maxHeight="none"},750)})})</script>
 </body>
 </html>

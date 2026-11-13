@@ -247,8 +247,8 @@ nav.main a:hover:after{transform:scaleX(1);transform-origin:left}
   .cb-a .btn{padding:0 18px}
   .cb-a .tg{flex:1 1 auto}
 }
-/* компьютер и планшет: компактная сетка карточек классов, модели раскрываются под рядом */
-@media (min-width:761px){
+/* сетка карточек классов с картинками (компьютер, планшет и телефон), модели раскрываются под рядом */
+@media all{
   .fl-h,.tabs,#fleet .fl-b{max-width:1560px}
   .cls{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(34px,3vw,52px) clamp(14px,1.5vw,26px)}
   .cb{display:contents}
@@ -260,11 +260,20 @@ nav.main a:hover:after{transform:scaleX(1);transform-origin:left}
   .cb-m{display:contents}
   .cb-m b{grid-column:2;grid-row:1;align-self:baseline;white-space:nowrap;text-align:right;font-size:clamp(17px,1.3vw,20px)}
   .cb-m span{grid-column:1;grid-row:2;color:var(--muted);font-size:14px}
-  .cb-h:hover h3,.cb.open h3{color:var(--gold2)}
+  .cb-h:hover h3,.cb.open .cb-h h3{color:var(--gold2)}
   .cb.open .cb-i:after{box-shadow:inset 0 0 0 1px rgba(224,180,92,.85)}
   .cb .cars{grid-column:1/-1;margin:0;padding:clamp(6px,1vw,14px) 0 clamp(26px,2.6vw,40px);border-bottom:1px solid var(--line)}
 }
 @media (min-width:761px) and (max-width:1100px){.cls{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .cls{grid-template-columns:1fr 1fr;gap:24px 12px;padding-top:22px}
+  .cb-i{border-radius:12px}
+  .cb-t{grid-template-columns:1fr;gap:3px;padding-top:10px}
+  .cb h3{font-size:15px;line-height:1.22;letter-spacing:-.01em}
+  .cb-m b{grid-column:1;grid-row:auto;text-align:left;font-size:15px;white-space:normal}
+  .cb-m span{grid-row:auto;font-size:12px}
+  .cb .cars{padding:4px 0 26px}
+}
 /* страницы услуг: открываются поверх сайта со своим адресом (#svadby и т. д.), «Назад» возвращает на место */
 .svp{position:fixed;inset:0;z-index:75;visibility:hidden;transition:visibility .8s}
 .svp.on{visibility:visible}
@@ -461,6 +470,13 @@ nav.main a:hover:after{transform:scaleX(1);transform-origin:left}
 .ab-l div{padding:18px 0;border-top:1px solid var(--line2)}
 .ab-l h3{font:500 18px/1.3 var(--sans);letter-spacing:0}
 .ab-l p{color:var(--muted);font-size:15px;margin-top:3px}
+.wy{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,16px)}
+.wy-i{padding:clamp(20px,2vw,28px);border:1px solid var(--line);border-radius:var(--r);background:var(--bg2)}
+.wy-i svg{width:30px;height:30px;fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.wy-i h3{font:500 clamp(17px,1.3vw,19px)/1.3 var(--sans);letter-spacing:0;margin-top:18px}
+.wy-i p{color:var(--muted);font-size:14px;line-height:1.5;margin-top:6px}
+@media (max-width:1100px){.wy{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.wy{gap:8px}.wy-i{padding:16px 14px}.wy-i svg{width:26px;height:26px}.wy-i h3{font-size:15px;margin-top:12px}.wy-i p{font-size:13px}}
 
 /* final */
 .final{background:var(--gold);color:var(--ink);padding:clamp(70px,9vw,140px) 0 clamp(50px,6vw,90px);position:relative;z-index:1;border-radius:clamp(20px,3vw,40px) clamp(20px,3vw,40px) 0 0}
@@ -521,6 +537,17 @@ footer{position:relative;overflow:hidden;background:var(--gold);color:var(--ink)
 .info li{padding:9px 0 9px 20px;color:var(--soft);font-size:14px;position:relative;line-height:1.45}
 .info li:before{content:"";position:absolute;left:1px;top:17px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
 .info .src{margin-top:12px;font-size:12px;color:#62666d}
+.cf{margin-top:26px;padding:clamp(18px,2vw,26px);border:1px solid var(--line2);border-radius:20px;background:rgba(255,255,255,.025)}
+.cf h3{font-size:clamp(21px,1.7vw,26px);letter-spacing:-.02em}
+.cf-s{margin:6px 0 16px;color:var(--soft);font-size:14px;line-height:1.5}
+.cf .row{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.cf .f.full{grid-column:1/-1}
+.cf>.btn{width:100%;margin-top:10px}
+.cf-n{margin-top:10px;font-size:12px;color:#6c7077;text-align:center}
+.cf .done{text-align:center;padding:8px 0}
+.cf .done i{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:var(--gold);color:var(--ink);font-style:normal;font-size:24px}
+.cf .done p{color:var(--soft);margin:8px 0 14px}
+.cf .done .btn{width:100%}
 .rec{margin-top:clamp(44px,5vw,72px)}
 .rec .rh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:18px}
 .rec .rh p{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
@@ -645,7 +672,14 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
   .book .btn{grid-column:1/-1}
   .book .suggest-pop{top:calc(100% + 6px);bottom:auto;min-width:0}
   .st-l.frm>.fg{left:18px;right:18px;top:64px;width:auto;transform:none}
-  .cars{grid-template-columns:1fr;gap:26px}
+  .cars{grid-template-columns:1fr 1fr;gap:24px 12px}
+  .car .im{border-radius:12px}
+  .car .ph-n{right:6px;bottom:6px;padding:2px 7px;font-size:11px}
+  .car .b{grid-template-columns:1fr;gap:3px;padding-top:10px}
+  .car h3{font-size:15px;line-height:1.22;letter-spacing:-.01em}
+  .car .pr{text-align:left;font-size:15px;white-space:normal}
+  .car .pr small{font-size:12px}
+  .car .spec{font-size:12px;line-height:1.4}
   .fl-b{padding-bottom:60px}
   .rec .cars{display:flex;overflow-x:auto;margin:0 calc(var(--pad)*-1);padding:0 var(--pad);scroll-snap-type:x mandatory;scrollbar-width:none}
   .rec .car{flex:0 0 68%;scroll-snap-align:start}
@@ -718,6 +752,9 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 .art a{color:var(--gold2);border-bottom:1px solid rgba(224,180,92,.35);transition:border-color .25s}
 .art a:hover{border-color:var(--gold2)}
 .art .note{margin-top:30px;font-size:13px;color:var(--muted)}
+.art-in{transition:max-height .7s cubic-bezier(.2,.7,.2,1)}
+.art.cut .art-in{overflow:hidden;-webkit-mask-image:linear-gradient(#000 45%,transparent);mask-image:linear-gradient(#000 45%,transparent)}
+.art-more{margin-top:22px}
 .cp-oth{padding-top:clamp(64px,8vw,120px);padding-bottom:clamp(70px,9vw,140px)}
 .cp-chips{display:flex;flex-wrap:wrap;gap:8px}
 .cp-chips a{height:46px;display:inline-flex;align-items:center;padding:0 20px;border-radius:99px;border:1px solid var(--line);color:var(--soft);transition:color .25s,border-color .25s}
@@ -783,7 +820,7 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 <p class="lead">Машина молодожёнов, кортеж и транспорт для гостей — с водителем на весь день.</p>
 <div class="cp-act"><a class="btn gold" href="#book">Подобрать на дату</a><a class="btn glass" href="https://wa.me/79221882045"><svg><use href="#i-wa"/></svg>Написать в WhatsApp</a></div></div>
 <div class="cp-pic wide"><img src="img/ekb/w/wedding-xl.jpg" alt="Свадебный автомобиль Mercedes"></div></div></section>
-<section class="wrap kts" id="models"><h2 class="kts-h">Автомобили и цены</h2><div class="kt-g"><a class="kt" href="6-noir-2.html#c-cabrio"><div class="cp-pic"><img src="img/fleet/bmw-cabrio-restyle-0.jpg" alt="Кабриолеты" loading="lazy"></div><h3>Кабриолеты</h3><small><b class="num">от 2 000 ₽/час</b> · <span class="num">4 места</span></small><p>Для драйва и летней фотопрогулки.</p></a><a class="kt" href="6-noir-2.html#c-vip"><div class="cp-pic"><img src="img/fleet/belyi-mersedes-s5000w222l-0.jpg" alt="Представительский класс" loading="lazy"></div><h3>Представительский класс</h3><small><b class="num">от 1 500 ₽/час</b> · <span class="num">4 места</span></small><p>Классика: S-класс и Maybach, белые и чёрные.</p></a><a class="kt" href="6-noir-2.html#c-business"><div class="cp-pic"><img src="img/fleet/novyi-belyi-mersedes-e200-w213-0.jpg" alt="Бизнес-класс" loading="lazy"></div><h3>Бизнес-класс</h3><small><b class="num">от 1 500 ₽/час</b> · <span class="num">4 места</span></small><p>Скромнее: Mercedes E-класса, Toyota Camry.</p></a><a class="kt" href="retro.html"><div class="cp-pic"><img src="img/fleet/volga-gaz-21-0.jpg" alt="Ретро-автомобили" loading="lazy"></div><h3>Ретро-автомобили</h3><small><b class="num">от 1 900 ₽/час</b> · <span class="num">4 места</span></small><p>«Волга», ЗИМ, «Победа» и американская классика.</p></a><a class="kt" href="6-noir-2.html#c-cortege"><div class="cp-pic"><img src="img/ekb/w/cortege-xl.jpg" alt="Кортежи" loading="lazy"></div><h3>Кортежи</h3><small><b class="num">от 1 400 ₽/час за машину</b> · <span class="num">5–30 машин</span></small><p>5–30 машин одной марки и цвета.</p></a><a class="kt" href="avtobusy.html"><div class="cp-pic"><img src="img/fleet/man-lions-coach-vip-belyi-0.jpg" alt="Автобусы" loading="lazy"></div><h3>Автобусы</h3><small><b class="num">от 1 500 ₽/час</b> · <span class="num">57 мест</span></small><p>Гости едут вместе и приезжают вовремя.</p></a><a class="kt" href="6-noir-2.html#c-minibus"><div class="cp-pic"><img src="img/p/sprinter-vip.jpg" alt="Микроавтобусы" loading="lazy"></div><h3>Микроавтобусы</h3><small><b class="num">от 1 000 ₽/час</b> · <span class="num">20 мест</span></small><p>Для гостей и родственников — до 20 мест.</p></a><a class="kt" href="6-noir-2.html#c-minivan"><div class="cp-pic"><img src="img/ekb/w/scen-delegation.jpg" alt="Минивэны" loading="lazy"></div><h3>Минивэны</h3><small><b class="num">от 1 100 ₽/час</b> · <span class="num">7 мест</span></small><p>Для свидетелей и семьи — до 7 человек.</p></a></div></section>
+<section class="wrap kts" id="models"><h2 class="kts-h">Автомобили и цены</h2><div class="kt-g"><a class="kt" href="6-noir-2.html#c-cabrio"><div class="cp-pic"><img src="img/fleet/bmw-cabrio-restyle-0.jpg" alt="Кабриолеты" loading="lazy"></div><h3>Кабриолеты</h3><small><b class="num">от 2 000 ₽/час</b> · <span class="num">3–4 места</span></small><p>Для драйва и летней фотопрогулки.</p></a><a class="kt" href="6-noir-2.html#c-vip"><div class="cp-pic"><img src="img/fleet/belyi-mersedes-s5000w222l-0.jpg" alt="Представительский класс" loading="lazy"></div><h3>Представительский класс</h3><small><b class="num">от 1 500 ₽/час</b> · <span class="num">3–4 места</span></small><p>Классика: S-класс и Maybach, белые и чёрные.</p></a><a class="kt" href="6-noir-2.html#c-business"><div class="cp-pic"><img src="img/fleet/novyi-belyi-mersedes-e200-w213-0.jpg" alt="Бизнес-класс" loading="lazy"></div><h3>Бизнес-класс</h3><small><b class="num">от 1 500 ₽/час</b> · <span class="num">4 места</span></small><p>Скромнее: Mercedes E-класса, Toyota Camry.</p></a><a class="kt" href="retro.html"><div class="cp-pic"><img src="img/fleet/volga-gaz-21-0.jpg" alt="Ретро-автомобили" loading="lazy"></div><h3>Ретро-автомобили</h3><small><b class="num">от 1 900 ₽/час</b> · <span class="num">3–4 места</span></small><p>«Волга», ЗИМ, «Победа» и американская классика.</p></a><a class="kt" href="6-noir-2.html#c-cortege"><div class="cp-pic"><img src="img/ekb/w/cortege-xl.jpg" alt="Кортежи" loading="lazy"></div><h3>Кортежи</h3><small><b class="num">от 1 400 ₽/час за машину</b> · <span class="num">5–30 машин</span></small><p>5–30 машин одной марки и цвета.</p></a><a class="kt" href="avtobusy.html"><div class="cp-pic"><img src="img/fleet/man-lions-coach-vip-belyi-0.jpg" alt="Автобусы" loading="lazy"></div><h3>Автобусы</h3><small><b class="num">от 1 500 ₽/час</b> · <span class="num">29–57 мест</span></small><p>Гости едут вместе и приезжают вовремя.</p></a><a class="kt" href="6-noir-2.html#c-minibus"><div class="cp-pic"><img src="img/p/sprinter-vip.jpg" alt="Микроавтобусы" loading="lazy"></div><h3>Микроавтобусы</h3><small><b class="num">от 1 000 ₽/час</b> · <span class="num">9–20 мест</span></small><p>Для гостей и родственников — до 20 мест.</p></a><a class="kt" href="6-noir-2.html#c-minivan"><div class="cp-pic"><img src="img/ekb/w/scen-delegation.jpg" alt="Минивэны" loading="lazy"></div><h3>Минивэны</h3><small><b class="num">от 1 100 ₽/час</b> · <span class="num">4–7 мест</span></small><p>Для свидетелей и семьи — до 7 человек.</p></a></div></section>
 <article class="wrap art">
 <h2>Какой автомобиль выбрать на свадьбу</h2>
 <p>Машина молодожёнов задаёт стиль всего дня. Выбор зависит от сезона, бюджета и того, какой вы видите свадьбу.</p>
@@ -876,7 +913,7 @@ const CATS=[
   ["retro","Ретро","Ретро-автомобили","«Волга», ЗИМ, «Победа» и американская классика."],
   ["cortege","Кортежи","Кортежи","От 5 до 30 машин одной марки — для делегаций и свадеб."]];
 // обложки категорий: кадр на всю ширину или реальное фото в рамке, пока нет кадра нужного качества
-const COVER={vip:{full:"img/ekb/w/sclass-xl.jpg"},business:{full:"img/ekb/w/scen-airport.jpg"},minibus:{full:"img/p/sprinter-vip.jpg"},minivan:{full:"img/ekb/w/scen-delegation.jpg"},suv:{full:"img/w/c-lc200.jpg",pos:"70% 60%",dim:.72},cortege:{full:"img/ekb/w/cortege-xl.jpg"},bus:{frame:1},cabrio:{frame:2},retro:{frame:3}};
+const COVER={vip:{full:"img/ekb/w/sclass-xl.jpg"},business:{full:"img/ekb/w/scen-airport.jpg"},minibus:{full:"img/p/sprinter-vip.jpg"},minivan:{full:"img/ekb/w/scen-delegation.jpg"},suv:{full:"img/w/c-lc200.jpg",pos:"70% 60%",dim:.72},cortege:{full:"img/ekb/w/cortege-xl.jpg"},bus:{frame:1},cabrio:{full:"img/fleet/bmw-black-0.jpg"},retro:{frame:3}};
 const catName=k=>CATS.find(c=>c[0]===k)[2];
 const RELATED={vip:"business",business:"vip",bus:"minibus",minibus:"minivan",minivan:"minibus",suv:"vip",cabrio:"retro",retro:"cabrio",cortege:"vip"};
 const byId=Object.fromEntries(FLEET.map(c=>[c.id,c]));
@@ -910,7 +947,7 @@ if(!still)addEventListener("load",()=>CATS.forEach(([k])=>{new Image().src=cover
 // разделы классов: картинка, описание, модели раскрываются под картинкой
 const classImg=k=>k==="vip"?inCat("vip")[0].img[0]:coverSrc(k);
 const modelsTxt=n=>`Смотреть ${n} ${plural(n,"модель","модели","моделей")}`;
-const deskW=()=>innerWidth>760;
+const deskW=()=>true; // сетка классов одинакова на всех ширинах
 const posOf=el=>el.firstElementChild.getBoundingClientRect().top;
 // на компьютере панель моделей встаёт сразу под рядом, в котором карточка класса
 const placePanels=()=>{if(!clsList||!deskW())return;const n=getComputedStyle(clsList).gridTemplateColumns.split(" ").length||1;
@@ -1015,6 +1052,13 @@ const render=c=>{cur=c;gi=0;
       <div class="from num">${priceTxt(c)}</div>
       ${c.rates.length?`<div class="rates num">${c.rates.map(([a,b])=>`<div><span>${a}</span>${b}</div>`).join("")}</div>`:""}
       <div class="acts"><button class="btn gold" data-order>Заказать</button><a class="btn glass" href="${wa}">Спросить в WhatsApp</a></div>
+      <form class="cf" id="cf" novalidate><h3>Рассчитать стоимость</h3><p class="cf-s">Оставьте телефон — менеджер проверит, свободна ли машина на вашу дату, и назовёт цену.</p>
+        <div class="row"><label class="f"><span>Имя</span><input type="text" name="name" placeholder="Ваше имя" autocomplete="name"></label>
+        <label class="f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" data-phone required></label>
+        <label class="f"><span>Дата и время</span><input type="text" name="when" placeholder="20 ноября, 10:00"></label>
+        <label class="f"><span>Часов</span><input type="text" name="hours" inputmode="numeric" placeholder="${c.min?"от "+c.min:"4"}"></label>
+        <label class="f full"><span>Маршрут, комментарий</span><input type="text" name="note" placeholder="Откуда и куда, сколько пассажиров"></label></div>
+        <button class="btn gold" type="submit">Рассчитать стоимость</button><p class="cf-n">Демо: заявка пока никуда не уходит.</p></form>
       ${c.li.length?`<ul>${c.li.map(s=>`<li>${s}</li>`).join("")}</ul>`:""}
       ${c.src?`<p class="src">Данные и фото — со страницы машины на avenu96.ru</p>`:""}
     </div></div>
@@ -1030,7 +1074,7 @@ document.addEventListener("click",e=>{const c=e.target.closest(".car");if(c){ope
   const g=e.target.closest("[data-g]");if(g)gShow(gi+ +g.dataset.g);
   const t=e.target.closest("[data-gi]");if(t)gShow(+t.dataset.gi);
   const sc=e.target.closest("[data-showcat]");if(sc){close();openCat(sc.dataset.showcat,true)}
-  if(e.target.closest("[data-order]")){const c=cur;close();if(!book){openOrder([["Автомобиль",c.t]]);return}setCar(c);$("#needF").value=c.t;go("#book",()=>sel.closest(".f").animate([{borderColor:"#e0b45c"},{borderColor:"transparent"}],{duration:1800}))}});
+  if(e.target.closest("[data-order]")){const cf=$("#cf");if(cf){cf.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>cf.elements.phone.focus({preventScroll:true}),450)}}});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){close();setMenu(false)}if(sheet.classList.contains("on")){if(e.key==="ArrowRight")gShow(gi+1);if(e.key==="ArrowLeft")gShow(gi-1)}
   if(e.key==="Enter"&&e.target.classList&&e.target.classList.contains("car"))open(e.target.dataset.id)});
 addEventListener("popstate",e=>{if(e.state&&e.state.car)open(e.state.car,false);else close(false)});
@@ -1199,6 +1243,9 @@ const openOrder=rows=>{
   of.addEventListener("submit",e=>{e.preventDefault();if(!check(of))return;const v=vals();oBody.innerHTML=doneHtml(v.name,v.phone)});
   order.classList.add("on");order.setAttribute("aria-hidden","false");document.body.classList.add("lock");lenis&&lenis.stop();
   setTimeout(()=>of.elements.phone.focus({preventScroll:true}),350)};
+document.addEventListener("submit",e=>{const f=e.target;if(f.id!=="cf")return;e.preventDefault();if(!check(f))return;const v=n=>f.elements[n].value.trim();
+  const rows=[["Автомобиль",cur?cur.t:""],v("when")?["Когда",v("when")]:null,v("hours")?["Часов",v("hours")]:null].filter(Boolean),o={name:v("name"),phone:fmtPhone(v("phone")),note:v("note")};
+  f.innerHTML=`<div class="done"><i>✓</i><h3>Заявка принята</h3><p>${esc(o.name||"Спасибо")}, менеджер перезвонит на ${esc(o.phone)} и назовёт стоимость ${esc(cur?cur.t:"")}.</p><a class="btn glass" target="_blank" rel="noopener" href="https://wa.me/79221882045?text=${encodeURIComponent(waText(rows,o))}">Продублировать в WhatsApp</a><p class="cf-n">Демо: заявка никуда не отправлена — куда её получать, решим с Александром.</p></div>`});
 const closeOrder=()=>{if(!order.classList.contains("on"))return;order.classList.remove("on");order.setAttribute("aria-hidden","true");document.body.classList.remove("lock");lenis&&lenis.start()};
 document.addEventListener("click",e=>{if(e.target.closest("[data-oclose]"))closeOrder()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeOrder()});
