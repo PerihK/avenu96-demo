@@ -828,7 +828,7 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 <p>Главное — число пассажиров. Возьмите автобус с запасом в несколько мест: для сопровождающих, ручной клади и тех, кто присоединится в последний момент. Ниже — какие автобусы подходят под разный размер группы, для каких поездок их берут, сколько стоит аренда и что написать менеджеру, чтобы быстро получить расчёт.</p>
 <h3>До 30 человек</h3>
 <p>Категория небольших пассажирских автобусов. В ней представлены как бюджетные варианты — Исузу Богдан, ГАЗ Вектор, ПАЗ, — так и комфортные туристические автобусы <a href="#car=iveko-neman-29-mest">Iveco Неман</a>, Хайгер — для небольшой делегации, экскурсии или трансфера гостей.</p>
-<p>Если всё же группа не превышает 20 человек, дешевле и удобнее заказать <a href="6-noir-2.html#c-minibus">микроавтобус</a> — Форд Транзит, Mercedes Sprinter и другие.</p>
+<p>Если всё же группа не превышает 20 человек, дешевле и удобнее заказать <a href="mikroavtobusy.html">микроавтобус</a> — Форд Транзит, Mercedes Sprinter и другие.</p>
 <h3>30–40 человек</h3>
 <p>Самая востребованная в пассажирских перевозках категория автобусов. Чаще всего заказывают именно автобусы на 30–35 мест. Особенно популярной является модель автобуса Yutong 35 мест.</p>
 <p>Для такой группы берите автобус с запасом — <a href="#car=hyundai-universe-43-mesta">Hyundai Universe на 43 места</a>. Уточнить по занятости и забронировать автобус на выбранную вами дату поможет менеджер.</p>
@@ -869,7 +869,7 @@ html,body{overflow-x:clip;overscroll-behavior-x:none}
 <h3>Как заказать автобус</h3>
 <p>Нажмите «Заказать» или напишите в WhatsApp. Менеджер проверит, какие автобусы свободны на вашу дату, и назовёт стоимость аренды.</p>
 </div><button class="btn glass art-more" type="button" hidden><span>Читать дальше</span><i>↓</i></button>
-</article><section class="wrap cp-oth"><h2>Другие классы</h2><div class="cp-chips"><a href="6-noir-2.html#c-vip">Представительский класс</a><a href="6-noir-2.html#c-business">Бизнес-класс</a><a href="6-noir-2.html#c-minibus">Микроавтобусы</a><a href="6-noir-2.html#c-minivan">Минивэны</a><a href="6-noir-2.html#c-suv">Внедорожники</a><a href="6-noir-2.html#c-cabrio">Кабриолеты</a><a href="retro.html">Ретро-автомобили</a><a href="6-noir-2.html#c-cortege">Кортежи</a></div></section>
+</article><section class="wrap cp-oth"><h2>Другие классы</h2><div class="cp-chips"><a href="vip.html">Представительский класс</a><a href="biznes-klass.html">Бизнес-класс</a><a href="mikroavtobusy.html">Микроавтобусы</a><a href="miniveny.html">Минивэны</a><a href="vnedorozhniki.html">Внедорожники</a><a href="kabriolety.html">Кабриолеты</a><a href="retro.html">Ретро-автомобили</a><a href="6-noir-2.html#c-cortege">Кортежи</a></div></section>
 </main>
 
 <section class="final" id="contact"><div class="wrap" style="max-width:none">
@@ -930,7 +930,7 @@ const phoneW=()=>innerWidth<=760;
 const touch=html.classList.contains("touch");
 const lenis=(!still&&!touch&&window.Lenis)?new Lenis({lerp:.09,wheelMultiplier:.9}):null;
 // отдельные страницы классов: главная ведёт на них, остальные классы раскрываются на главной
-const PAGE=document.body.dataset.page||"",HOME="6-noir-2.html",PAGES={retro:"retro.html",bus:"avtobusy.html"};
+const PAGE=document.body.dataset.page||"",HOME="6-noir-2.html",PAGES={vip:"vip.html",business:"biznes-klass.html",bus:"avtobusy.html",minibus:"mikroavtobusy.html",minivan:"miniveny.html",suv:"vnedorozhniki.html",cabrio:"kabriolety.html",retro:"retro.html"};
 
 /* ---------- автопарк ---------- */
 const CATS=[
